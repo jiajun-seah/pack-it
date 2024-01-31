@@ -11,7 +11,7 @@ import '../audio/sounds.dart';
 // import '../settings/settings.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
-import '../style/responsive_screen.dart';
+import '../style/responsive_screen_landscape.dart';
 
 class MainMenuScreen extends StatelessWidget {
   const MainMenuScreen({super.key});
@@ -32,7 +32,7 @@ class MainMenuScreen extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Halogen',
                 fontSize: 100,
-                height: 1,
+                // height: 1,
               ),
             ),
         ),
