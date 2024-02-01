@@ -110,13 +110,13 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
     super.onCollisionStart(intersectionPoints, other);
     // When the player collides with an obstacle it should lose all its points.
     if (other is Obstacle) {
-      // game.audioController.playSfx(SfxType.damage);
+      game.audioController.playSfx(SfxType.damage);
       resetScore();
       add(HurtEffect());
     } else if (other is Point) {
       // When the player collides with a point it should gain a point and remove
       // the `Point` from the game.
-      // game.audioController.playSfx(SfxType.score);
+      game.audioController.playSfx(SfxType.score);
       other.removeFromParent();
       addScore();
     }
@@ -132,7 +132,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
 
     // We only allow jumps when the player isn't already in the air.
     if (!inAir) {
-      // game.audioController.playSfx(SfxType.jump);
+      game.audioController.playSfx(SfxType.jump);
       add(jumpEffect);
     }
   }

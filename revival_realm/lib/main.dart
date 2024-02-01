@@ -54,12 +54,12 @@ class MyGame extends StatelessWidget {
             title: 'Revival Realm',
             theme: flutterNesTheme().copyWith(
               colorScheme: ColorScheme.fromSeed(
-                seedColor: palette.darkPen,
-                background: palette.backgroundMain,
+                seedColor: palette.darkForestGreen,
+                background: palette.limeGreen,
               ),
-              textTheme: GoogleFonts.pressStart2pTextTheme().apply(
-                bodyColor: palette.darkPen,
-                displayColor: palette.darkPen,
+              textTheme: GoogleFonts.homemadeAppleTextTheme().apply(
+                bodyColor: palette.darkForestGreen,
+                displayColor: palette.darkForestGreen,
               ),
             ),
             routeInformationProvider: router.routeInformationProvider,

@@ -54,7 +54,10 @@ class LevelSelectionScreen extends StatelessWidget {
           Expanded(
             child: SizedBox(
               width: 450,
-              child: ListView(
+              child: GridView.count(
+                crossAxisCount: 4,
+                mainAxisSpacing: 10.0, // spacing between rows
+                crossAxisSpacing: 10.0,
                 children: [
                   for (final level in gameLevels)
                     ListTile(
@@ -66,33 +69,72 @@ class LevelSelectionScreen extends StatelessWidget {
                         GoRouter.of(context)
                             .go('/play/session/${level.number}');
                       },
-                      leading: Text(
-                        level.number.toString(),
-                        style: levelTextStyle,
-                      ),
+                      // leading: Text(
+                      //   level.number.toString(),
+                      //   style: levelTextStyle,
+                      // ),
                       title: Row(
                         children: [
                           Text(
-                            'Level #${level.number}',
+                            '#${level.number}',
                             style: levelTextStyle,
                           ),
                           if (playerProgress.levels.length <
                               level.number - 1) ...[
                             const SizedBox(width: 10),
                             const Icon(Icons.lock, size: 20),
-                          ] else if (playerProgress.levels.length >=
-                              level.number) ...[
-                            const SizedBox(width: 50),
-                            Text(
-                              '${playerProgress.levels[level.number - 1]}s',
-                              style: levelTextStyle,
-                            ),
+                              ],
+                          // ] else if (playerProgress.levels.length >=
+                          //     level.number) ...[
+                          //   const SizedBox(width: 50),
+                          //   Text(
+                          //     '${playerProgress.levels[level.number - 1]}s',
+                          //     style: levelTextStyle,
+                          //   ),
                           ],
-                        ],
                       ),
                     )
                 ],
               ),
+              // child: ListView(
+              //   children: [
+              //     for (final level in gameLevels)
+              //       ListTile(
+              //         enabled: playerProgress.levels.length >= level.number - 1,
+              //         onTap: () {
+              //           final audioController = context.read<AudioController>();
+              //           audioController.playSfx(SfxType.buttonTap);
+
+              //           GoRouter.of(context)
+              //               .go('/play/session/${level.number}');
+              //         },
+              //         leading: Text(
+              //           level.number.toString(),
+              //           style: levelTextStyle,
+              //         ),
+              //         title: Row(
+              //           children: [
+              //             Text(
+              //               'Level #${level.number}',
+              //               style: levelTextStyle,
+              //             ),
+              //             if (playerProgress.levels.length <
+              //                 level.number - 1) ...[
+              //               const SizedBox(width: 10),
+              //               const Icon(Icons.lock, size: 20),
+              //             ] else if (playerProgress.levels.length >=
+              //                 level.number) ...[
+              //               const SizedBox(width: 50),
+              //               Text(
+              //                 '${playerProgress.levels[level.number - 1]}s',
+              //                 style: levelTextStyle,
+              //               ),
+              //             ],
+              //           ],
+              //         ),
+              //       )
+              //   ],
+              // ),
             ),
           ),
           const SizedBox(height: 30),

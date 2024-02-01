@@ -11,7 +11,7 @@ import '../audio/sounds.dart';
 // import '../settings/settings.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
-import '../style/responsive_screen.dart';
+import '../style/responsive_screen_landscape.dart';
 
 class MainMenuScreen extends StatelessWidget {
   const MainMenuScreen({super.key});
@@ -23,7 +23,7 @@ class MainMenuScreen extends StatelessWidget {
     final audioController = context.watch<AudioController>();
 
     return Scaffold(
-      backgroundColor: palette.backgroundMain,
+      backgroundColor: palette.limeGreen,
       body: ResponsiveScreen(
         squarishMainArea: const Center(
           child: Text(
@@ -31,7 +31,7 @@ class MainMenuScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Halogen',
-                fontSize: 100,
+                fontSize: 200,
                 // height: 1,
               ),
             ),
@@ -39,33 +39,63 @@ class MainMenuScreen extends StatelessWidget {
         rectangularMenuArea: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            MyButton(
+            ElevatedButton(
               onPressed: () {
                 audioController.playSfx(SfxType.buttonTap);
                 GoRouter.of(context).go('/play');
               },
-              child: const Text('Play'),
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(20)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24.0),
+                    side: const BorderSide(color: Colors.red)
+                  )
+                )
+              ),
+              child: const Text(
+                'Play',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 28,
+              ),),
             ),
             _gap,
             MyButton(
               onPressed: () => GoRouter.of(context).push('/settings'),
-              child: const Text('Options'),
+              child: const Text(
+                'Options',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 28,
+              ),),
             ),
             _gap,
             MyButton(
               onPressed: () => GoRouter.of(context).push('/collection'),
-              child: const Text('Collection'),
+              child: const Text(
+                'Collection',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 28,
+              ),),
             ),
             _gap,
             MyButton(
               onPressed: () => GoRouter.of(context).push('/quit'),
-              child: const Text('Quit'),
+              child: const Text(
+                'Quit',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 28,
+              ),),
             ),
           ],
         ),
       ),
     );
   }
-
-  static const _gap = SizedBox(height: 10);
+  static const _gap = SizedBox(height: 20);
 }
