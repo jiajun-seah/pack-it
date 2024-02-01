@@ -1,11 +1,7 @@
-// Copyright 2022, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-CustomTransitionPage<T> buildMyTransition<T>({
+CustomTransitionPage<T> buildPageTransition<T>({
   required Widget child,
   required Color color,
   String? name,
@@ -16,7 +12,7 @@ CustomTransitionPage<T> buildMyTransition<T>({
   return CustomTransitionPage<T>(
     child: child,
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      return _MyReveal(
+      return _PageReveal(
         animation: animation,
         color: color,
         child: child,
@@ -30,7 +26,7 @@ CustomTransitionPage<T> buildMyTransition<T>({
   );
 }
 
-class _MyReveal extends StatelessWidget {
+class _PageReveal extends StatelessWidget {
   final Widget child;
 
   final Animation<double> animation;
@@ -44,7 +40,7 @@ class _MyReveal extends StatelessWidget {
     TweenSequenceItem(tween: Tween(begin: 0.0, end: 1.0), weight: 1),
   ]);
 
-  _MyReveal({
+  _PageReveal({
     required this.child,
     required this.animation,
     required this.color,

@@ -1,23 +1,28 @@
-// Copyright 2022, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
+import 'dart:core';
 
 import 'player_progress_persistence.dart';
 
 /// An in-memory implementation of [PlayerProgressPersistence].
 /// Useful for testing.
 class MemoryOnlyPlayerProgressPersistence implements PlayerProgressPersistence {
-  int level = 0;
+  final levels = <int>[];
 
   @override
-  Future<int> getHighestLevelReached() async {
+  Future<List<int>> getFinishedLevels() async {
     await Future<void>.delayed(const Duration(milliseconds: 500));
-    return level;
+    return levels;
   }
 
   @override
-  Future<void> saveHighestLevelReached(int level) async {
+  Future<void> saveLevelFinished(int level, int time) async {
     await Future<void>.delayed(const Duration(milliseconds: 500));
-    this.level = level;
+    if (level < levels.length - 1 && levels[level - 1] > time) {
+      levels[level - 1] = time;
+    }
+  }
+
+  @override
+  Future<void> reset() async {
+    levels.clear();
   }
 }

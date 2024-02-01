@@ -1,9 +1,7 @@
-// Copyright 2022, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
-
+import 'package:revival_realm/level_selection/instructions_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nes_ui/nes_ui.dart';
 import 'package:provider/provider.dart';
 
 import '../audio/audio_controller.dart';
@@ -11,7 +9,6 @@ import '../audio/sounds.dart';
 import '../player_progress/player_progress.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
-import '../style/responsive_screen.dart';
 import 'levels.dart';
 
 class LevelSelectionScreen extends StatelessWidget {
@@ -21,30 +18,47 @@ class LevelSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final palette = context.watch<Palette>();
     final playerProgress = context.watch<PlayerProgress>();
+    final levelTextStyle =
+        Theme.of(context).textTheme.bodyMedium?.copyWith(height: 1.4);
 
     return Scaffold(
       backgroundColor: palette.backgroundLevelSelection,
-      body: ResponsiveScreen(
-        squarishMainArea: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.all(16),
-              child: Center(
-                child: Text(
-                  'Select level',
-                  style:
-                      TextStyle(fontFamily: 'Permanent Marker', fontSize: 30),
-                ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Select level',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                  const SizedBox(width: 16),
+                  NesButton(
+                    type: NesButtonType.normal,
+                    child: NesIcon(iconData: NesIcons.questionMark),
+                    onPressed: () {
+                      NesDialog.show(
+                        context: context,
+                        builder: (_) => const InstructionsDialog(),
+                      );
+                    },
+                  )
+                ],
               ),
             ),
-            const SizedBox(height: 50),
-            Expanded(
+          ),
+          const SizedBox(height: 50),
+          Expanded(
+            child: SizedBox(
+              width: 450,
               child: ListView(
                 children: [
                   for (final level in gameLevels)
                     ListTile(
-                      enabled: playerProgress.highestLevelReached >=
-                          level.number - 1,
+                      enabled: playerProgress.levels.length >= level.number - 1,
                       onTap: () {
                         final audioController = context.read<AudioController>();
                         audioController.playSfx(SfxType.buttonTap);
@@ -52,20 +66,44 @@ class LevelSelectionScreen extends StatelessWidget {
                         GoRouter.of(context)
                             .go('/play/session/${level.number}');
                       },
-                      leading: Text(level.number.toString()),
-                      title: Text('Level #${level.number}'),
+                      leading: Text(
+                        level.number.toString(),
+                        style: levelTextStyle,
+                      ),
+                      title: Row(
+                        children: [
+                          Text(
+                            'Level #${level.number}',
+                            style: levelTextStyle,
+                          ),
+                          if (playerProgress.levels.length <
+                              level.number - 1) ...[
+                            const SizedBox(width: 10),
+                            const Icon(Icons.lock, size: 20),
+                          ] else if (playerProgress.levels.length >=
+                              level.number) ...[
+                            const SizedBox(width: 50),
+                            Text(
+                              '${playerProgress.levels[level.number - 1]}s',
+                              style: levelTextStyle,
+                            ),
+                          ],
+                        ],
+                      ),
                     )
                 ],
               ),
             ),
-          ],
-        ),
-        rectangularMenuArea: MyButton(
-          onPressed: () {
-            GoRouter.of(context).go('/');
-          },
-          child: const Text('Back'),
-        ),
+          ),
+          const SizedBox(height: 30),
+          MyButton(
+            onPressed: () {
+              GoRouter.of(context).go('/');
+            },
+            child: const Text('Back'),
+          ),
+          const SizedBox(height: 30),
+        ],
       ),
     );
   }

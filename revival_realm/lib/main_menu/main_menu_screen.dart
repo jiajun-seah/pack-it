@@ -11,7 +11,7 @@ import '../audio/sounds.dart';
 // import '../settings/settings.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
-import '../style/responsive_screen_landscape.dart';
+import '../style/responsive_screen.dart';
 
 class MainMenuScreen extends StatelessWidget {
   const MainMenuScreen({super.key});

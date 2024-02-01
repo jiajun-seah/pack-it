@@ -1,9 +1,12 @@
-import 'dart:developer' as dev;
+// import 'dart:developer' as dev;
 
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
+import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:logging/logging.dart';
+// import 'package:flutter/services.dart';
+// import 'package:logging/logging.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:nes_ui/nes_ui.dart';
 import 'package:provider/provider.dart';
 
 import 'app_lifecycle/app_lifecycle.dart';
@@ -14,82 +17,49 @@ import 'settings/settings.dart';
 import 'style/palette.dart';
 
 void main() async {
-  // Basic logging setup.
-  Logger.root.level = kDebugMode ? Level.FINE : Level.INFO;
-  Logger.root.onRecord.listen((record) {
-    dev.log(
-      record.message,
-      time: record.time,
-      level: record.level.value,
-      name: record.loggerName,
-    );
-  });
-
   WidgetsFlutterBinding.ensureInitialized();
-  // Put game into full screen mode on mobile devices.
-  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-  // Lock the game to portrait mode on mobile devices.
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.landscapeLeft,
-    // DeviceOrientation.portraitDown,
-  ]);
-
-  runApp(MyApp());
+  await Flame.device.setLandscape();
+  await Flame.device.fullScreen();
+  runApp(const MyGame());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyGame extends StatelessWidget {
+  const MyGame({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppLifecycleObserver(
       child: MultiProvider(
-        // This is where you add objects that you want to have available
-        // throughout your game.
-        //
-        // Every widget in the game can access these objects by calling
-        // `context.watch()` or `context.read()`.
-        // See `lib/main_menu/main_menu_screen.dart` for example usage.
         providers: [
-          Provider(create: (context) => SettingsController()),
           Provider(create: (context) => Palette()),
           ChangeNotifierProvider(create: (context) => PlayerProgress()),
+          Provider(create: (context) => SettingsController()),
           // Set up audio.
-          ProxyProvider2<AppLifecycleStateNotifier, SettingsController,
+          ProxyProvider2<SettingsController, AppLifecycleStateNotifier,
               AudioController>(
+            // Ensures that music starts immediately.
+            lazy: false,
             create: (context) => AudioController(),
-            update: (context, lifecycleNotifier, settings, audio) {
+            update: (context, settings, lifecycleNotifier, audio) {
               audio!.attachDependencies(lifecycleNotifier, settings);
               return audio;
             },
             dispose: (context, audio) => audio.dispose(),
-            // Ensures that music starts immediately.
-            lazy: false,
           ),
         ],
         child: Builder(builder: (context) {
           final palette = context.watch<Palette>();
 
           return MaterialApp.router(
-            title: 'My Flutter Game',
-            theme: ThemeData.from(
+            title: 'Revival Realm',
+            theme: flutterNesTheme().copyWith(
               colorScheme: ColorScheme.fromSeed(
                 seedColor: palette.darkPen,
                 background: palette.backgroundMain,
               ),
-              textTheme: TextTheme(
-                bodyMedium: TextStyle(color: palette.ink),
-              ),
-              useMaterial3: true,
-            ).copyWith(
-              // Make buttons more fun.
-              filledButtonTheme: FilledButtonThemeData(
-                style: FilledButton.styleFrom(
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
+              textTheme: GoogleFonts.pressStart2pTextTheme().apply(
+                bodyColor: palette.darkPen,
+                displayColor: palette.darkPen,
               ),
             ),
             routeInformationProvider: router.routeInformationProvider,
