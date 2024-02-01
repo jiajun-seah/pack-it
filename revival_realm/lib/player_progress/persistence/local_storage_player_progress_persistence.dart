@@ -1,3 +1,7 @@
+// Copyright 2022, the Flutter project authors. Please see the AUTHORS file
+// for details. All rights reserved. Use of this source code is governed by a
+// BSD-style license that can be found in the LICENSE file.
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'player_progress_persistence.dart';
@@ -9,31 +13,14 @@ class LocalStoragePlayerProgressPersistence extends PlayerProgressPersistence {
       SharedPreferences.getInstance();
 
   @override
-  Future<List<int>> getFinishedLevels() async {
+  Future<int> getHighestLevelReached() async {
     final prefs = await instanceFuture;
-    final serialized = prefs.getStringList('levelsFinished') ?? [];
-
-    return serialized.map(int.parse).toList();
+    return prefs.getInt('highestLevelReached') ?? 0;
   }
 
   @override
-  Future<void> saveLevelFinished(int level, int time) async {
+  Future<void> saveHighestLevelReached(int level) async {
     final prefs = await instanceFuture;
-    final serialized = prefs.getStringList('levelsFinished') ?? [];
-    if (level <= serialized.length) {
-      final currentTime = int.parse(serialized[level - 1]);
-      if (time < currentTime) {
-        serialized[level - 1] = time.toString();
-      }
-    } else {
-      serialized.add(time.toString());
-    }
-    await prefs.setStringList('levelsFinished', serialized);
-  }
-
-  @override
-  Future<void> reset() async {
-    final prefs = await instanceFuture;
-    await prefs.remove('levelsFinished');
+    await prefs.setInt('highestLevelReached', level);
   }
 }

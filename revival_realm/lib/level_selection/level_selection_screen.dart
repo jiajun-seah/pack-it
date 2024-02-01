@@ -61,7 +61,7 @@ class LevelSelectionScreen extends StatelessWidget {
                 children: [
                   for (final level in gameLevels)
                     ListTile(
-                      enabled: playerProgress.levels.length >= level.number - 1,
+                      enabled: playerProgress.highestLevelReached >= level.number - 1,
                       onTap: () {
                         final audioController = context.read<AudioController>();
                         audioController.playSfx(SfxType.buttonTap);
@@ -79,7 +79,7 @@ class LevelSelectionScreen extends StatelessWidget {
                             '#${level.number}',
                             style: levelTextStyle,
                           ),
-                          if (playerProgress.levels.length <
+                          if (playerProgress.highestLevelReached <
                               level.number - 1) ...[
                             const SizedBox(width: 10),
                             const Icon(Icons.lock, size: 20),

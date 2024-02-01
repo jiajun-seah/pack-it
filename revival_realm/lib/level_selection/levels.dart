@@ -1,58 +1,60 @@
 const gameLevels = <GameLevel>[
   (
     number: 1,
-    winScore: 3,
-    canSpawnTall: false,
+    size: 3,
+    difficulty: 5,
   ),
   (
     number: 2,
-    winScore: 5,
-    canSpawnTall: true,
+    size: 3,
+    difficulty: 5,
   ),
   (
     number: 3,
-    winScore: 5,
-    canSpawnTall: true,
+    size: 3,
+    difficulty: 5,
   ),
   (
     number: 4,
-    winScore: 5,
-    canSpawnTall: true,
+    size: 3,
+    difficulty: 5,
   ),
   (
     number: 5,
-    winScore: 5,
-    canSpawnTall: true,
+    size: 4,
+    difficulty: 5,
   ),
   (
     number: 6,
-    winScore: 5,
-    canSpawnTall: true,
+    size: 4,
+    difficulty: 5,
   ),
   (
     number: 7,
-    winScore: 5,
-    canSpawnTall: true,
+    size: 4,
+    difficulty: 5,
   ),
   (
     number: 8,
-    winScore: 5,
-    canSpawnTall: true,
+    size: 5,
+    difficulty: 5,
   ),
   (
     number: 9,
-    winScore: 5,
-    canSpawnTall: true,
+    size: 5,
+    difficulty: 5,
   ),
   (
     number: 10,
-    winScore: 5,
-    canSpawnTall: true,
+    size: 5,
+    difficulty: 5,
   ),
 ];
 
 typedef GameLevel = ({
   int number,
-  int winScore,
-  bool canSpawnTall,
+  int size,
+  int difficulty,
+  // int winScore,
+  // bool canSpawnTall,
 });
