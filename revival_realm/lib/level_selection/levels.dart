@@ -55,6 +55,4 @@ typedef GameLevel = ({
   int number,
   int size,
   int difficulty,
-  // int winScore,
-  // bool canSpawnTall,
 });

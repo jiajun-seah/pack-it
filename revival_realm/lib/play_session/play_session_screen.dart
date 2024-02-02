@@ -82,6 +82,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
               // with a settings button on top, the actual play area
               // in the middle, and a back button at the bottom.
               Column(
+                
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Align(
@@ -95,9 +96,32 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                     ),
                   ),
                   const Spacer(),
-                  Expanded(
-                    // The actual UI of the game.
-                    child: GameWidget(),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        // flex: 2,
+                        // Left side placeholder
+                        child:
+                          Container(
+                            color: Colors.black12,
+                          ),
+                      ),
+                      const Flexible(
+                        // flex: 6,
+                        // The actual UI of the game.
+                        child:
+                          GameWidget(),
+                      ),
+                      Flexible(
+                        // flex: 2,
+                        // Left side placeholder
+                        child:
+                          Container(
+                            color: Colors.black12,
+                          ),
+                      ),
+                    ]
                   ),
                   const Spacer(),
                   Padding(

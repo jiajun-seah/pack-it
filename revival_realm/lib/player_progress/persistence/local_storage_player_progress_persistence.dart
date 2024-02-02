@@ -3,7 +3,6 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'player_progress_persistence.dart';
 
 /// An implementation of [PlayerProgressPersistence] that uses
