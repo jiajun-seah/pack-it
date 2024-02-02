@@ -96,33 +96,38 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                     ),
                   ),
                   const Spacer(),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Flexible(
-                        // flex: 2,
-                        // Left side placeholder
-                        child:
-                          Container(
-                            color: Colors.black12,
-                          ),
-                      ),
-                      const Flexible(
-                        // flex: 6,
+                  const Expanded(
+                        flex: 6,
                         // The actual UI of the game.
                         child:
                           GameWidget(),
                       ),
-                      Flexible(
-                        // flex: 2,
-                        // Left side placeholder
-                        child:
-                          Container(
-                            color: Colors.black12,
-                          ),
-                      ),
-                    ]
-                  ),
+                  // Row(
+                  //   children: [
+                  //     Flexible(
+                  //       flex: 2,
+                  //       // Left side placeholder
+                  //       child:
+                  //         Container(
+                  //           color: Colors.black12,
+                  //         ),
+                  //     ),
+                  //     const Flexible(
+                  //       flex: 6,
+                  //       // The actual UI of the game.
+                  //       child:
+                  //         GameWidget(),
+                  //     ),
+                  //     Flexible(
+                  //       flex: 2,
+                  //       // Left side placeholder
+                  //       child:
+                  //         Container(
+                  //           color: Colors.black12,
+                  //         ),
+                  //     ),
+                  //   ]
+                  // ),
                   const Spacer(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),

@@ -17,23 +17,19 @@ class GameWidget extends StatelessWidget {
     final levelState = context.watch<LevelState>();
 
     return Column(
-      mainAxisSize: MainAxisSize.min,
       children: [
         Text('Level ${level.number}'),
-        Flexible(
-          child:
-            GridView.builder(
-              itemCount: 25,
-              physics: NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
-              itemBuilder: ((context, index) => Center(
-                child: Text(
-                  index.toString(),
-                  style: TextStyle(color: Colors.black),
-                ))
-              )
-            ),
-          ),
+        GridView.builder(
+          itemCount: 25,
+          physics: NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
+          itemBuilder: ((context, index) => Center(
+            child: Text(
+              index.toString(),
+              style: TextStyle(color: Colors.black),
+            ))
+          )
+        ),
         // Slider(
         //   label: 'Level Progress',
         //   autofocus: true,
