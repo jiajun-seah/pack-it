@@ -94,14 +94,13 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                       ),
                     ),
                   ),
-                  const Spacer(flex:1),
+                  const Spacer(),
                   const Expanded(
-                    flex: 8,
                     // The actual UI of the game.
                     child:
                       GameWidget(),
                   ),
-                  const Spacer(flex:1),
+                  const Spacer(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: MyButton(

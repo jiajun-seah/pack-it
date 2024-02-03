@@ -53,7 +53,7 @@ class LevelSelectionScreen extends StatelessWidget {
           const SizedBox(height: 50),
           Expanded(
             child: SizedBox(
-              width: 450,
+              width: 500,
               child: GridView.builder(
                 itemCount: gameLevels.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
