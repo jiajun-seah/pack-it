@@ -96,38 +96,44 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                     ),
                   ),
                   const Spacer(),
-                  const Expanded(
-                        flex: 6,
-                        // The actual UI of the game.
-                        child:
-                          GameWidget(),
-                      ),
-                  // Row(
-                  //   children: [
-                  //     Flexible(
-                  //       flex: 2,
-                  //       // Left side placeholder
-                  //       child:
-                  //         Container(
-                  //           color: Colors.black12,
-                  //         ),
-                  //     ),
-                  //     const Flexible(
+                  // const Expanded(
                   //       flex: 6,
                   //       // The actual UI of the game.
                   //       child:
                   //         GameWidget(),
                   //     ),
-                  //     Flexible(
-                  //       flex: 2,
-                  //       // Left side placeholder
-                  //       child:
-                  //         Container(
-                  //           color: Colors.black12,
-                  //         ),
-                  //     ),
-                  //   ]
-                  // ),
+                  Row(
+                    children: [
+                      Expanded(
+                        // flex: 2,
+                        // Left side placeholder
+                        child:
+                          Container(
+                            // width: 225,
+                            height: 500,
+                            color: Colors.black12,
+                          ),
+                      ),
+                      const SizedBox(
+                        width: 500,
+                        height: 500,
+                        // flex: 6,
+                        // The actual UI of the game.
+                        child:
+                          GameWidget(),
+                      ),
+                      Expanded(
+                        // flex: 2,
+                        // Left side placeholder
+                        child:
+                          Container(
+                            // width: 225,
+                            height: 500,
+                            color: Colors.black12,
+                          ),
+                      ),
+                    ]
+                  ),
                   const Spacer(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
