@@ -33,7 +33,11 @@ class GameWidget extends StatelessWidget {
                     color: Colors.black12,
                     child: Column(
                       children: [
-                        Piece(type:Recyclable.A)],
+                        Draggable<String>(
+                          data: 'A',
+                          child: Piece(type:Recyclable.A),
+                          feedback: Piece(type:Recyclable.A),
+                          childWhenDragging: Container(),)],
                         ),
                   ),
                 ),

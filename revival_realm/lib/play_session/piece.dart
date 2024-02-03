@@ -5,7 +5,7 @@ import 'recyclable_mapping.dart';
 class Piece extends StatelessWidget{
   //type of Recyclable
   Recyclable type;
-  Image sprite = Image.asset('assets/images/recyclables/block.png', semanticLabel: 'deafult',);
+  Image sprite = Image.asset('assets/images/recyclables/A.png', semanticLabel: 'deafult',);
 
   Piece({
     super.key,
@@ -15,7 +15,7 @@ class Piece extends StatelessWidget{
   void initializePiece() {
     switch(type) {
           case Recyclable.A:
-            sprite = Image.asset('assets/images/recyclables/block.png', semanticLabel: 'A',);
+            sprite = Image.asset('assets/images/recyclables/A.png', semanticLabel: 'A',);
             break;
             default:
     }
