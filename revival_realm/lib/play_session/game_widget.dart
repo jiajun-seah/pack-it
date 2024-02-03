@@ -18,22 +18,41 @@ class GameWidget extends StatelessWidget {
 
     return Column(
       children: [
-        // Text('Level ${level.number}'),
-        SizedBox(
-          width: 500,
-          height: 500,
-          child: GridView.builder(
-          itemCount: 25,
-          physics: NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
-          itemBuilder: ((context, index) => Center(
-            child: Text(
-              index.toString(),
-              style: TextStyle(color: Colors.black),
-            ))
-          )
-        ),
-        )
+        Text('Level ${level.number}'),
+        Row(children: [
+          SizedBox(
+            height: 500,
+            width: 250,
+            // Left side placeholder
+            child:
+              Container(
+                color: Colors.black12,
+              ),
+          ),
+          SizedBox(
+            height: 500,
+            width: 500,
+            child: GridView.builder(
+            itemCount: level.size*level.size,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: level.size),
+            itemBuilder: ((context, index) => Center(
+              child: Text(
+                index.toString(),
+                style: TextStyle(color: Colors.black),
+              )))
+            ),
+          ),
+          SizedBox(
+            height: 500,
+            width: 250,
+            // Left side placeholder
+            child:
+              Container(
+                color: Colors.black12,
+              ),
+          ),
+        ],)
         // Slider(
         //   label: 'Level Progress',
         //   autofocus: true,

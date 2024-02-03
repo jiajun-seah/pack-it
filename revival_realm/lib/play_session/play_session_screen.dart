@@ -10,7 +10,7 @@ import 'package:logging/logging.dart' hide Level;
 import 'package:provider/provider.dart';
 
 import '../audio/audio_controller.dart';
-import '../audio/sounds.dart';
+// import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
 import '../game_internals/score.dart';
 import '../level_selection/levels.dart';
@@ -82,7 +82,6 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
               // with a settings button on top, the actual play area
               // in the middle, and a back button at the bottom.
               Column(
-                
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Align(
@@ -96,43 +95,10 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                     ),
                   ),
                   const Spacer(),
-                  // const Expanded(
-                  //       flex: 6,
-                  //       // The actual UI of the game.
-                  //       child:
-                  //         GameWidget(),
-                  //     ),
-                  Row(
-                    children: [
-                      Expanded(
-                        // flex: 2,
-                        // Left side placeholder
-                        child:
-                          Container(
-                            // width: 225,
-                            height: 500,
-                            color: Colors.black12,
-                          ),
-                      ),
-                      const SizedBox(
-                        width: 500,
-                        height: 500,
-                        // flex: 6,
-                        // The actual UI of the game.
-                        child:
-                          GameWidget(),
-                      ),
-                      Expanded(
-                        // flex: 2,
-                        // Left side placeholder
-                        child:
-                          Container(
-                            // width: 225,
-                            height: 500,
-                            color: Colors.black12,
-                          ),
-                      ),
-                    ]
+                  const Expanded(
+                    // The actual UI of the game.
+                    child:
+                      GameWidget(),
                   ),
                   const Spacer(),
                   Padding(
