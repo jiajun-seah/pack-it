@@ -64,7 +64,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
         // by widgets below this one in the widget tree.
         ChangeNotifierProvider(
           create: (context) => LevelState(
-            goal: widget.level.difficulty,
+            foods: widget.level.foods,
             onWin: _playerWon,
           ),
         ),

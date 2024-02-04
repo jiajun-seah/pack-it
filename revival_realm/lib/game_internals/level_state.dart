@@ -1,24 +1,39 @@
 import 'package:flutter/foundation.dart';
+import '../level_selection/levels.dart';
 
-/// Tracks the filled status of the GameBoard, also tracks if the GameBoard has been successfully filled
+/// Tracks the filled status of the GameBoard
+/// also tracks if the GameBoard has been fully filled
 class LevelState extends ChangeNotifier {
   final VoidCallback onWin;
+  // final List<String> foods;
 
-  final int goal;
+  final List<String> foods;
 
-  LevelState({required this.onWin, this.goal = 100});
+  LevelState({required this.onWin, required this.foods});
 
-  int _progress = 0;
+  List<bool> _progress = [];
 
-  int get progress => _progress;
+  List<bool> get progress => _progress;
 
-  void setProgress(int value) {
-    _progress = value;
+  void initializeProgress() {
+    _progress = List.filled(foods.length, false, growable: false);
+  }
+
+  void setProgress(String newlyOccupied) {
+    int ind = foods.indexOf('newlyOccupied');
+    _progress[ind] = true;
     notifyListeners();
   }
 
   void evaluate() {
-    if (_progress >= goal) {
+    bool res = true;
+    for (bool b in _progress){
+      if (!b){
+        res = false;
+        break;
+      }
+    }
+    if (res) {
       onWin();
     }
   }

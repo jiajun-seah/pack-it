@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import '../game_internals/level_state.dart';
 import '../level_selection/levels.dart';
 import '../play_session/pixel.dart';
-import '../play_session/recyclable_mapping.dart';
+import '../play_session/foods_mapping.dart';
 import '../play_session/piece.dart';
 
 /// This widget defines the game UI itself, without things like the settings
@@ -34,9 +34,9 @@ class LevelOne extends StatelessWidget {
                     child: Column(
                       children: [
                         Draggable<String>(
-                          data: 'A',
-                          child: Piece(type:Recyclable.A),
-                          feedback: Piece(type:Recyclable.A),
+                          data: 'Red',
+                          child: Piece(type:Food.Red),
+                          feedback: Piece(type:Food.Red),
                           childWhenDragging: Container(),)],
                         ),
                   ),
@@ -47,6 +47,7 @@ class LevelOne extends StatelessWidget {
               child: SizedBox(
                 width: 500,
                 height: 500,
+                // MainAxisAlignment: MainAxisAlignment.center,
                 child: GridView.builder(
                   itemCount: level.nRows*level.nCols,
                   // shrinkWrap: true,

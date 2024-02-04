@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'recyclable_mapping.dart';
+import 'foods_mapping.dart';
 
 class Piece extends StatelessWidget{
   //type of Recyclable
-  Recyclable type;
-  Image sprite = Image.asset('assets/images/recyclables/A.png', semanticLabel: 'deafult',);
+  Food type;
+  Image sprite = Image.asset('assets/images/foods/A.png', semanticLabel: 'default',);
 
   Piece({
     super.key,
@@ -14,8 +14,8 @@ class Piece extends StatelessWidget{
 
   void initializePiece() {
     switch(type) {
-          case Recyclable.A:
-            sprite = Image.asset('assets/images/recyclables/A.png', semanticLabel: 'A',);
+          case Food.Red:
+            sprite = Image.asset('assets/images/foods/Red.png', semanticLabel: 'Red',);
             break;
             default:
     }
