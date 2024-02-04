@@ -14,7 +14,7 @@ class Pixel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(4)),
-      margin: EdgeInsets.all(1),
+      margin: EdgeInsets.all(10),
       child: Center(
         child:
           Text(

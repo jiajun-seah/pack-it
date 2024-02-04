@@ -100,7 +100,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                     flex: 8,
                     // The actual UI of the game.
                     child:
-                      LevelOne(),
+                      Center(child: LevelOne()),
                   ),
                   const Spacer(flex:1),
                   Padding(
