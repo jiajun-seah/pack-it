@@ -41,14 +41,14 @@ class GameWinDialog extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'You completed level ${level.number} in $levelCompletedIn seconds.',
+              'You completed level ${level.id} in $levelCompletedIn seconds.',
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
-            if (level.number < gameLevels.length) ...[
+            if (level.id < gameLevels.length) ...[
               NesButton(
                 onPressed: () {
-                  context.go('/play/session/${level.number + 1}');
+                  context.go('/play/session/${level.id + 1}');
                 },
                 type: NesButtonType.primary,
                 child: const Text('Next level'),

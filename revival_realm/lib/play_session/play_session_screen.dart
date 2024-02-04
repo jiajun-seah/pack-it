@@ -18,7 +18,8 @@ import '../player_progress/player_progress.dart';
 import '../style/confetti.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
-import 'game_widget.dart';
+import '../levels/level_1.dart';
+// import 'game_widget.dart';
 
 /// This widget defines the entirety of the screen that the player sees when
 /// they are playing a level.
@@ -99,7 +100,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                     flex: 8,
                     // The actual UI of the game.
                     child:
-                      GameWidget(),
+                      LevelOne(),
                   ),
                   const Spacer(flex:1),
                   Padding(
@@ -131,16 +132,16 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
   }
 
   Future<void> _playerWon() async {
-    _log.info('Level ${widget.level.number} won');
+    _log.info('Level ${widget.level.id} won');
 
     final score = Score(
-      widget.level.number,
+      widget.level.id,
       widget.level.difficulty,
       DateTime.now().difference(_startOfPlay),
     );
 
     final playerProgress = context.read<PlayerProgress>();
-    playerProgress.setLevelReached(widget.level.number);
+    playerProgress.setLevelReached(widget.level.id);
 
     // Let the player see the game just after winning for a bit.
     await Future<void>.delayed(_preCelebrationDuration);
