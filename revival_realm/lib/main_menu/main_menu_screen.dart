@@ -27,7 +27,7 @@ class MainMenuScreen extends StatelessWidget {
       body: ResponsiveScreen(
         squarishMainArea: const Center(
           child: Text(
-              'Revival',
+              'Pack-It!',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Halogen',

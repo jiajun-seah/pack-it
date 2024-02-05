@@ -9,8 +9,10 @@ class LevelState extends ChangeNotifier {
 
   final List<String> foods;
 
-  LevelState({required this.onWin, required this.foods});
-
+  LevelState({required this.onWin, required this.foods}){
+    _progress = List.filled(foods.length, false, growable: false);
+  }
+  
   List<bool> _progress = [];
 
   List<bool> get progress => _progress;
@@ -19,8 +21,8 @@ class LevelState extends ChangeNotifier {
     _progress = List.filled(foods.length, false, growable: false);
   }
 
-  void setProgress(String newlyOccupied) {
-    int ind = foods.indexOf('newlyOccupied');
+  void setProgress(String name) {
+    int ind = foods.indexOf(name);
     _progress[ind] = true;
     notifyListeners();
   }
@@ -36,5 +38,10 @@ class LevelState extends ChangeNotifier {
     if (res) {
       onWin();
     }
+  }
+
+  bool checkDropped(String name) {
+    int ind = foods.indexOf(name);
+    return _progress[ind];
   }
 }
