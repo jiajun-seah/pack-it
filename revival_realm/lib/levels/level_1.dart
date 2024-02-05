@@ -26,46 +26,52 @@ class LevelOne extends StatelessWidget {
             child: Row(children: [
               Flexible(
                 flex: 1,
-                child: Stack(
-                  children: [
-                    const SizedBox(
-                      height: 500,
-                      width: 500,
-                    ),
-                    Draggable<String>(
-                      data: 'Red',
-                      feedback: Food(
-                        name: 'Red',
-                        relativeWidth: 0.5,
-                        relativeHeight: 0.5,
-                        sprite: Image.asset('assets/images/foods/Red.png')
-                      ),
-                      childWhenDragging: Container(),
-                      child: Food(
-                        name: 'Red',
-                        relativeWidth: 0.5,
-                        relativeHeight: 0.5,
-                        sprite: Image.asset('assets/images/foods/Red.png')
-                      ),
-                    ),
-                    Draggable<String>(
-                        data: 'Blue',
-                        feedback: Food(
-                          name: 'Blue',
-                          relativeWidth: 0.5,
-                          relativeHeight: 0.5,
-                          sprite: Image.asset('assets/images/foods/Blue.png')
+                child: Center(
+                  child: AspectRatio(
+                    aspectRatio: 1/2,
+                    child: Stack (
+                      children: [
+                        Container(
+                          alignment: Alignment.topCenter,
+                          child: FractionallySizedBox(
+                            heightFactor: 0.5,
+                            child: Container(
+                              color: Colors.black12,
+                              child: LayoutBuilder(
+                                builder: (context, constraints) => Draggable<String>(
+                                  data: 'Red',
+                                  feedback: Container(
+                                    width: constraints.maxWidth,
+                                    child: Food(
+                                    name: 'Red',
+                                    relativeWidth: 0.5,
+                                    relativeHeight: 0.5,
+                                    sprite: Image.asset('assets/images/foods/Red_L.png')
+                                  )),
+                                  childWhenDragging: Container(),
+                                  child: Food(
+                                    name: 'Red',
+                                    relativeWidth: 0.5,
+                                    relativeHeight: 0.5,
+                                    sprite: Image.asset('assets/images/foods/Red_L.png')
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
-                        childWhenDragging: Container(),
-                        child: Food(
-                          name: 'Blue',
-                          relativeWidth: 0.5,
-                          relativeHeight: 0.5,
-                          sprite: Image.asset('assets/images/foods/Blue.png')
+                        Container(
+                          alignment: Alignment.bottomCenter,
+                          child: FractionallySizedBox(
+                            heightFactor: 0.5,
+                            child: Container(
+                              color: Colors.blue
+                            ),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],)
                   ),
+                ),
               ),
               Flexible(
                 flex:2,
@@ -81,7 +87,7 @@ class LevelOne extends StatelessWidget {
                             heightFactor: 0.5,
                             child: Container(
                               color: Colors.red,
-                              child: const Center(child: Text('0'))
+                              // child: Image.asset('assets/images/foods/Blue.png', fit: BoxFit.fill,)
                             ),
                           ),
                         ),
@@ -127,10 +133,6 @@ class LevelOne extends StatelessWidget {
                 flex: 1,
                 child: Stack(
                   children: [
-                    const SizedBox(
-                      height: 500,
-                      width: 500,
-                    ),
                     Positioned(
                       // height: 250,
                       // width: 250,
@@ -142,7 +144,7 @@ class LevelOne extends StatelessWidget {
                           name: 'Yellow',
                           relativeWidth: 0.5,
                           relativeHeight: 0.5,
-                          sprite: Image.asset('assets/images/foods/Yellow.png')
+                          sprite: Image.asset('assets/images/foods/Yellow.png', fit: BoxFit.fill,)
                         ),
                         childWhenDragging: Container(),
                         child: Food(

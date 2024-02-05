@@ -20,8 +20,11 @@ class Food extends StatelessWidget{
   
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      fit: BoxFit.fill,
-      child: sprite);
+    return Container(
+        // decoration: BoxDecoration(color: Colors.black12),
+        // margin: EdgeInsets.all(1),
+        child: sprite
+      );
+    // );
   }
 }
