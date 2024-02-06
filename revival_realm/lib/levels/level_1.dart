@@ -48,14 +48,14 @@ class LevelOne extends StatelessWidget {
                                       name: 'Red',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Dog.gif')
+                                      sprite: Image.asset('assets/images/foods/Sandwich_TR.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
                                       name: 'Red',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Dog.gif')
+                                      sprite: Image.asset('assets/images/foods/Sandwich_TR.gif')
                                     ),
                                   ),
                                 ),
