@@ -3,7 +3,7 @@ const gameLevels = <GameLevel>[
     id: 1,
     nRows: 2,
     nCols: 2,
-    foods: ['Red', 'Green', 'Blue', 'Yellow'],
+    foods: ['sandwich_tl', 'sandwich_tr', 'sandwich_bl', 'sandwich_br'],
     difficulty: 0,
   ),
   (

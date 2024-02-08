@@ -39,20 +39,20 @@ class LevelOne extends StatelessWidget {
                               color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
-                                  visible: !levelState.checkDropped('Red'),
+                                  visible: !levelState.checkDropped('sandwich_tr'),
                                   child: Draggable<String>(
-                                    data: 'Red',
+                                    data: 'sandwich_tr',
                                     feedback: Container(
                                       width: constraints.maxWidth*1.05,
                                       child: Food(
-                                      name: 'Red',
+                                      name: 'sandwich_tr',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
                                       sprite: Image.asset('assets/images/foods/Sandwich_TR.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
-                                      name: 'Red',
+                                      name: 'sandwich_tr',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
                                       sprite: Image.asset('assets/images/foods/Sandwich_TR.gif')
@@ -71,23 +71,23 @@ class LevelOne extends StatelessWidget {
                               color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
-                                  visible: !levelState.checkDropped('Blue'),
+                                  visible: !levelState.checkDropped('sandwich_bl'),
                                   child: Draggable<String>(
-                                    data: 'Blue',
+                                    data: 'sandwich_bl',
                                     feedback: Container(
                                       width: constraints.maxWidth,
                                       child: Food(
-                                      name: 'Blue',
+                                      name: 'sandwich_bl',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Blue_L.png')
+                                      sprite: Image.asset('assets/images/foods/sandwich_bl.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
-                                      name: 'Blue',
+                                      name: 'sandwich_bl',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Blue_L.png')
+                                      sprite: Image.asset('assets/images/foods/sandwich_bl.gif')
                                     ),
                                   ),
                                 ),
@@ -120,16 +120,16 @@ class LevelOne extends StatelessWidget {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('Red')
-                                    ? 'assets/images/foods/Red_L.png'
+                                  child: Image.asset(levelState.checkDropped('sandwich_tl')
+                                    ? 'assets/images/foods/sandwich_tl.gif'
                                     : 'assets/images/foods/Grey_L.png')
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'Red';
+                                return data == 'sandwich_tl';
                               },
                               onAccept: (data) {
-                                levelState.setProgress('Red');
+                                levelState.setProgress('sandwich_tl');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
                               },
@@ -150,16 +150,16 @@ class LevelOne extends StatelessWidget {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('Blue')
-                                    ? 'assets/images/foods/Blue_L.png'
+                                  child: Image.asset(levelState.checkDropped('sandwich_tr')
+                                    ? 'assets/images/foods/sandwich_tr.gif'
                                     : 'assets/images/foods/Grey_L.png')
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'Blue';
+                                return data == 'sandwich_tr';
                               },
                               onAccept: (data) {
-                                levelState.setProgress('Blue');
+                                levelState.setProgress('sandwich_tr');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
                               },
@@ -180,16 +180,16 @@ class LevelOne extends StatelessWidget {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('Yellow')
-                                    ? 'assets/images/foods/Yellow_L.png'
+                                  child: Image.asset(levelState.checkDropped('sandwich_bl')
+                                    ? 'assets/images/foods/sandwich_bl.gif'
                                     : 'assets/images/foods/Grey_L.png')
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'Yellow';
+                                return data == 'sandwich_bl';
                               },
                               onAccept: (data) {
-                                levelState.setProgress('Yellow');
+                                levelState.setProgress('sandwich_bl');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
                               },
@@ -210,16 +210,16 @@ class LevelOne extends StatelessWidget {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('Green')
-                                    ? 'assets/images/foods/Green_L.png'
+                                  child: Image.asset(levelState.checkDropped('sandwich_br')
+                                    ? 'assets/images/foods/sandwich_br.gif'
                                     : 'assets/images/foods/Grey_L.png')
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'Green';
+                                return data == 'sandwich_br';
                               },
                               onAccept: (data) {
-                                levelState.setProgress('Green');
+                                levelState.setProgress('sandwich_br');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
                               },
@@ -246,23 +246,23 @@ class LevelOne extends StatelessWidget {
                               color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
-                                  visible: !levelState.checkDropped('Yellow'),
+                                  visible: !levelState.checkDropped('sandwich_br'),
                                   child: Draggable<String>(
-                                    data: 'Yellow',
+                                    data: 'sandwich_br',
                                     feedback: Container(
                                       width: constraints.maxWidth,
                                       child: Food(
-                                      name: 'Yellow',
+                                      name: 'sandwich_br',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Yellow_L.png')
+                                      sprite: Image.asset('assets/images/foods/sandwich_br.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
-                                      name: 'Yellow',
+                                      name: 'sandwich_br',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Yellow_L.png')
+                                      sprite: Image.asset('assets/images/foods/sandwich_br.gif')
                                     ),
                                   ),
                                 ),
@@ -278,23 +278,23 @@ class LevelOne extends StatelessWidget {
                               color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
-                                  visible: !levelState.checkDropped('Green'),
+                                  visible: !levelState.checkDropped('sandwich_tl'),
                                   child: Draggable<String>(
-                                    data: 'Green',
+                                    data: 'sandwich_tl',
                                     feedback: Container(
                                       width: constraints.maxWidth,
                                       child: Food(
-                                      name: 'Green',
+                                      name: 'sandwich_tl',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Green_L.png')
+                                      sprite: Image.asset('assets/images/foods/sandwich_tl.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
-                                      name: 'Green',
+                                      name: 'sandwich_tl',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Green_L.png')
+                                      sprite: Image.asset('assets/images/foods/sandwich_tl.gif')
                                     ),
                                   ),
                                 ),
