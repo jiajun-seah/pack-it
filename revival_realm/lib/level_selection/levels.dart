@@ -38,7 +38,7 @@ const gameLevels = <GameLevel>[
     id: 6,
     // nRows: 4,
     // nCols: 4,
-    foods: [],
+    foods: ['vanilla_glazed', 'chocolate_sprinkle', 'chocolate_swirl', 'strawberry_glazed', 'strawberry_sprinkle', 'strawberry_swirl'],
     difficulty: 0,
   ),
   (
