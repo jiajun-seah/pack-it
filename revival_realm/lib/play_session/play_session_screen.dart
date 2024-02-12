@@ -18,8 +18,9 @@ import '../player_progress/player_progress.dart';
 import '../style/confetti.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
-import '../levels/level_1.dart';
-// import 'game_widget.dart';
+// import '../levels/level_1.dart';
+// import '../levels/level_2.dart';
+import 'game_widget.dart';
 
 /// This widget defines the entirety of the screen that the player sees when
 /// they are playing a level.
@@ -39,13 +40,12 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
   static final _log = Logger('PlaySessionScreen');
 
   static const _celebrationDuration = Duration(milliseconds: 2000);
-
   static const _preCelebrationDuration = Duration(milliseconds: 500);
 
   bool _duringCelebration = false;
 
   late DateTime _startOfPlay;
-
+  
   @override
   void initState() {
     super.initState();
@@ -57,6 +57,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
   Widget build(BuildContext context) {
     final palette = context.watch<Palette>();
 
+    
     return MultiProvider(
       providers: [
         Provider.value(value: widget.level),
@@ -100,7 +101,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                     flex: 8,
                     // The actual UI of the game.
                     child:
-                      Center(child: LevelOne()),
+                      Center(child: GameWidget())
                   ),
                   const Spacer(flex:1),
                   Padding(
@@ -129,8 +130,9 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
         ),
       ),
     );
+    ;
   }
-
+  
   Future<void> _playerWon() async {
     _log.info('Level ${widget.level.id} won');
 
