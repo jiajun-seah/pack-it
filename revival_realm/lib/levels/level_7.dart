@@ -11,8 +11,8 @@ import '../play_session/food.dart';
 
 /// This widget defines the game UI itself, without things like the settings
 /// button or the back button.
-class LevelSix extends StatelessWidget {
-  const LevelSix({super.key});
+class LevelSeven extends StatelessWidget {
+  const LevelSeven({super.key});
 
   @override
   Widget build(BuildContext context) {

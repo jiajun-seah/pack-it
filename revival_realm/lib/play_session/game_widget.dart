@@ -9,7 +9,7 @@ import '../level_selection/levels.dart';
 import '../levels/level_1.dart';
 import '../levels/level_2.dart';
 import '../levels/level_4.dart';
-import '../levels/level_6.dart';
+import '../levels/level_7.dart';
 
 /// This widget defines the game UI itself, without things like the settings
 /// button or the back button.
@@ -29,7 +29,7 @@ class GameWidget extends StatelessWidget {
       case 4:
         return Center(child: LevelFour());
       case 6:
-        return Center(child: LevelSix());
+        return Center(child: LevelSeven());
       default:
         return Center(child: LevelOne());
     }
