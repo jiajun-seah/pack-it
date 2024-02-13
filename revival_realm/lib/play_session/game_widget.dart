@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 // import '../game_internals/level_state.dart';
 import '../level_selection/levels.dart';
 // import 'pixel.dart';
+import '../levels/level_1.dart';
 import '../levels/level_2.dart';
 import '../levels/level_3.dart';
 import '../levels/level_5.dart';
@@ -22,13 +23,15 @@ class GameWidget extends StatelessWidget {
     // final levelState = context.watch<LevelState>();
 
     switch (level.id) {
+      case 1:
+        return Center(child: LevelOne());
       case 2:
         return Center(child: LevelTwo());
       case 3:
         return Center(child: LevelThree());
-      case 4:
+      case 5:
         return Center(child: LevelFive());
-      case 6:
+      case 7:
         return Center(child: LevelSeven());
       default:
         return Center(child: LevelTwo());
