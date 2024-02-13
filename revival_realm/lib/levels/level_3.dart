@@ -11,8 +11,8 @@ import '../play_session/food.dart';
 
 /// This widget defines the game UI itself, without things like the settings
 /// button or the back button.
-class LevelOne extends StatelessWidget {
-  const LevelOne({super.key});
+class LevelThree extends StatelessWidget {
+  const LevelThree({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,34 +28,34 @@ class LevelOne extends StatelessWidget {
                 flex: 1,
                 child: Center(
                   child: AspectRatio(
-                    aspectRatio: 1/2,
+                    aspectRatio: 1/1,
                     child: Stack (
                       children: [
                         Container(
                           alignment: Alignment.topCenter,
                           child: FractionallySizedBox(
-                            heightFactor: 0.5,
+                            // heightFactor: 0.5,
                             child: Container(
                               color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
-                                  visible: !levelState.checkDropped('sandwich_tr'),
+                                  visible: !levelState.checkDropped('banana'),
                                   child: Draggable<String>(
-                                    data: 'sandwich_tr',
+                                    data: 'banana',
                                     feedback: Container(
                                       width: constraints.maxWidth*1.05,
                                       child: Food(
-                                      name: 'sandwich_tr',
-                                      relativeWidth: 0.5,
+                                      name: 'banana',
+                                      relativeWidth: 1.0,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Sandwich_TR.gif')
+                                      sprite: Image.asset('assets/images/foods/Banana.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
-                                      name: 'sandwich_tr',
-                                      relativeWidth: 0.5,
+                                      name: 'banana',
+                                      relativeWidth: 1.0,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Sandwich_TR.gif')
+                                      sprite: Image.asset('assets/images/foods/Banana.gif')
                                     ),
                                   ),
                                 ),
@@ -71,23 +71,23 @@ class LevelOne extends StatelessWidget {
                               color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
-                                  visible: !levelState.checkDropped('sandwich_bl'),
+                                  visible: !levelState.checkDropped('orange_r'),
                                   child: Draggable<String>(
-                                    data: 'sandwich_bl',
+                                    data: 'orange_r',
                                     feedback: Container(
-                                      width: constraints.maxWidth,
+                                      width: constraints.maxWidth*0.55,
                                       child: Food(
-                                      name: 'sandwich_bl',
+                                      name: 'orange_r',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/sandwich_bl.gif')
+                                      sprite: Image.asset('assets/images/foods/Orange_r.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
-                                      name: 'sandwich_bl',
+                                      name: 'orange_r',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/sandwich_bl.gif')
+                                      sprite: Image.asset('assets/images/foods/Orange_r.gif')
                                     ),
                                   ),
                                 ),
@@ -100,12 +100,13 @@ class LevelOne extends StatelessWidget {
                 ),
               ),
               Flexible(
-                flex:2,
+                flex:1,
                 child: Center(
                   child: AspectRatio(
                     aspectRatio: 1/1,
                     child: Stack(
                       children: [
+                        
                         Container(
                           alignment: Alignment.topLeft,
                           child: FractionallySizedBox(
@@ -120,16 +121,16 @@ class LevelOne extends StatelessWidget {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('sandwich_tl')
-                                    ? 'assets/images/foods/sandwich_tl.gif'
+                                  child: Image.asset(levelState.checkDropped('orange_l')
+                                    ? 'assets/images/foods/Orange_L.gif'
                                     : 'assets/images/foods/Grey_L.png')
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'sandwich_tl';
+                                return data == 'orange_l';
                               },
                               onAccept: (data) {
-                                levelState.setProgress('sandwich_tl');
+                                levelState.setProgress('orange_l');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
                               },
@@ -150,16 +151,16 @@ class LevelOne extends StatelessWidget {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('sandwich_tr')
-                                    ? 'assets/images/foods/sandwich_tr.gif'
+                                  child: Image.asset(levelState.checkDropped('orange_r')
+                                    ? 'assets/images/foods/Orange_R.gif'
                                     : 'assets/images/foods/Grey_L.png')
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'sandwich_tr';
+                                return data == 'orange_r';
                               },
                               onAccept: (data) {
-                                levelState.setProgress('sandwich_tr');
+                                levelState.setProgress('orange_r');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
                               },
@@ -169,7 +170,7 @@ class LevelOne extends StatelessWidget {
                         Container(
                           alignment: Alignment.bottomLeft,
                           child: FractionallySizedBox(
-                            widthFactor: 0.5,
+                            widthFactor: 1,
                             heightFactor: 0.5,
                             child: DragTarget<String>(
                               builder: (
@@ -180,16 +181,16 @@ class LevelOne extends StatelessWidget {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('sandwich_bl')
-                                    ? 'assets/images/foods/sandwich_bl.gif'
+                                  child: Image.asset(levelState.checkDropped('banana')
+                                    ? 'assets/images/foods/Banana.gif'
                                     : 'assets/images/foods/Grey_L.png')
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'sandwich_bl';
+                                return data == 'banana';
                               },
                               onAccept: (data) {
-                                levelState.setProgress('sandwich_bl');
+                                levelState.setProgress('banana');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
                               },
@@ -197,10 +198,10 @@ class LevelOne extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.bottomRight,
+                          alignment: Alignment(0.0, 0.25),
                           child: FractionallySizedBox(
-                            widthFactor: 0.5,
-                            heightFactor: 0.5,
+                            widthFactor: 0.25,
+                            heightFactor: 0.25,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -210,16 +211,16 @@ class LevelOne extends StatelessWidget {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('sandwich_br')
-                                    ? 'assets/images/foods/sandwich_br.gif'
+                                  child: Image.asset(levelState.checkDropped('blueberry')
+                                    ? 'assets/images/foods/Blueberry.gif'
                                     : 'assets/images/foods/Grey_L.png')
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'sandwich_br';
+                                return data == 'blueberry';
                               },
                               onAccept: (data) {
-                                levelState.setProgress('sandwich_br');
+                                levelState.setProgress('blueberry');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
                               },
@@ -246,23 +247,23 @@ class LevelOne extends StatelessWidget {
                               color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
-                                  visible: !levelState.checkDropped('sandwich_br'),
+                                  visible: !levelState.checkDropped('orange_l'),
                                   child: Draggable<String>(
-                                    data: 'sandwich_br',
+                                    data: 'orange_l',
                                     feedback: Container(
                                       width: constraints.maxWidth,
                                       child: Food(
-                                      name: 'sandwich_br',
+                                      name: 'orange_l',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/sandwich_br.gif')
+                                      sprite: Image.asset('assets/images/foods/Orange_l.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
-                                      name: 'sandwich_br',
+                                      name: 'orange_l',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/sandwich_br.gif')
+                                      sprite: Image.asset('assets/images/foods/Orange_l.gif')
                                     ),
                                   ),
                                 ),
@@ -273,28 +274,28 @@ class LevelOne extends StatelessWidget {
                         Container(
                           alignment: Alignment.bottomCenter,
                           child: FractionallySizedBox(
-                            heightFactor: 0.5,
+                            heightFactor: 0.2,
                             child: Container(
                               color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
-                                  visible: !levelState.checkDropped('sandwich_tl'),
+                                  visible: !levelState.checkDropped('blueberry'),
                                   child: Draggable<String>(
-                                    data: 'sandwich_tl',
+                                    data: 'blueberry',
                                     feedback: Container(
-                                      width: constraints.maxWidth,
+                                      width: constraints.maxWidth*.45,
                                       child: Food(
-                                      name: 'sandwich_tl',
+                                      name: 'blueberry',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/sandwich_tl.gif')
+                                      sprite: Image.asset('assets/images/foods/blueberry.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
-                                      name: 'sandwich_tl',
+                                      name: 'blueberry',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/sandwich_tl.gif')
+                                      sprite: Image.asset('assets/images/foods/blueberry.gif')
                                     ),
                                   ),
                                 ),
