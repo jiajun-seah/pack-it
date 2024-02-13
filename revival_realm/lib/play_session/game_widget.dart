@@ -9,6 +9,7 @@ import '../level_selection/levels.dart';
 import '../levels/level_1.dart';
 import '../levels/level_2.dart';
 import '../levels/level_3.dart';
+import '../levels/level_4.dart';
 import '../levels/level_5.dart';
 import '../levels/level_7.dart';
 
@@ -29,7 +30,9 @@ class GameWidget extends StatelessWidget {
         return Center(child: LevelTwo());
       case 3:
         return Center(child: LevelThree());
-      case 5:
+      case 4:
+        return Center(child: LevelFour());
+      case 5: 
         return Center(child: LevelFive());
       case 7:
         return Center(child: LevelSeven());

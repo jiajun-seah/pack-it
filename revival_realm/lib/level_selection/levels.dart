@@ -24,7 +24,7 @@ const gameLevels = <GameLevel>[
     id: 4,
     // nRows: 3,
     // nCols: 3,
-    foods: ['stick', 'olive', 'lettuce', 'rice', 'mushroom'],
+    foods: ['stick', 'lettuce', 'rice', 'mushroom'],
     difficulty: 0,
   ),
   (
