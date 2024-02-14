@@ -34,7 +34,7 @@ class LevelEight extends StatelessWidget {
                         Container(
                           alignment: Alignment.topLeft,
                           child: FractionallySizedBox(
-                            heightFactor: 0.333,
+                            heightFactor: 1/6,
                             child: Container(
                               // color: Colors.black12,
                               child: LayoutBuilder(
@@ -43,7 +43,7 @@ class LevelEight extends StatelessWidget {
                                   child: Draggable<String>(
                                     data: 'blackcurrent',
                                     feedback: Container(
-                                      width: constraints.maxWidth*0.7,
+                                      width: constraints.maxWidth*0.35,
                                       child: Food(
                                       name: 'blackcurrent',
                                       relativeWidth: 0.5,
@@ -66,7 +66,7 @@ class LevelEight extends StatelessWidget {
                         Container(
                           alignment: Alignment.centerRight,
                           child: FractionallySizedBox(
-                            heightFactor: 0.333,
+                            heightFactor: 1/3,
                             child: Container(
                               // color: Colors.black12,
                               child: LayoutBuilder(
@@ -98,7 +98,7 @@ class LevelEight extends StatelessWidget {
                         Container(
                           alignment: Alignment.bottomLeft,
                           child: FractionallySizedBox(
-                            heightFactor: 0.333,
+                            heightFactor: 1/9,
                             child: Container(
                               // color: Colors.black12,
                               child: LayoutBuilder(
@@ -107,7 +107,7 @@ class LevelEight extends StatelessWidget {
                                   child: Draggable<String>(
                                     data: 'grape',
                                     feedback: Container(
-                                      width: constraints.maxWidth*0.7,
+                                      width: constraints.maxWidth*0.25,
                                       child: Food(
                                       name: 'grape',
                                       relativeWidth: 0.5,
@@ -151,10 +151,14 @@ class LevelEight extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
+                                  alignment: Alignment.center,
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('grape')
-                                    ? 'assets/images/foods/Grape.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                  child: FractionallySizedBox(
+                                    widthFactor: 1/3,
+                                    child: Image.asset(levelState.checkDropped('grape')
+                                      ? 'assets/images/foods/Grape.gif'
+                                      : 'assets/images/foods/Grey_L.png'),
+                                  )
                                 );
                               },
                               onWillAccept: (data) {
@@ -181,10 +185,14 @@ class LevelEight extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
+                                  alignment: Alignment.center,
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('blueberry')
-                                    ? 'assets/images/foods/Blueberry.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                  child: FractionallySizedBox(
+                                    widthFactor: 1/3,
+                                    child: Image.asset(levelState.checkDropped('blueberry')
+                                      ? 'assets/images/foods/Blueberry.gif'
+                                      : 'assets/images/foods/Grey_L.png'),
+                                  )
                                 );
                               },
                               onWillAccept: (data) {
@@ -211,14 +219,18 @@ class LevelEight extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
+                                  alignment: Alignment.center,
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('strawberry')
-                                    ? 'assets/images/foods/Strawberry.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                  child: FractionallySizedBox(
+                                    widthFactor: 1/2,
+                                    child: Image.asset(levelState.checkDropped('strawberry')
+                                      ? 'assets/images/foods/Strawberry.gif'
+                                      : 'assets/images/foods/Grey_L.png'),
+                                  )
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'strawberryl';
+                                return data == 'strawberry';
                               },
                               onAccept: (data) {
                                 levelState.setProgress('strawberry');
@@ -241,10 +253,14 @@ class LevelEight extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
+                                  alignment: Alignment.center,
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('blackcurrent')
-                                    ? 'assets/images/foods/Blackcurrent.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                  child: FractionallySizedBox(
+                                    widthFactor: 1/2,
+                                    child: Image.asset(levelState.checkDropped('blackcurrent')
+                                      ? 'assets/images/foods/Blackcurrent.gif'
+                                      : 'assets/images/foods/Grey_L.png'),
+                                  )
                                 );
                               },
                               onWillAccept: (data) {
@@ -333,7 +349,7 @@ class LevelEight extends StatelessWidget {
                         Container(
                           alignment: Alignment.topRight,
                           child: FractionallySizedBox(
-                            heightFactor: 0.333,
+                            heightFactor: 1/3,
                             child: Container(
                               // color: Colors.black12,
                               child: LayoutBuilder(
@@ -365,7 +381,7 @@ class LevelEight extends StatelessWidget {
                         Container(
                           alignment: Alignment.centerLeft,
                           child: FractionallySizedBox(
-                            heightFactor: 0.333,
+                            heightFactor: 1/6,
                             child: Container(
                               // color: Colors.black12,
                               child: LayoutBuilder(
@@ -374,7 +390,7 @@ class LevelEight extends StatelessWidget {
                                   child: Draggable<String>(
                                     data: 'strawberry',
                                     feedback: Container(
-                                      width: constraints.maxWidth*0.7,
+                                      width: constraints.maxWidth*0.35,
                                       child: Food(
                                       name: 'strawberry',
                                       relativeWidth: 0.5,
@@ -397,7 +413,7 @@ class LevelEight extends StatelessWidget {
                         Container(
                           alignment: Alignment.bottomRight,
                           child: FractionallySizedBox(
-                            heightFactor: 0.333,
+                            heightFactor: 1/9,
                             child: Container(
                               // color: Colors.black12,
                               child: LayoutBuilder(
@@ -406,7 +422,7 @@ class LevelEight extends StatelessWidget {
                                   child: Draggable<String>(
                                     data: 'blueberry',
                                     feedback: Container(
-                                      width: constraints.maxWidth*0.7,
+                                      width: constraints.maxWidth*0.25,
                                       child: Food(
                                       name: 'blueberry',
                                       relativeWidth: 0.5,

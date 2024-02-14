@@ -52,7 +52,7 @@ const gameLevels = <GameLevel>[
     id: 8,
     // nRows: 4,
     // nCols: 5,
-    foods: ['cranberry', 'strawberry', 'watermelon', 'grape', 'kiwi', 'mango', 'blueberry', 'blackcurrent', 'plum'],
+    foods: ['strawberry', 'watermelon', 'grape', 'mango', 'blueberry', 'blackcurrent'],
     difficulty: 0,
   ),
 ];
