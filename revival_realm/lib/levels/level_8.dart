@@ -66,7 +66,7 @@ class LevelEight extends StatelessWidget {
                         Container(
                           alignment: Alignment.centerRight,
                           child: FractionallySizedBox(
-                            heightFactor: 1/3,
+                            heightFactor: 0.28,
                             child: Container(
                               // color: Colors.black12,
                               child: LayoutBuilder(
@@ -75,7 +75,7 @@ class LevelEight extends StatelessWidget {
                                   child: Draggable<String>(
                                     data: 'mango',
                                     feedback: Container(
-                                      width: constraints.maxWidth*0.7,
+                                      width: constraints.maxWidth*0.6,
                                       child: Food(
                                       name: 'mango',
                                       relativeWidth: 0.5,
@@ -138,6 +138,7 @@ class LevelEight extends StatelessWidget {
                     aspectRatio: 1/1,
                     child: Stack(
                       children: [
+                        Image.asset('assets/images/foods/level_8_board.png'),
                         Container(
                           alignment: Alignment.topCenter,
                           child: FractionallySizedBox(
@@ -157,7 +158,7 @@ class LevelEight extends StatelessWidget {
                                     widthFactor: 1/3,
                                     child: Image.asset(levelState.checkDropped('grape')
                                       ? 'assets/images/foods/Grape.gif'
-                                      : 'assets/images/foods/Grey_L.png'),
+                                      : 'assets/images/foods/transparent_square.png'),
                                   )
                                 );
                               },
@@ -191,7 +192,7 @@ class LevelEight extends StatelessWidget {
                                     widthFactor: 1/3,
                                     child: Image.asset(levelState.checkDropped('blueberry')
                                       ? 'assets/images/foods/Blueberry.gif'
-                                      : 'assets/images/foods/Grey_L.png'),
+                                      : 'assets/images/foods/transparent_square.png'),
                                   )
                                 );
                               },
@@ -225,7 +226,7 @@ class LevelEight extends StatelessWidget {
                                     widthFactor: 1/2,
                                     child: Image.asset(levelState.checkDropped('strawberry')
                                       ? 'assets/images/foods/Strawberry.gif'
-                                      : 'assets/images/foods/Grey_L.png'),
+                                      : 'assets/images/foods/transparent_square.png'),
                                   )
                                 );
                               },
@@ -259,7 +260,7 @@ class LevelEight extends StatelessWidget {
                                     widthFactor: 1/2,
                                     child: Image.asset(levelState.checkDropped('blackcurrent')
                                       ? 'assets/images/foods/Blackcurrent.gif'
-                                      : 'assets/images/foods/Grey_L.png'),
+                                      : 'assets/images/foods/transparent_square.png'),
                                   )
                                 );
                               },
@@ -275,10 +276,10 @@ class LevelEight extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.bottomLeft,
+                          alignment: Alignment(-0.9, 0.9),
                           child: FractionallySizedBox(
-                            widthFactor: 0.333,
-                            heightFactor: 0.333,
+                            widthFactor: 0.28,
+                            heightFactor: 0.28,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -290,7 +291,7 @@ class LevelEight extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('watermelon')
                                     ? 'assets/images/foods/Watermelon.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -305,10 +306,10 @@ class LevelEight extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.bottomCenter,
+                          alignment: Alignment(0, 0.9),
                           child: FractionallySizedBox(
-                            widthFactor: 0.333,
-                            heightFactor: 0.333,
+                            widthFactor: 0.28,
+                            heightFactor: 0.28,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -320,7 +321,7 @@ class LevelEight extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('mango')
                                     ? 'assets/images/foods/Mango.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {

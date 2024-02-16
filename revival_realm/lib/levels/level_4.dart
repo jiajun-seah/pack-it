@@ -25,7 +25,7 @@ class LevelFour extends StatelessWidget {
           Expanded(
             child: Row(children: [
               Flexible(
-                flex: 1,
+                flex: 2,
                 child: Center(
                   child: AspectRatio(
                     aspectRatio: 4/3,
@@ -34,8 +34,8 @@ class LevelFour extends StatelessWidget {
                         Container(
                           alignment: Alignment(-0.25, 0),
                           child: FractionallySizedBox(
-                            heightFactor: 0.8,
-                            widthFactor: 0.45,
+                            heightFactor: 1,
+                            widthFactor: 0.5,
                             child: Container(
                               // color: Colors.black12,
                               child: LayoutBuilder(
@@ -69,7 +69,7 @@ class LevelFour extends StatelessWidget {
                 ),
               ),
               Flexible(
-                flex:1,
+                flex:3,
                 child: Center(
                   child: AspectRatio(
                     aspectRatio: 4/3,
@@ -77,10 +77,10 @@ class LevelFour extends StatelessWidget {
                       children: [
                         Image.asset('assets/images/foods/level_4_board.png'),
                         Container(
-                          alignment: Alignment.centerLeft,
+                          alignment: Alignment(-0.9, -0.2),
                           child: FractionallySizedBox(
-                            widthFactor: 0.45,
-                            heightFactor: 0.8,
+                            widthFactor: 0.5,
+                            heightFactor: 0.75,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -107,7 +107,7 @@ class LevelFour extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.35, 0),
+                          alignment: Alignment(0.3, -0.5),
                           child: FractionallySizedBox(
                             widthFactor: 0.2,
                             heightFactor: 1,
@@ -137,10 +137,10 @@ class LevelFour extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.topRight,
+                          alignment: Alignment(0.9, -0.65),
                           child: FractionallySizedBox(
                             widthFactor: 0.2,
-                            heightFactor: 0.6,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -167,10 +167,10 @@ class LevelFour extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.bottomRight,
+                          alignment: Alignment(0.9, 0.5),
                           child: FractionallySizedBox(
                             widthFactor: 0.2,
-                            heightFactor: 0.3,
+                            heightFactor: 0.25,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -202,7 +202,7 @@ class LevelFour extends StatelessWidget {
                 ),
               ),
               Flexible(
-                flex: 1,
+                flex: 2,
                 child: Center(
                   child: AspectRatio(
                     aspectRatio: 4/3,
