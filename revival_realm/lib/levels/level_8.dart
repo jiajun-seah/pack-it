@@ -223,7 +223,7 @@ class LevelEight extends StatelessWidget {
                                   alignment: Alignment.center,
                                   // color: Colors.blue,
                                   child: FractionallySizedBox(
-                                    widthFactor: 1/2,
+                                    widthFactor: 2/3,
                                     child: Image.asset(levelState.checkDropped('strawberry')
                                       ? 'assets/images/foods/Strawberry.gif'
                                       : 'assets/images/foods/transparent_square.png'),
@@ -382,7 +382,7 @@ class LevelEight extends StatelessWidget {
                         Container(
                           alignment: Alignment.centerLeft,
                           child: FractionallySizedBox(
-                            heightFactor: 1/6,
+                            heightFactor: 1/4,
                             child: Container(
                               // color: Colors.black12,
                               child: LayoutBuilder(
@@ -391,7 +391,7 @@ class LevelEight extends StatelessWidget {
                                   child: Draggable<String>(
                                     data: 'strawberry',
                                     feedback: Container(
-                                      width: constraints.maxWidth*0.35,
+                                      width: constraints.maxWidth*0.52,
                                       child: Food(
                                       name: 'strawberry',
                                       relativeWidth: 0.5,
