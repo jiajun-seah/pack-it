@@ -25,7 +25,7 @@ class LevelSix extends StatelessWidget {
           Expanded(
             child: Row(children: [
               Flexible(
-                flex: 1,
+                flex: 2,
                 child: Center(
                   child: AspectRatio(
                     aspectRatio: 3/2,
@@ -37,7 +37,7 @@ class LevelSix extends StatelessWidget {
                             heightFactor: 0.5,
                             widthFactor: 1/6,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('sushi_3'),
@@ -70,7 +70,7 @@ class LevelSix extends StatelessWidget {
                             heightFactor: 0.5,
                             widthFactor: 1/6,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('sushi_2'),
@@ -103,7 +103,7 @@ class LevelSix extends StatelessWidget {
                             heightFactor: 0.5,
                             widthFactor: 1/6,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('sushi_1'),
@@ -136,7 +136,7 @@ class LevelSix extends StatelessWidget {
                             heightFactor: 0.5,
                             widthFactor: 1/3,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('maki_2'),
@@ -169,7 +169,7 @@ class LevelSix extends StatelessWidget {
                             heightFactor: 0.5,
                             widthFactor: 1/3,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('maki_1'),
@@ -201,16 +201,17 @@ class LevelSix extends StatelessWidget {
                 ),
               ),
               Flexible(
-                flex:1,
+                flex:3,
                 child: Center(
                   child: AspectRatio(
                     aspectRatio: 3/2,
                     child: Stack(
                       children: [
+                        Image.asset('assets/images/foods/level_6_board.png'),
                         Container(
-                          alignment: Alignment.topLeft,
+                          alignment: Alignment(-0.85, -0.85),
                           child: FractionallySizedBox(
-                            widthFactor: 1/3,
+                            widthFactor: 0.25,
                             heightFactor: 0.5,
                             child: DragTarget<String>(
                               builder: (
@@ -223,7 +224,7 @@ class LevelSix extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('maki_1')
                                     ? 'assets/images/foods/maki_1.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -238,9 +239,9 @@ class LevelSix extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.topCenter,
+                          alignment: Alignment(-0.05, -0.85),
                           child: FractionallySizedBox(
-                            widthFactor: 1/3,
+                            widthFactor: 0.25,
                             heightFactor: 0.5,
                             child: DragTarget<String>(
                               builder: (
@@ -253,7 +254,7 @@ class LevelSix extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('maki_2')
                                     ? 'assets/images/foods/maki_2.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -268,9 +269,9 @@ class LevelSix extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.topRight,
+                          alignment: Alignment(0.8, -0.85),
                           child: FractionallySizedBox(
-                            widthFactor: 1/3,
+                            widthFactor: 0.25,
                             heightFactor: 0.5,
                             child: DragTarget<String>(
                               builder: (
@@ -283,7 +284,7 @@ class LevelSix extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('maki_3')
                                     ? 'assets/images/foods/maki_3.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -298,10 +299,10 @@ class LevelSix extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.bottomLeft,
+                          alignment: Alignment(-0.85, 0.8),
                           child: FractionallySizedBox(
-                            widthFactor: 1/6,
-                            heightFactor: 0.5,
+                            widthFactor: 0.13,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -313,7 +314,7 @@ class LevelSix extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sushi_1')
                                     ? 'assets/images/foods/sushi_1.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -328,10 +329,10 @@ class LevelSix extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(-0.595, 1),
+                          alignment: Alignment(-0.52, 0.8),
                           child: FractionallySizedBox(
-                            widthFactor: 1/6,
-                            heightFactor: 0.5,
+                            widthFactor: 0.13,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -343,7 +344,7 @@ class LevelSix extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sushi_2')
                                     ? 'assets/images/foods/sushi_2.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -358,10 +359,10 @@ class LevelSix extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(-0.190, 1),
+                          alignment: Alignment(-0.18, 0.8),
                           child: FractionallySizedBox(
-                            widthFactor: 1/6,
-                            heightFactor: 0.5,
+                            widthFactor: 0.13,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -373,7 +374,7 @@ class LevelSix extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sushi_3')
                                     ? 'assets/images/foods/sushi_3.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -388,10 +389,10 @@ class LevelSix extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.215,1),
+                          alignment: Alignment(0.18, 0.8),
                           child: FractionallySizedBox(
-                            widthFactor: 1/6,
-                            heightFactor: 0.5,
+                            widthFactor: 0.13,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -403,7 +404,7 @@ class LevelSix extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sushi_4')
                                     ? 'assets/images/foods/sushi_4.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -418,10 +419,10 @@ class LevelSix extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.620,1),
+                          alignment: Alignment(0.52,0.8),
                           child: FractionallySizedBox(
-                            widthFactor: 1/6,
-                            heightFactor: 0.5,
+                            widthFactor: 0.13,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -433,7 +434,7 @@ class LevelSix extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sushi_5')
                                     ? 'assets/images/foods/sushi_5.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -448,10 +449,10 @@ class LevelSix extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.bottomRight,
+                          alignment: Alignment(0.85, 0.8),
                           child: FractionallySizedBox(
-                            widthFactor: 1/6,
-                            heightFactor: 0.5,
+                            widthFactor: 0.13,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -463,7 +464,7 @@ class LevelSix extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sushi_6')
                                     ? 'assets/images/foods/sushi_6.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -483,7 +484,7 @@ class LevelSix extends StatelessWidget {
                 ),
               ),
               Flexible(
-                flex: 1,
+                flex: 2,
                 child: Center(
                   child: AspectRatio(
                     aspectRatio: 3/2,
@@ -495,7 +496,7 @@ class LevelSix extends StatelessWidget {
                             heightFactor: 0.5,
                             widthFactor: 1/6,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('sushi_4'),
@@ -528,7 +529,7 @@ class LevelSix extends StatelessWidget {
                             heightFactor: 0.5,
                             widthFactor: 1/6,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('sushi_5'),
@@ -561,7 +562,7 @@ class LevelSix extends StatelessWidget {
                             heightFactor: 0.5,
                             widthFactor: 1/6,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('sushi_6'),
@@ -594,7 +595,7 @@ class LevelSix extends StatelessWidget {
                             heightFactor: 0.5,
                             widthFactor: 1/3,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('maki_3'),
