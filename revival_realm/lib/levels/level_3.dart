@@ -34,8 +34,6 @@ class LevelThree extends StatelessWidget {
                           child: FractionallySizedBox(
                             widthFactor: 0.9,
                             heightFactor: 0.45,
-                            child: Container(
-                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('banana'),
@@ -59,16 +57,13 @@ class LevelThree extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            ),
                           ),
                         ),
                         Container(
                           alignment: Alignment.bottomCenter,
                           child: FractionallySizedBox(
                             heightFactor: 0.45,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('orange_r'),
                                   child: Draggable<String>(
@@ -92,7 +87,6 @@ class LevelThree extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                       ],)
                   ),
@@ -107,7 +101,7 @@ class LevelThree extends StatelessWidget {
                       children: [
                         Image.asset('assets/images/foods/level_3_board.png'),
                         Container(
-                          alignment: Alignment(-0.75,-0.5),
+                          alignment: const Alignment(-0.75,-0.5),
                           child: FractionallySizedBox(
                             widthFactor: 0.45,
                             heightFactor: 0.45,
@@ -137,7 +131,7 @@ class LevelThree extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.75, -0.5),
+                          alignment: const Alignment(0.75, -0.5),
                           child: FractionallySizedBox(
                             widthFactor: 0.45,
                             heightFactor: 0.45,
@@ -167,7 +161,7 @@ class LevelThree extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0, 0.75),
+                          alignment: const Alignment(0, 0.75),
                           child: FractionallySizedBox(
                             widthFactor: 0.9,
                             heightFactor: 0.45,
@@ -197,7 +191,7 @@ class LevelThree extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.0, 0.15),
+                          alignment: const Alignment(0.0, 0.15),
                           child: FractionallySizedBox(
                             widthFactor: 0.15,
                             heightFactor: 0.15,
@@ -242,9 +236,7 @@ class LevelThree extends StatelessWidget {
                           alignment: Alignment.topCenter,
                           child: FractionallySizedBox(
                             heightFactor: 0.45,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('orange_l'),
                                   child: Draggable<String>(
@@ -268,15 +260,12 @@ class LevelThree extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                         Container(
                           alignment: Alignment.bottomCenter,
                           child: FractionallySizedBox(
                             heightFactor: 0.15,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('blueberry'),
                                   child: Draggable<String>(
@@ -300,7 +289,6 @@ class LevelThree extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                       ],)
                   ),

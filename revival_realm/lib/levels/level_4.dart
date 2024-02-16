@@ -31,13 +31,11 @@ class LevelFour extends StatelessWidget {
                     child: Stack (
                       children: [
                         Container(
-                          alignment: Alignment(-0.25, 0),
+                          alignment: const Alignment(-0.25, 0),
                           child: FractionallySizedBox(
                             heightFactor: 1,
                             widthFactor: 0.5,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('rice'),
                                   child: Draggable<String>(
@@ -61,7 +59,6 @@ class LevelFour extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                       ],)
                   ),
@@ -76,7 +73,7 @@ class LevelFour extends StatelessWidget {
                       children: [
                         Image.asset('assets/images/foods/level_4_board.png'),
                         Container(
-                          alignment: Alignment(-0.9, -0.2),
+                          alignment: const Alignment(-0.9, -0.2),
                           child: FractionallySizedBox(
                             widthFactor: 0.5,
                             heightFactor: 0.75,
@@ -106,7 +103,7 @@ class LevelFour extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.3, -0.5),
+                          alignment: const Alignment(0.3, -0.5),
                           child: FractionallySizedBox(
                             widthFactor: 0.2,
                             heightFactor: 1,
@@ -136,7 +133,7 @@ class LevelFour extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.9, -0.65),
+                          alignment: const Alignment(0.9, -0.65),
                           child: FractionallySizedBox(
                             widthFactor: 0.2,
                             heightFactor: 0.45,
@@ -166,7 +163,7 @@ class LevelFour extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.9, 0.5),
+                          alignment: const Alignment(0.9, 0.5),
                           child: FractionallySizedBox(
                             widthFactor: 0.2,
                             heightFactor: 0.25,
@@ -208,12 +205,10 @@ class LevelFour extends StatelessWidget {
                     child: Stack (
                       children: [
                         Container(
-                          alignment: Alignment(-0.25, -1),
+                          alignment: const Alignment(-0.25, -1),
                           child: FractionallySizedBox(
                             heightFactor: 1/3,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('mushroom'),
                                   child: Draggable<String>(
@@ -237,15 +232,12 @@ class LevelFour extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                         Container(
-                          alignment: Alignment(-0.25, 1),
+                          alignment: const Alignment(-0.25, 1),
                           child: FractionallySizedBox(
                             heightFactor: 2/3,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('lettuce'),
                                   child: Draggable<String>(
@@ -269,15 +261,12 @@ class LevelFour extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                         Container(
-                          alignment: Alignment(0.5, 0),
+                          alignment: const Alignment(0.5, 0),
                           child: FractionallySizedBox(
                             heightFactor: 1,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('stick'),
                                   child: Draggable<String>(
@@ -302,7 +291,6 @@ class LevelFour extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ),
                       ],)
                   ),
                 ),

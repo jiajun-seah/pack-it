@@ -33,10 +33,7 @@ class LevelOne extends StatelessWidget {
                           alignment: Alignment.center,
                           child: FractionallySizedBox(
                             heightFactor: 0.875,
-                            // widthFactor: 1,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('rice'),
                                   child: Draggable<String>(
@@ -60,7 +57,6 @@ class LevelOne extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                       ],)
                   ),
@@ -75,7 +71,7 @@ class LevelOne extends StatelessWidget {
                       children: [
                         Image.asset('assets/images/foods/level_1_board.png'),
                         Container(
-                          alignment: Alignment(-0.9, 0),
+                          alignment: const Alignment(-0.9, 0),
                           child: FractionallySizedBox(
                             widthFactor: 0.45,
                             heightFactor: 1,
@@ -105,7 +101,7 @@ class LevelOne extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.9, 0),
+                          alignment: const Alignment(0.9, 0),
                           child: FractionallySizedBox(
                             widthFactor: 0.45,
                             heightFactor: 1,
@@ -117,7 +113,6 @@ class LevelOne extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('curry')
                                     ? 'assets/images/foods/curry_L.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -150,9 +145,6 @@ class LevelOne extends StatelessWidget {
                           alignment: Alignment.center,
                           child: FractionallySizedBox(
                             heightFactor: 0.875,
-                            // widthFactor: 0.85,
-                            child: Container(
-                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('curry'),
@@ -177,7 +169,6 @@ class LevelOne extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                       ],)
                   ),
