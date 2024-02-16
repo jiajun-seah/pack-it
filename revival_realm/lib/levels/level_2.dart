@@ -34,16 +34,16 @@ class LevelTwo extends StatelessWidget {
                         Container(
                           alignment: Alignment.topCenter,
                           child: FractionallySizedBox(
-                            heightFactor: 0.5,
+                            heightFactor: 0.45,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('sandwich_tr'),
                                   child: Draggable<String>(
                                     data: 'sandwich_tr',
                                     feedback: Container(
-                                      width: constraints.maxWidth*1.05,
+                                      width: constraints.maxWidth*.95,
                                       child: Food(
                                       name: 'sandwich_tr',
                                       relativeWidth: 0.5,
@@ -66,16 +66,16 @@ class LevelTwo extends StatelessWidget {
                         Container(
                           alignment: Alignment.bottomCenter,
                           child: FractionallySizedBox(
-                            heightFactor: 0.5,
+                            heightFactor: 0.45,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('sandwich_bl'),
                                   child: Draggable<String>(
                                     data: 'sandwich_bl',
                                     feedback: Container(
-                                      width: constraints.maxWidth,
+                                      width: constraints.maxWidth*.95,
                                       child: Food(
                                       name: 'sandwich_bl',
                                       relativeWidth: 0.5,
@@ -106,11 +106,12 @@ class LevelTwo extends StatelessWidget {
                     aspectRatio: 1/1,
                     child: Stack(
                       children: [
+                        Image.asset('assets/images/foods/level_2_board.png'),
                         Container(
-                          alignment: Alignment.topLeft,
+                          alignment: Alignment(-0.825, -0.825),
                           child: FractionallySizedBox(
-                            widthFactor: 0.5,
-                            heightFactor: 0.5,
+                            widthFactor: 0.45,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -122,7 +123,7 @@ class LevelTwo extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sandwich_tl')
                                     ? 'assets/images/foods/sandwich_tl.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -137,10 +138,10 @@ class LevelTwo extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.topRight,
+                          alignment: Alignment(0.825, -0.825),
                           child: FractionallySizedBox(
-                            widthFactor: 0.5,
-                            heightFactor: 0.5,
+                            widthFactor: 0.45,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -152,7 +153,7 @@ class LevelTwo extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sandwich_tr')
                                     ? 'assets/images/foods/sandwich_tr.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -167,10 +168,10 @@ class LevelTwo extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.bottomLeft,
+                          alignment: Alignment(-0.825, 0.825),
                           child: FractionallySizedBox(
-                            widthFactor: 0.5,
-                            heightFactor: 0.5,
+                            widthFactor: 0.45,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -182,7 +183,7 @@ class LevelTwo extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sandwich_bl')
                                     ? 'assets/images/foods/sandwich_bl.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -197,10 +198,10 @@ class LevelTwo extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.bottomRight,
+                          alignment: Alignment(0.825, 0.825),
                           child: FractionallySizedBox(
-                            widthFactor: 0.5,
-                            heightFactor: 0.5,
+                            widthFactor: 0.45,
+                            heightFactor: 0.45,
                             child: DragTarget<String>(
                               builder: (
                                 BuildContext context,
@@ -212,7 +213,7 @@ class LevelTwo extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sandwich_br')
                                     ? 'assets/images/foods/sandwich_br.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -241,16 +242,16 @@ class LevelTwo extends StatelessWidget {
                         Container(
                           alignment: Alignment.topCenter,
                           child: FractionallySizedBox(
-                            heightFactor: 0.5,
+                            heightFactor: 0.45,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('sandwich_br'),
                                   child: Draggable<String>(
                                     data: 'sandwich_br',
                                     feedback: Container(
-                                      width: constraints.maxWidth,
+                                      width: constraints.maxWidth*.95,
                                       child: Food(
                                       name: 'sandwich_br',
                                       relativeWidth: 0.5,
@@ -273,16 +274,16 @@ class LevelTwo extends StatelessWidget {
                         Container(
                           alignment: Alignment.bottomCenter,
                           child: FractionallySizedBox(
-                            heightFactor: 0.5,
+                            heightFactor: 0.45,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('sandwich_tl'),
                                   child: Draggable<String>(
                                     data: 'sandwich_tl',
                                     feedback: Container(
-                                      width: constraints.maxWidth,
+                                      width: constraints.maxWidth*.95,
                                       child: Food(
                                       name: 'sandwich_tl',
                                       relativeWidth: 0.5,

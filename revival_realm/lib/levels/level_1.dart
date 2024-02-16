@@ -32,30 +32,31 @@ class LevelOne extends StatelessWidget {
                     child: Stack (
                       children: [
                         Container(
-                          alignment: Alignment.topCenter,
+                          alignment: Alignment.center,
                           child: FractionallySizedBox(
-                            heightFactor: 1,
+                            heightFactor: 0.875,
+                            // widthFactor: 1,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('rice'),
                                   child: Draggable<String>(
                                     data: 'rice',
                                     feedback: Container(
-                                      width: constraints.maxWidth*1.05,
+                                      width: constraints.maxWidth*0.9,
                                       child: Food(
                                       name: 'rice',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Rice.gif')
+                                      sprite: Image.asset('assets/images/foods/rice_L2.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
                                       name: 'rice',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Rice.gif')
+                                      sprite: Image.asset('assets/images/foods/rice_L2.gif')
                                     ),
                                   ),
                                 ),
@@ -74,10 +75,11 @@ class LevelOne extends StatelessWidget {
                     aspectRatio: 1/1,
                     child: Stack(
                       children: [
+                        Image.asset('assets/images/foods/level_1_board.png'),
                         Container(
-                          alignment: Alignment.centerLeft,
+                          alignment: Alignment(-0.9, 0),
                           child: FractionallySizedBox(
-                            widthFactor: 0.5,
+                            widthFactor: 0.45,
                             heightFactor: 1,
                             child: DragTarget<String>(
                               builder: (
@@ -89,8 +91,8 @@ class LevelOne extends StatelessWidget {
                                 return Container(
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('rice')
-                                    ? 'assets/images/foods/Rice.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    ? 'assets/images/foods/rice_L2.gif'
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -105,9 +107,9 @@ class LevelOne extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment.centerRight,
+                          alignment: Alignment(0.9, 0),
                           child: FractionallySizedBox(
-                            widthFactor: 0.5,
+                            widthFactor: 0.45,
                             heightFactor: 1,
                             child: DragTarget<String>(
                               builder: (
@@ -119,8 +121,8 @@ class LevelOne extends StatelessWidget {
                                 return Container(
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('curry')
-                                    ? 'assets/images/foods/Curry.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    ? 'assets/images/foods/curry_L.gif'
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -147,30 +149,31 @@ class LevelOne extends StatelessWidget {
                     child: Stack (
                       children: [
                         Container(
-                          alignment: Alignment.centerRight,
+                          alignment: Alignment.center,
                           child: FractionallySizedBox(
-                            heightFactor: 1,
+                            heightFactor: 0.875,
+                            // widthFactor: 0.85,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('curry'),
                                   child: Draggable<String>(
                                     data: 'curry',
                                     feedback: Container(
-                                      width: constraints.maxWidth,
+                                      width: constraints.maxWidth*0.9,
                                       child: Food(
                                       name: 'curry',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/curry.gif')
+                                      sprite: Image.asset('assets/images/foods/curry_L.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
                                       name: 'curry',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Curry.gif')
+                                      sprite: Image.asset('assets/images/foods/curry_L.gif')
                                     ),
                                   ),
                                 ),

@@ -36,7 +36,7 @@ class LevelFive extends StatelessWidget {
                           child: FractionallySizedBox(
                             heightFactor: 0.25,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('orange_swiss'),
@@ -68,7 +68,7 @@ class LevelFive extends StatelessWidget {
                           child: FractionallySizedBox(
                             heightFactor: 0.25,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('lime_swiss'),
@@ -106,6 +106,7 @@ class LevelFive extends StatelessWidget {
                     aspectRatio: 1/1,
                     child: Stack(
                       children: [
+                        Image.asset('assets/images/foods/level_5_board.png'),
                         Container(
                           alignment: Alignment.center,
                           child: FractionallySizedBox(
@@ -122,7 +123,7 @@ class LevelFive extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('chocolate_swiss')
                                     ? 'assets/images/foods/Chocolate_Swiss.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -152,7 +153,7 @@ class LevelFive extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('grape_swiss')
                                     ? 'assets/images/foods/Grape_Swiss.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -182,7 +183,7 @@ class LevelFive extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('orange_swiss')
                                     ? 'assets/images/foods/Orange_Swiss.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -212,7 +213,7 @@ class LevelFive extends StatelessWidget {
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('lime_swiss')
                                     ? 'assets/images/foods/Lime_Swiss.gif'
-                                    : 'assets/images/foods/Grey_L.png')
+                                    : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
@@ -243,7 +244,7 @@ class LevelFive extends StatelessWidget {
                           child: FractionallySizedBox(
                             heightFactor: 0.25,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('chocolate_swiss'),
@@ -275,7 +276,7 @@ class LevelFive extends StatelessWidget {
                           child: FractionallySizedBox(
                             heightFactor: 0.25,
                             child: Container(
-                              color: Colors.black12,
+                              // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('grape_swiss'),
