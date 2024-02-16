@@ -33,9 +33,7 @@ class LevelFive extends StatelessWidget {
                           alignment: Alignment.topCenter,
                           child: FractionallySizedBox(
                             heightFactor: 0.25,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('orange_swiss'),
                                   child: Draggable<String>(
@@ -60,14 +58,11 @@ class LevelFive extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ),
                         Container(
                           alignment: Alignment.bottomCenter,
                           child: FractionallySizedBox(
                             heightFactor: 0.25,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('lime_swiss'),
                                   child: Draggable<String>(
@@ -91,7 +86,6 @@ class LevelFive extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                       ],)
                   ),
@@ -136,7 +130,7 @@ class LevelFive extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(-0.66, -0.33),
+                          alignment: const Alignment(-0.66, -0.33),
                           child: FractionallySizedBox(
                             widthFactor: 0.25,
                             heightFactor: 0.25,
@@ -166,7 +160,7 @@ class LevelFive extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.66, -0.33),
+                          alignment: const Alignment(0.66, -0.33),
                           child: FractionallySizedBox(
                             widthFactor: 0.25,
                             heightFactor: 0.25,
@@ -196,7 +190,7 @@ class LevelFive extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0, 0.66),
+                          alignment: const Alignment(0, 0.66),
                           child: FractionallySizedBox(
                             widthFactor: 0.25,
                             heightFactor: 0.25,
@@ -241,9 +235,7 @@ class LevelFive extends StatelessWidget {
                           alignment: Alignment.topCenter,
                           child: FractionallySizedBox(
                             heightFactor: 0.25,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('chocolate_swiss'),
                                   child: Draggable<String>(
@@ -267,15 +259,12 @@ class LevelFive extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                         Container(
                           alignment: Alignment.bottomCenter,
                           child: FractionallySizedBox(
                             heightFactor: 0.25,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('grape_swiss'),
                                   child: Draggable<String>(
@@ -300,7 +289,6 @@ class LevelFive extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ),
                       ],)
                   ),
                 ),

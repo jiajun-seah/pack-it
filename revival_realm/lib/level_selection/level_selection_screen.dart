@@ -22,7 +22,7 @@ class LevelSelectionScreen extends StatelessWidget {
         Theme.of(context).textTheme.bodyMedium?.copyWith(height: 1.4);
 
     return Scaffold(
-      backgroundColor: palette.backgroundLevelSelection,
+      backgroundColor: palette.darkEarthGreen,
       body: Column(
         children: [
           Padding(

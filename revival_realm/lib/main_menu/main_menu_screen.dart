@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
-// import '../settings/settings.dart';
+import '../settings/settings.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
 import '../style/responsive_screen_landscape.dart';
@@ -19,11 +19,11 @@ class MainMenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final palette = context.watch<Palette>();
-    // final settingsController = context.watch<SettingsController>();
+    final settingsController = context.watch<SettingsController>();
     final audioController = context.watch<AudioController>();
 
     return Scaffold(
-      backgroundColor: palette.limeGreen,
+      backgroundColor: palette.lightEarthGreen,
       body: ResponsiveScreen(
         squarishMainArea: const Center(
           child: Text(

@@ -1,7 +1,5 @@
 const List<Song> songs = [
-  Song('bit_forrest.mp3', 'Bit Forrest', artist: 'bertz'),
-  Song('free_run.mp3', 'Free Run', artist: 'TAD'),
-  Song('tropical_fantasy.mp3', 'Tropical Fantasy', artist: 'Spring Spring'),
+  Song('pack_it_bgm.mp3', 'Chill BGM'),
 ];
 
 class Song {
@@ -9,9 +7,7 @@ class Song {
 
   final String name;
 
-  final String? artist;
-
-  const Song(this.filename, this.name, {this.artist});
+  const Song(this.filename, this.name);
 
   @override
   String toString() => 'Song<$filename>';

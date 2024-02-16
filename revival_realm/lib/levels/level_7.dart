@@ -33,9 +33,7 @@ class LevelSeven extends StatelessWidget {
                           alignment: Alignment.topLeft,
                           child: FractionallySizedBox(
                             heightFactor: 0.3,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('chocolate_sprinkle'),
                                   child: Draggable<String>(
@@ -58,16 +56,14 @@ class LevelSeven extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            ),
+                              
                           ),
                         ),
                         Container(
                           alignment: Alignment.centerRight,
                           child: FractionallySizedBox(
                             heightFactor: 0.3,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('vanilla_glazed'),
                                   child: Draggable<String>(
@@ -90,16 +86,13 @@ class LevelSeven extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            ),
                           ),
                         ),
                         Container(
                           alignment: Alignment.bottomLeft,
                           child: FractionallySizedBox(
                             heightFactor: 0.3,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('strawberry_swirl'),
                                   child: Draggable<String>(
@@ -123,7 +116,6 @@ class LevelSeven extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                       ],)
                   ),
@@ -138,7 +130,7 @@ class LevelSeven extends StatelessWidget {
                       children: [
                         Image.asset('assets/images/foods/level_7_board.png'),
                         Container(
-                          alignment: Alignment(-0.9, -0.9),
+                          alignment: const Alignment(-0.9, -0.9),
                           child: FractionallySizedBox(
                             widthFactor: 0.3,
                             heightFactor: 0.3,
@@ -150,7 +142,6 @@ class LevelSeven extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('vanilla_glazed')
                                     ? 'assets/images/foods/Vanilla_Glazed.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -180,7 +171,6 @@ class LevelSeven extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('chocolate_sprinkle')
                                     ? 'assets/images/foods/Chocolate_Sprinkle.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -198,7 +188,7 @@ class LevelSeven extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.9, 0),
+                          alignment: const Alignment(0.9, 0),
                           child: FractionallySizedBox(
                             widthFactor: 0.3,
                             heightFactor: 0.3,
@@ -228,7 +218,7 @@ class LevelSeven extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(-0.9, 0.9),
+                          alignment: const Alignment(-0.9, 0.9),
                           child: FractionallySizedBox(
                             widthFactor: 0.3,
                             heightFactor: 0.3,
@@ -240,7 +230,6 @@ class LevelSeven extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('strawberry_glazed')
                                     ? 'assets/images/foods/Strawberry_Glazed.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -258,7 +247,7 @@ class LevelSeven extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0, 0.9),
+                          alignment: const Alignment(0, 0.9),
                           child: FractionallySizedBox(
                             widthFactor: 0.3,
                             heightFactor: 0.3,
@@ -270,7 +259,6 @@ class LevelSeven extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('strawberry_sprinkle')
                                     ? 'assets/images/foods/Strawberry_Sprinkle.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -288,7 +276,7 @@ class LevelSeven extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          alignment: Alignment(0.9, 0.9),
+                          alignment: const Alignment(0.9, 0.9),
                           child: FractionallySizedBox(
                             widthFactor: 0.3,
                             heightFactor: 0.3,
@@ -333,9 +321,7 @@ class LevelSeven extends StatelessWidget {
                           alignment: Alignment.topRight,
                           child: FractionallySizedBox(
                             heightFactor: 0.3,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('strawberry_glazed'),
                                   child: Draggable<String>(
@@ -359,15 +345,12 @@ class LevelSeven extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                         Container(
                           alignment: Alignment.centerLeft,
                           child: FractionallySizedBox(
                             heightFactor: 0.3,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('strawberry_sprinkle'),
                                   child: Draggable<String>(
@@ -391,15 +374,12 @@ class LevelSeven extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                         Container(
                           alignment: Alignment.bottomRight,
                           child: FractionallySizedBox(
                             heightFactor: 0.3,
-                            child: Container(
-                              // color: Colors.black12,
-                              child: LayoutBuilder(
+                            child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
                                   visible: !levelState.checkDropped('chocolate_swirl'),
                                   child: Draggable<String>(
@@ -423,7 +403,6 @@ class LevelSeven extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
                         ),
                       ],)
                   ),

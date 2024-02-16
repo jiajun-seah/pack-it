@@ -18,8 +18,6 @@ import '../player_progress/player_progress.dart';
 import '../style/confetti.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
-// import '../levels/level_1.dart';
-// import '../levels/level_2.dart';
 import 'game_widget.dart';
 
 /// This widget defines the entirety of the screen that the player sees when
@@ -74,7 +72,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
         // Ignore all input during the celebration animation.
         ignoring: _duringCelebration,
         child: Scaffold(
-          backgroundColor: palette.backgroundPlaySession,
+          backgroundColor: palette.champange,
           // The stack is how you layer widgets on top of each other.
           // Here, it is used to overlay the winning confetti animation on top
           // of the game.

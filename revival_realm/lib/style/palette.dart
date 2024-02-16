@@ -30,7 +30,8 @@ class Palette {
   Color get inkFullOpacity => const Color(0xff352b42);
   Color get ink => const Color(0xee352b42);
   Color get backgroundMain => const Color(0xffffffd1);
-  Color get backgroundLevelSelection => const Color(0xffa2dcc7);
+  // Color get backgroundLevelSelection => const Color(0xffa2dcc7);
+  Color get backgroundLevelSelection => const Color(0xffffffff);
   Color get backgroundPlaySession => const Color(0xffffebb5);
   Color get background4 => const Color(0xffffd7ff);
   Color get backgroundSettings => const Color(0xffbfc8e3);
@@ -80,7 +81,7 @@ class Palette {
   Color get darkForestGreen => const Color(0xff313638);
   Color get mediumForestGreen => const Color(0xff374e4a);
   Color get lightForestGreen => const Color(0xff547e64);
-  Color get darkEarthgreen => const Color(0xff92a984);
+  Color get darkEarthGreen => const Color(0xff92a984);
   Color get lightEarthGreen => const Color(0xffb2ba90);
 
   //blues
@@ -116,4 +117,8 @@ class Palette {
   Color get mediumBeige => const Color(0xfffca790);
   Color get lightBeige => const Color(0xfffdcbb0);
 
+  Color get champange => const Color(0xfff7e7ce);
+  Color get beige => const Color(0xfff5f5dc);
+  Color get offWhite => const Color(0xffFAF9F6);
+  
 }
