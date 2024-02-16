@@ -71,23 +71,23 @@ class LevelEight extends StatelessWidget {
                               // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
-                                  visible: !levelState.checkDropped('mango'),
+                                  visible: !levelState.checkDropped('pear'),
                                   child: Draggable<String>(
-                                    data: 'mango',
+                                    data: 'pear',
                                     feedback: Container(
                                       width: constraints.maxWidth*0.6,
                                       child: Food(
-                                      name: 'mango',
+                                      name: 'pear',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Mango.gif')
+                                      sprite: Image.asset('assets/images/foods/Pear.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
-                                      name: 'mango',
+                                      name: 'pear',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Mango.gif')
+                                      sprite: Image.asset('assets/images/foods/Pear.gif')
                                     ),
                                   ),
                                 ),
@@ -289,16 +289,16 @@ class LevelEight extends StatelessWidget {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('watermelon')
-                                    ? 'assets/images/foods/Watermelon.gif'
+                                  child: Image.asset(levelState.checkDropped('apple')
+                                    ? 'assets/images/foods/Apple.gif'
                                     : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'watermelon';
+                                return data == 'apple';
                               },
                               onAccept: (data) {
-                                levelState.setProgress('watermelon');
+                                levelState.setProgress('apple');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
                               },
@@ -319,16 +319,16 @@ class LevelEight extends StatelessWidget {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
-                                  child: Image.asset(levelState.checkDropped('mango')
-                                    ? 'assets/images/foods/Mango.gif'
+                                  child: Image.asset(levelState.checkDropped('pear')
+                                    ? 'assets/images/foods/Pear.gif'
                                     : 'assets/images/foods/transparent_square.png')
                                 );
                               },
                               onWillAccept: (data) {
-                                return data == 'mango';
+                                return data == 'pear';
                               },
                               onAccept: (data) {
-                                levelState.setProgress('mango');
+                                levelState.setProgress('pear');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
                               },
@@ -355,23 +355,23 @@ class LevelEight extends StatelessWidget {
                               // color: Colors.black12,
                               child: LayoutBuilder(
                                 builder: (context, constraints) => Visibility(
-                                  visible: !levelState.checkDropped('watermelon'),
+                                  visible: !levelState.checkDropped('apple'),
                                   child: Draggable<String>(
-                                    data: 'watermelon',
+                                    data: 'apple',
                                     feedback: Container(
                                       width: constraints.maxWidth*0.7,
                                       child: Food(
-                                      name: 'watermelon',
+                                      name: 'apple',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Watermelon.gif')
+                                      sprite: Image.asset('assets/images/foods/Apple.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
-                                      name: 'watermelon',
+                                      name: 'apple',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Watermelon.gif')
+                                      sprite: Image.asset('assets/images/foods/Apple.gif')
                                     ),
                                   ),
                                 ),
