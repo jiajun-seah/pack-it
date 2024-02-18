@@ -41,7 +41,7 @@ class MainMenuScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                audioController.playSfx(SfxType.buttonTap);
+                audioController.playSfx(SfxType.peel);
                 GoRouter.of(context).go('/play');
               },
               style: ButtonStyle(
@@ -74,24 +74,15 @@ class MainMenuScreen extends StatelessWidget {
             ),
             _gap,
             MyButton(
-              onPressed: () => GoRouter.of(context).push('/collection'),
+              onPressed: () => GoRouter.of(context).push('/extras'),
               child: const Text(
-                'Collection',
+                'Extras',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 28,
               ),),
             ),
-            _gap,
-            MyButton(
-              onPressed: () => GoRouter.of(context).push('/quit'),
-              child: const Text(
-                'Quit',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 28,
-              ),),
-            ),
+            
             Padding(
               padding: const EdgeInsets.only(top: 32),
               child: ValueListenableBuilder<bool>(

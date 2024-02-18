@@ -1,7 +1,7 @@
 // import 'dart:developer' as dev;
 
 // import 'package:flutter/foundation.dart';
-import 'package:flame/flame.dart';
+// import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 // import 'package:logging/logging.dart';
@@ -18,8 +18,6 @@ import 'style/palette.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Flame.device.setLandscape();
-  await Flame.device.fullScreen();
   runApp(const MyGame());
 }
 
@@ -30,21 +28,21 @@ class MyGame extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppLifecycleObserver(
       child: MultiProvider(
-        providers: [
+       providers: [
+          Provider(create: (context) => SettingsController()),
           Provider(create: (context) => Palette()),
           ChangeNotifierProvider(create: (context) => PlayerProgress()),
-          Provider(create: (context) => SettingsController()),
           // Set up audio.
-          ProxyProvider2<SettingsController, AppLifecycleStateNotifier,
+          ProxyProvider2<AppLifecycleStateNotifier, SettingsController,
               AudioController>(
-            // Ensures that music starts immediately.
-            lazy: false,
             create: (context) => AudioController(),
-            update: (context, settings, lifecycleNotifier, audio) {
+            update: (context, lifecycleNotifier, settings, audio) {
               audio!.attachDependencies(lifecycleNotifier, settings);
               return audio;
             },
             dispose: (context, audio) => audio.dispose(),
+            // Ensures that music starts immediately.
+            lazy: false,
           ),
         ],
         child: Builder(builder: (context) {

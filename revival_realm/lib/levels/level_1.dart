@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// import '../audio/audio_controller.dart';
-// import '../audio/sounds.dart';
+import '../audio/audio_controller.dart';
+import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
 import '../level_selection/levels.dart';
 import '../play_session/food.dart';
@@ -16,6 +16,7 @@ class LevelOne extends StatelessWidget {
   Widget build(BuildContext context) {
     final level = context.watch<GameLevel>();
     final levelState = context.watch<LevelState>();
+    final audioController = context.watch<AudioController>();
     
     
     return Column(
@@ -94,6 +95,7 @@ class LevelOne extends StatelessWidget {
                                 return data == 'rice';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('rice');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -123,6 +125,7 @@ class LevelOne extends StatelessWidget {
                                 return data == 'curry';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('curry');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());

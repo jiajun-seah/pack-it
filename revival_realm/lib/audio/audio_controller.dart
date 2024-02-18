@@ -94,7 +94,7 @@ class AudioController {
     _log.fine(() => '- Chosen filename: $filename');
 
     final currentPlayer = _sfxPlayers[_currentSfxPlayer];
-    currentPlayer.play(AssetSource('sfx/$filename'),
+    currentPlayer.play(AssetSource('audio/sfx/$filename'),
         volume: soundTypeToVolume(type));
     _currentSfxPlayer = (_currentSfxPlayer + 1) % _sfxPlayers.length;
   }
@@ -225,7 +225,7 @@ class AudioController {
     // to be more selective when preloading.
     await AudioCache.instance.loadAll(SfxType.values
         .expand(soundTypeToFilename)
-        .map((path) => 'sfx/$path')
+        .map((path) => 'audio/sfx/$path')
         .toList());
   }
 
@@ -261,6 +261,17 @@ class AudioController {
     _musicPlayer.pause();
     for (final player in _sfxPlayers) {
       player.stop();
+    }
+  }
+
+  void _changeMusicVolume(value) {
+    _log.info('Music volume adjusted');
+    _musicPlayer.setVolume(value);
+  }
+  void _changeSoundVolume(value) {
+    _log.info('Sfx volume adjusted');
+    for (final player in _sfxPlayers) {
+      player.setVolume(value);
     }
   }
 }
