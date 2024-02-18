@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// import '../audio/audio_controller.dart';
-// import '../audio/sounds.dart';
+import '../audio/audio_controller.dart';
+import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
 import '../level_selection/levels.dart';
 import '../play_session/food.dart';
@@ -16,6 +16,7 @@ class LevelTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     final level = context.watch<GameLevel>();
     final levelState = context.watch<LevelState>();
+    final audioController = context.watch<AudioController>();
     
     return Column(
         children: [
@@ -122,6 +123,7 @@ class LevelTwo extends StatelessWidget {
                                 return data == 'sandwich_tl';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sandwich_tl');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -142,7 +144,6 @@ class LevelTwo extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sandwich_tr')
                                     ? 'assets/images/foods/sandwich_tr.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -152,6 +153,7 @@ class LevelTwo extends StatelessWidget {
                                 return data == 'sandwich_tr';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sandwich_tr');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -172,7 +174,6 @@ class LevelTwo extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sandwich_bl')
                                     ? 'assets/images/foods/sandwich_bl.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -182,6 +183,7 @@ class LevelTwo extends StatelessWidget {
                                 return data == 'sandwich_bl';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sandwich_bl');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -202,7 +204,6 @@ class LevelTwo extends StatelessWidget {
                               ) {
                                 debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('sandwich_br')
                                     ? 'assets/images/foods/sandwich_br.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -212,6 +213,7 @@ class LevelTwo extends StatelessWidget {
                                 return data == 'sandwich_br';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sandwich_br');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// import '../audio/audio_controller.dart';
-// import '../audio/sounds.dart';
+import '../audio/audio_controller.dart';
+import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
 import '../level_selection/levels.dart';
 import '../play_session/food.dart';
@@ -16,6 +16,8 @@ class LevelSeven extends StatelessWidget {
   Widget build(BuildContext context) {
     final level = context.watch<GameLevel>();
     final levelState = context.watch<LevelState>();
+
+    final audioController = context.watch<AudioController>();
     
     return Column(
         children: [
@@ -151,6 +153,7 @@ class LevelSeven extends StatelessWidget {
                                 return data == 'vanilla_glazed';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('vanilla_glazed');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -180,6 +183,7 @@ class LevelSeven extends StatelessWidget {
                                 return data == 'chocolate_sprinkle';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('chocolate_sprinkle');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -210,6 +214,7 @@ class LevelSeven extends StatelessWidget {
                                 return data == 'chocolate_swirl';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('chocolate_swirl');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -239,6 +244,7 @@ class LevelSeven extends StatelessWidget {
                                 return data == 'strawberry_glazed';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('strawberry_glazed');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -268,6 +274,7 @@ class LevelSeven extends StatelessWidget {
                                 return data == 'strawberry_sprinkle';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('strawberry_sprinkle');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -298,6 +305,7 @@ class LevelSeven extends StatelessWidget {
                                 return data == 'strawberry_swirl';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('strawberry_swirl');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());

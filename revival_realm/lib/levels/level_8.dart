@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// import '../audio/audio_controller.dart';
-// import '../audio/sounds.dart';
+import '../audio/audio_controller.dart';
+import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
 import '../level_selection/levels.dart';
 import '../play_session/food.dart';
@@ -16,6 +16,7 @@ class LevelEight extends StatelessWidget {
   Widget build(BuildContext context) {
     final level = context.watch<GameLevel>();
     final levelState = context.watch<LevelState>();
+    final audioController = context.watch<AudioController>();
     
     return Column(
         children: [
@@ -164,6 +165,7 @@ class LevelEight extends StatelessWidget {
                                 return data == 'grape';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('grape');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -198,6 +200,7 @@ class LevelEight extends StatelessWidget {
                                 return data == 'blueberry';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('blueberry');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -232,6 +235,7 @@ class LevelEight extends StatelessWidget {
                                 return data == 'strawberry';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('strawberry');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -266,6 +270,7 @@ class LevelEight extends StatelessWidget {
                                 return data == 'blackcurrent';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('blackcurrent');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -296,6 +301,7 @@ class LevelEight extends StatelessWidget {
                                 return data == 'apple';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('apple');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -326,6 +332,7 @@ class LevelEight extends StatelessWidget {
                                 return data == 'pear';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('pear');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());

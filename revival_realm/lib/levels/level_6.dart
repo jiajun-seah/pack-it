@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// import '../audio/audio_controller.dart';
-// import '../audio/sounds.dart';
+import '../audio/audio_controller.dart';
+import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
 import '../level_selection/levels.dart';
 import '../play_session/food.dart';
@@ -16,6 +16,8 @@ class LevelSix extends StatelessWidget {
   Widget build(BuildContext context) {
     final level = context.watch<GameLevel>();
     final levelState = context.watch<LevelState>();
+
+    final audioController = context.watch<AudioController>();
     
     return Column(
         children: [
@@ -215,6 +217,7 @@ class LevelSix extends StatelessWidget {
                                 return data == 'maki_1';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('maki_1');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -244,6 +247,7 @@ class LevelSix extends StatelessWidget {
                                 return data == 'maki_2';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('maki_2');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -273,6 +277,7 @@ class LevelSix extends StatelessWidget {
                                 return data == 'maki_3';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('maki_3');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -302,6 +307,7 @@ class LevelSix extends StatelessWidget {
                                 return data == 'sushi_1';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_1');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -331,6 +337,7 @@ class LevelSix extends StatelessWidget {
                                 return data == 'sushi_2';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_2');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -360,6 +367,7 @@ class LevelSix extends StatelessWidget {
                                 return data == 'sushi_3';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_3');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -389,6 +397,7 @@ class LevelSix extends StatelessWidget {
                                 return data == 'sushi_4';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_4');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -418,6 +427,7 @@ class LevelSix extends StatelessWidget {
                                 return data == 'sushi_5';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_5');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -447,6 +457,7 @@ class LevelSix extends StatelessWidget {
                                 return data == 'sushi_6';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_6');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());

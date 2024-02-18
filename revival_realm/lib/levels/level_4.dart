@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// import '../audio/audio_controller.dart';
-// import '../audio/sounds.dart';
+import '../audio/audio_controller.dart';
+import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
 import '../level_selection/levels.dart';
 import '../play_session/food.dart';
@@ -17,6 +17,7 @@ class LevelFour extends StatelessWidget {
   Widget build(BuildContext context) {
     final level = context.watch<GameLevel>();
     final levelState = context.watch<LevelState>();
+    final audioController = context.watch<AudioController>();
     
     return Column(
         children: [
@@ -95,6 +96,7 @@ class LevelFour extends StatelessWidget {
                                 return data == 'rice';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('rice');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -125,6 +127,7 @@ class LevelFour extends StatelessWidget {
                                 return data == 'stick';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('stick');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -155,6 +158,7 @@ class LevelFour extends StatelessWidget {
                                 return data == 'lettuce';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('lettuce');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -185,6 +189,7 @@ class LevelFour extends StatelessWidget {
                                 return data == 'mushroom';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('mushroom');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// import '../audio/audio_controller.dart';
-// import '../audio/sounds.dart';
+import '../audio/audio_controller.dart';
+import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
 import '../level_selection/levels.dart';
 import '../play_session/food.dart';
@@ -16,6 +16,7 @@ class LevelFive extends StatelessWidget {
   Widget build(BuildContext context) {
     final level = context.watch<GameLevel>();
     final levelState = context.watch<LevelState>();
+    final audioController = context.watch<AudioController>();
     
     return Column(
         children: [
@@ -122,6 +123,7 @@ class LevelFive extends StatelessWidget {
                                 return data == 'chocolate_swiss';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('chocolate_swiss');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -152,6 +154,7 @@ class LevelFive extends StatelessWidget {
                                 return data == 'grape_swiss';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('grape_swiss');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -182,6 +185,7 @@ class LevelFive extends StatelessWidget {
                                 return data == 'orange_swiss';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('orange_swiss');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
@@ -212,6 +216,7 @@ class LevelFive extends StatelessWidget {
                                 return data == 'lime_swiss';
                               },
                               onAccept: (data) {
+                                audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('lime_swiss');
                                 levelState.evaluate();
                                 debugPrint(levelState.progress.toString());
