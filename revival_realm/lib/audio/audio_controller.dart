@@ -94,8 +94,8 @@ class AudioController {
     _log.fine(() => '- Chosen filename: $filename');
 
     final currentPlayer = _sfxPlayers[_currentSfxPlayer];
-    currentPlayer.play(AssetSource('audio/sfx/$filename'),
-        volume: soundTypeToVolume(type));
+    currentPlayer.play(AssetSource('audio/sfx/$filename'));
+        // volume: soundTypeToVolume(type));
     _currentSfxPlayer = (_currentSfxPlayer + 1) % _sfxPlayers.length;
   }
 
@@ -125,6 +125,8 @@ class AudioController {
       oldSettings.audioOn.removeListener(_audioOnHandler);
       oldSettings.musicOn.removeListener(_musicOnHandler);
       oldSettings.soundsOn.removeListener(_soundsOnHandler);
+      oldSettings.musicVolume.removeListener(_musicVolumeHandler);
+      oldSettings.soundsVolume.removeListener(_soundsVolumeHandler);
     }
 
     _settings = settingsController;
@@ -133,6 +135,8 @@ class AudioController {
     settingsController.audioOn.addListener(_audioOnHandler);
     settingsController.musicOn.addListener(_musicOnHandler);
     settingsController.soundsOn.addListener(_soundsOnHandler);
+    settingsController.musicVolume.addListener(_musicVolumeHandler);
+    settingsController.soundsVolume.addListener(_soundsVolumeHandler);
 
     if (settingsController.audioOn.value && settingsController.musicOn.value) {
       if (kIsWeb) {
@@ -192,6 +196,10 @@ class AudioController {
     }
   }
 
+  void _musicVolumeHandler() {
+    _musicPlayer.setVolume(_settings!.musicVolume.value);
+  }
+
   Future<void> _playCurrentSongInPlaylist() async {
     _log.info(() => 'Playing ${_playlist.first} now.');
     try {
@@ -236,6 +244,11 @@ class AudioController {
       }
     }
   }
+  void _soundsVolumeHandler() {
+    for (final player in _sfxPlayers) {
+      player.setVolume(_settings!.soundsVolume.value);
+    }
+  }
 
   void _startOrResumeMusic() async {
     if (_musicPlayer.source == null) {
@@ -264,14 +277,14 @@ class AudioController {
     }
   }
 
-  void _changeMusicVolume(value) {
-    _log.info('Music volume adjusted');
-    _musicPlayer.setVolume(value);
-  }
-  void _changeSoundVolume(value) {
-    _log.info('Sfx volume adjusted');
-    for (final player in _sfxPlayers) {
-      player.setVolume(value);
-    }
-  }
+  // void _setMusicVolume(value) {
+  //   _log.info('Music volume adjusted');
+  //   _musicPlayer.setVolume(value);
+  // }
+  // void _setSoundVolume(value) {
+  //   _log.info('Sfx volume adjusted');
+  //   for (final player in _sfxPlayers) {
+  //     player.setVolume(value);
+  //   }
+  // }
 }

@@ -82,6 +82,12 @@ class SettingsController {
       _store
           .getMusicOn(defaultValue: true)
           .then((value) => musicOn.value = value),
+      _store
+          .getSoundsVolume(defaultValue: 1)
+          .then((value) => soundsVolume.value = value),
+      _store
+          .getMusicVolume(defaultValue: 1)
+          .then((value) => musicVolume.value = value),
     ]);
 
     _log.fine(() => 'Loaded settings: $loadedValues');

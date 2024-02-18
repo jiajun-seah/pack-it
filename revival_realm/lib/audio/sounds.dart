@@ -21,16 +21,16 @@ List<String> soundTypeToFilename(SfxType type) {
 }
 
 /// Allows control over loudness of different SFX types.
-double soundTypeToVolume(SfxType type) {
-  switch (type) {
-    case SfxType.peel:
-      return 1;
-    case SfxType.pop:
-      return 1;
-    case SfxType.chime:
-      return 1;
-  }
-}
+// double soundTypeToVolume(SfxType type) {
+//   switch (type) {
+//     case SfxType.peel:
+//       return 1;
+//     case SfxType.pop:
+//       return 1;
+//     case SfxType.chime:
+//       return 1;
+//   }
+// }
 
 enum SfxType {
   peel,

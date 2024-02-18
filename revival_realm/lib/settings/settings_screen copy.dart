@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import '../player_progress/player_progress.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
-import '../style/responsive_screen_landscape.dart';
+import '../style/responsive_screen.dart';
 import 'settings.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -45,16 +45,6 @@ class SettingsScreen extends StatelessWidget {
                 Icon(soundsOn ? Icons.graphic_eq : Icons.volume_off),
                 onSelected: () => settings.toggleSoundsOn(),
               ),
-            ),
-            ValueListenableBuilder<double>(
-              valueListenable: settings.soundsVolume,
-              builder: (context, soundsVolume, child) =>
-              Slider(value: soundsVolume, onChanged: (value) => settings.setSoundsVolume(value))
-            ),
-            ValueListenableBuilder<double>(
-              valueListenable: settings.musicVolume,
-              builder: (context, musicVolume, child) =>
-              Slider(value: musicVolume, onChanged: (value) => settings.setMusicVolume(value))
             ),
             ValueListenableBuilder<bool>(
               valueListenable: settings.musicOn,
