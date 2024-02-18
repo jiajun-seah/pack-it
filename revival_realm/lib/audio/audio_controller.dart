@@ -195,7 +195,7 @@ class AudioController {
   Future<void> _playCurrentSongInPlaylist() async {
     _log.info(() => 'Playing ${_playlist.first} now.');
     try {
-      await _musicPlayer.play(AssetSource('music/${_playlist.first.filename}'));
+      await _musicPlayer.play(AssetSource('audio/music/${_playlist.first.filename}'));
     } catch (e) {
       _log.severe('Could not play song ${_playlist.first}', e);
     }

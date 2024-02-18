@@ -1,6 +1,8 @@
-const List<Song> songs = [
-  Song('pack_it_bgm.mp3', 'Chill BGM'),
-];
+const Set<Song> songs = {
+  // Filenames with whitespace break package:audioplayers on iOS
+  // (as of February 2022), so we use no whitespace.
+  Song('pack_it_bgm_extended.mp3', 'Pack It BGM Extended'),
+};
 
 class Song {
   final String filename;
