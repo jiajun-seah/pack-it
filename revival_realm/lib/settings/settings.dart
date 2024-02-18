@@ -45,11 +45,6 @@ class SettingsController {
     _loadStateFromPersistence();
   }
 
-  void setPlayerName(String name) {
-    playerName.value = name;
-    _store.savePlayerName(playerName.value);
-  }
-
   void toggleAudioOn() {
     audioOn.value = !audioOn.value;
     _store.saveAudioOn(audioOn.value);
@@ -83,7 +78,6 @@ class SettingsController {
       _store
           .getMusicOn(defaultValue: true)
           .then((value) => musicOn.value = value),
-      _store.getPlayerName().then((value) => playerName.value = value),
     ]);
 
     _log.fine(() => 'Loaded settings: $loadedValues');
