@@ -31,6 +31,18 @@ class LocalStorageSettingsPersistence extends SettingsPersistence {
   }
 
   @override
+  Future<double> getMusicVolume({required double defaultValue}) async {
+    final prefs = await instanceFuture;
+    return prefs.getDouble('musicVolume') ?? defaultValue;
+  }
+
+  @override
+  Future<double> getSoundsVolume({required double defaultValue}) async {
+    final prefs = await instanceFuture;
+    return prefs.getDouble('soundsVolume') ?? defaultValue;
+  }
+
+  @override
   Future<void> saveAudioOn(bool value) async {
     final prefs = await instanceFuture;
     await prefs.setBool('audioOn', value);
@@ -46,5 +58,17 @@ class LocalStorageSettingsPersistence extends SettingsPersistence {
   Future<void> saveSoundsOn(bool value) async {
     final prefs = await instanceFuture;
     await prefs.setBool('soundsOn', value);
+  }
+
+  @override
+  Future<void> saveMusicVolume(double value) async {
+    final prefs = await instanceFuture;
+    await prefs.setDouble('musicVolume', value);
+  }
+
+  @override
+  Future<void> saveSoundsVolume(double value) async {
+    final prefs = await instanceFuture;
+    await prefs.setDouble('soundsVolume', value);
   }
 }
