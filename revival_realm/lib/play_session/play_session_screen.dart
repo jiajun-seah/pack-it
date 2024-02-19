@@ -37,10 +37,12 @@ class PlaySessionScreen extends StatefulWidget {
 class _PlaySessionScreenState extends State<PlaySessionScreen> {
   static final _log = Logger('PlaySessionScreen');
 
-  static const _celebrationDuration = Duration(milliseconds: 2000);
-  static const _preCelebrationDuration = Duration(milliseconds: 500);
+  static const _celebrationDuration = Duration(milliseconds: 3000);
+  static const _preCelebrationDuration = Duration(milliseconds: 600);
+  static const _styrofoamDuration = Duration(milliseconds: 1000);
 
   bool _duringCelebration = false;
+  bool _lidOn = false;
 
   late DateTime _startOfPlay;
   
@@ -54,6 +56,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
   @override
   Widget build(BuildContext context) {
     final palette = context.watch<Palette>();
+    final audioController = context.watch<AudioController>();
 
     
     return MultiProvider(
@@ -105,21 +108,42 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: MyButton(
-                      onPressed: () => GoRouter.of(context).go('/play'),
+                      onPressed: () {
+                        GoRouter.of(context).go('/play');
+                        audioController.playSfx(SfxType.peel);
+                        
+                      },
                       child: const Text('Back'),
                     ),
                   ),
                 ],
               ),
-              // This is the confetti animation that is overlaid on top of the
-              // game when the player wins.
-              SizedBox.expand(
+              SizedBox(height: 50),
+
+              // This is the styrofoam to lunbox animation swap that plays after winning the level
+              Container(
+                alignment: Alignment.center,
                 child: Visibility(
                   visible: _duringCelebration,
                   child: IgnorePointer(
-                    child: Confetti(
-                      isStopped: !_duringCelebration,
-                    ),
+                    child:
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                      Container(
+                        alignment: Alignment.center,
+                        child: FractionallySizedBox(
+                            widthFactor: 0.4,
+                              child: AnimatedCrossFade(
+                                duration: const Duration(seconds: 2),
+                                firstChild: Image.asset('assets/images/foods/styrofoam.png'),
+                                secondChild: Image.asset('assets/images/foods/level_${(widget.level.id)}_lid.png'),
+                                crossFadeState: _lidOn ? CrossFadeState.showSecond: CrossFadeState.showFirst,
+                              ),
+                            ),
+                      ),
+                    ],
+                    )
                   ),
                 ),
               ),
@@ -154,9 +178,19 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
     audioController.playSfx(SfxType.chime);
 
     /// Give the player some time to see the celebration animation.
+    await Future<void>.delayed(_styrofoamDuration);
+    if (!mounted) return;
+
+    setState(() {
+      _lidOn = true;
+    });
+
+    /// Give the player some time to see the celebration animation.
     await Future<void>.delayed(_celebrationDuration);
     if (!mounted) return;
 
     GoRouter.of(context).go('/play/won', extra: {'score': score});
+    audioController.playSfx(SfxType.peel);
+    
   }
 }

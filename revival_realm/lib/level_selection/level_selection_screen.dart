@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:nes_ui/nes_ui.dart';
 import 'package:provider/provider.dart';
 
-// import '../audio/audio_controller.dart';
-// import '../audio/sounds.dart';
+import '../audio/audio_controller.dart';
+import '../audio/sounds.dart';
 import '../player_progress/player_progress.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
@@ -18,6 +18,7 @@ class LevelSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final palette = context.watch<Palette>();
     final playerProgress = context.watch<PlayerProgress>();
+    final audioController = context.watch<AudioController>();
     final levelTextStyle =
         Theme.of(context).textTheme.bodyMedium?.copyWith(height: 1.4);
 
@@ -35,17 +36,17 @@ class LevelSelectionScreen extends StatelessWidget {
                     'Select level',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
-                  const SizedBox(width: 16),
-                  NesButton(
-                    type: NesButtonType.normal,
-                    child: NesIcon(iconData: NesIcons.questionMark),
-                    onPressed: () {
-                      NesDialog.show(
-                        context: context,
-                        builder: (_) => const InstructionsDialog(),
-                      );
-                    },
-                  )
+                  // const SizedBox(width: 16),
+                  // NesButton(
+                  //   type: NesButtonType.normal,
+                  //   child: NesIcon(iconData: NesIcons.questionMark),
+                  //   onPressed: () {
+                  //     NesDialog.show(
+                  //       context: context,
+                  //       builder: (_) => const InstructionsDialog(),
+                  //     );
+                  //   },
+                  // )
                 ],
               ),
             ),
@@ -61,6 +62,7 @@ class LevelSelectionScreen extends StatelessWidget {
                   enabled: true,
                   onTap:(){
                     GoRouter.of(context).go('/play/session/${(index+1)}');
+                    audioController.playSfx(SfxType.peel);
                   },
                   leading: Text(
                     (index+1).toString(),
@@ -74,6 +76,8 @@ class LevelSelectionScreen extends StatelessWidget {
           MyButton(
             onPressed: () {
               GoRouter.of(context).go('/');
+              audioController.playSfx(SfxType.peel);
+              
             },
             child: const Text('Back'),
           ),

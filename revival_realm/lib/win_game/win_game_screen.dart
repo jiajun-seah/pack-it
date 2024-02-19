@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
+import '../audio/audio_controller.dart';
+import '../audio/sounds.dart';
 import '../game_internals/score.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
@@ -18,6 +20,7 @@ class WinGameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final palette = context.watch<Palette>();
+    final audioController = context.watch<AudioController>();
 
     const gap = SizedBox(height: 10);
 
@@ -50,16 +53,21 @@ class WinGameScreen extends StatelessWidget {
             children: [
               MyButton(
                 onPressed: () {
+                  audioController.playSfx(SfxType.peel);
                   GoRouter.of(context).go('/play');
+                  
                 },
                 child: const Text('Back'),
               ),
               MyButton(
                 onPressed: () {
                   if (score.level == 8){
+                    audioController.playSfx(SfxType.peel);
                     GoRouter.of(context).go('/play');
+                    
                   }
                   else{
+                    audioController.playSfx(SfxType.peel);
                     GoRouter.of(context).go('/play/session/${(score.level+1)}');
                   }
                 },
