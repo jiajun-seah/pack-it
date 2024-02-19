@@ -1,7 +1,3 @@
-// Copyright 2022, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +5,7 @@ import 'package:provider/provider.dart';
 import '../game_internals/score.dart';
 import '../style/my_button.dart';
 import '../style/palette.dart';
-import '../style/responsive_screen.dart';
+import '../style/responsive_screen_landscape.dart';
 
 class WinGameScreen extends StatelessWidget {
   final Score score;
@@ -41,7 +37,6 @@ class WinGameScreen extends StatelessWidget {
             gap,
             Center(
               child: Text(
-                'Score: ${score.score}\n'
                 'Time: ${score.formattedTime}',
                 style: const TextStyle(
                     fontFamily: 'Permanent Marker', fontSize: 20),
@@ -49,11 +44,29 @@ class WinGameScreen extends StatelessWidget {
             ),
           ],
         ),
-        rectangularMenuArea: MyButton(
-          onPressed: () {
-            GoRouter.of(context).go('/play');
-          },
-          child: const Text('Continue'),
+        rectangularMenuArea: Container(
+          alignment: Alignment.bottomCenter,
+          child: Row(
+            children: [
+              MyButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/play');
+                },
+                child: const Text('Back'),
+              ),
+              MyButton(
+                onPressed: () {
+                  if (score.level == 8){
+                    GoRouter.of(context).go('/play');
+                  }
+                  else{
+                    GoRouter.of(context).go('/play/session/${(score.level+1)}');
+                  }
+                },
+                child: const Text('Continue'),
+              ),
+            ],
+          ),
         ),
       ),
     );

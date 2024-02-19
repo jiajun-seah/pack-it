@@ -10,7 +10,7 @@ import 'package:logging/logging.dart' hide Level;
 import 'package:provider/provider.dart';
 
 import '../audio/audio_controller.dart';
-// import '../audio/sounds.dart';
+import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
 import '../game_internals/score.dart';
 import '../level_selection/levels.dart';
@@ -136,7 +136,6 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
 
     final score = Score(
       widget.level.id,
-      widget.level.difficulty,
       DateTime.now().difference(_startOfPlay),
     );
 
@@ -152,7 +151,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
     });
 
     final audioController = context.read<AudioController>();
-    // audioController.playSfx(SfxType.congrats);
+    audioController.playSfx(SfxType.chime);
 
     /// Give the player some time to see the celebration animation.
     await Future<void>.delayed(_celebrationDuration);
