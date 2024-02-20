@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../player_progress/player_progress.dart';
@@ -25,59 +26,84 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: palette.lightEarthGreen,
       body: ResponsiveScreen(
-        squarishMainArea: ListView(
+        squarishMainArea: Column(
           children: [
             _gap,
-            const Text(
-              'Settings',
+            Text(
+              'Options',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Permanent Marker',
+              style: GoogleFonts.outfit(
                 fontSize: 55,
-                height: 1,
               ),
             ),
             _gap,
-            // ValueListenableBuilder<bool>(
-            //   valueListenable: settings.soundsOn,
-            //   builder: (context, soundsOn, child) => _SettingsLine(
-            //     'Sound FX',
-            //     Icon(soundsOn ? Icons.graphic_eq : Icons.volume_off),
-            //     onSelected: () => settings.toggleSoundsOn(),
-            //   ),
-            // ),
-            ValueListenableBuilder<double>(
-              valueListenable: settings.soundsVolume,
-              builder: (context, soundsVolume, child) =>
-              Slider(value: soundsVolume, onChanged: (value) => settings.setSoundsVolume(value))
+            Row(
+              children: [
+                Expanded(
+                  flex:2,
+                  child: Text(
+                    'Music Volume',
+                    textAlign: TextAlign.right,
+                    style: GoogleFonts.outfit(
+                      fontSize: 36,
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex:1,
+                  child: Container()
+                ),
+                Flexible(
+                  flex: 8,
+                  child: ValueListenableBuilder<double>(
+                    valueListenable: settings.musicVolume,
+                    builder: (context, musicVolume, child) =>
+                    Slider.adaptive(value: musicVolume, onChanged: (value) => settings.setMusicVolume(value))
+                  ),
+                ),
+              ]
             ),
-            ValueListenableBuilder<double>(
-              valueListenable: settings.musicVolume,
-              builder: (context, musicVolume, child) =>
-              Slider(value: musicVolume, onChanged: (value) => settings.setMusicVolume(value))
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Text(
+                    'SFX Volume',
+                    textAlign: TextAlign.right,
+                    style: GoogleFonts.outfit(
+                      fontSize: 36,
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex:1,
+                  child: Container()
+                ),
+                Flexible(
+                  flex: 8,
+                  child: ValueListenableBuilder<double>(
+                    valueListenable: settings.soundsVolume,
+                    builder: (context, soundsVolume, child) =>
+                     Slider.adaptive(value: soundsVolume, onChanged: (value) => settings.setSoundsVolume(value))
+                  ),
+                ),
+              ],
             ),
-            // ValueListenableBuilder<bool>(
-            //   valueListenable: settings.musicOn,
-            //   builder: (context, musicOn, child) => _SettingsLine(
-            //     'Music',
-            //     Icon(musicOn ? Icons.music_note : Icons.music_off),
-            //     onSelected: () => settings.toggleMusicOn(),
-            //   ),
-            // ),
-            _SettingsLine(
-              'Reset progress',
-              const Icon(Icons.delete),
-              onSelected: () {
-                context.read<PlayerProgress>().reset();
+              
+            // _SettingsLine(
+            //   'Reset progress',
+            //   const Icon(Icons.delete),
+            //   onSelected: () {
+            //     context.read<PlayerProgress>().reset();
 
-                final messenger = ScaffoldMessenger.of(context);
-                messenger.showSnackBar(
-                  const SnackBar(
-                      content: Text('Player progress has been reset.')),
-                );
-              },
-            ),
-            _gap,
+            //     final messenger = ScaffoldMessenger.of(context);
+            //     messenger.showSnackBar(
+            //       const SnackBar(
+            //           content: Text('Player progress has been reset.')),
+            //     );
+            //   },
+            // ),
+            // _gap,
           ],
         ),
         rectangularMenuArea: MyButton(

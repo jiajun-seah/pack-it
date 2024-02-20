@@ -41,6 +41,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
   static const _preCelebrationDuration = Duration(milliseconds: 600);
   static const _styrofoamDuration = Duration(milliseconds: 1000);
 
+  bool _won = false;
   bool _duringCelebration = false;
   bool _lidOn = false;
 
@@ -104,6 +105,8 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                     child:
                       Center(child: GameWidget())
                   ),
+                  // This is the styrofoam to lunchbox animation swap that plays after winning the level
+                  
                   const Spacer(flex:1),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -118,35 +121,56 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 50),
-
-              // This is the styrofoam to lunbox animation swap that plays after winning the level
               Container(
-                alignment: Alignment.center,
-                child: Visibility(
-                  visible: _duringCelebration,
-                  child: IgnorePointer(
-                    child:
-                    Stack(
-                      alignment: Alignment.center,
-                      children: [
-                      Container(
-                        alignment: Alignment.center,
-                        child: FractionallySizedBox(
-                            widthFactor: 0.4,
-                              child: AnimatedCrossFade(
-                                duration: const Duration(seconds: 2),
-                                firstChild: Image.asset('assets/images/foods/styrofoam.png'),
-                                secondChild: Image.asset('assets/images/foods/level_${(widget.level.id)}_lid.png'),
-                                crossFadeState: _lidOn ? CrossFadeState.showSecond: CrossFadeState.showFirst,
-                              ),
-                            ),
+                    // alignment: Alignment.center,
+                    child: Visibility(
+                      visible: _won,
+                      child: IgnorePointer(
+                        child:
+                        Stack(
+                          alignment: Alignment.topCenter,
+                          children: [
+                          Container(
+                            alignment: Alignment.center,
+                            child: FractionallySizedBox(
+                                widthFactor: 0.45,
+                                  child: AnimatedCrossFade(
+                                    duration: const Duration(seconds: 2),
+                                    firstChild: Image.asset('assets/images/foods/styrofoam.png'),
+                                    secondChild: Image.asset('assets/images/foods/level_${(widget.level.id)}_lid.png'),
+                                    crossFadeState: _lidOn ? CrossFadeState.showSecond: CrossFadeState.showFirst,
+                                    firstCurve: Curves.easeIn,
+                                    secondCurve: Curves.easeOutCubic,
+                                    sizeCurve: Curves.elasticInOut,
+                                    // layoutBuilder:
+                                    //   (topChild, topChildKey, bottomChild, bottomChildKey) {
+                                    //     return Stack(
+                                    //       // clipBehavior: Clip.none,
+                                    //       alignment: Alignment.center,
+                                    //       children: <Widget>[
+                                    //         Positioned(
+                                    //           key: bottomChildKey,
+                                    //           top: 0,
+                                    //           child: bottomChild,
+                                    //         ),
+                                    //         Positioned(
+                                    //           key: topChildKey,
+                                    //           child: topChild,
+                                    //         )
+                                    //       ]
+                                    //     );
+                                    //   },
+                                  ),
+                                ),
+                          ),
+                        ],
+                        )
                       ),
-                    ],
-                    )
+                    ),
                   ),
-                ),
-              ),
+              // SizedBox(height: 50),
+
+              
             ],
           ),
         ),
@@ -157,6 +181,10 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
   
   Future<void> _playerWon() async {
     _log.info('Level ${widget.level.id} won');
+    
+    setState(() {
+      _won = true;
+    });
 
     final score = Score(
       widget.level.id,

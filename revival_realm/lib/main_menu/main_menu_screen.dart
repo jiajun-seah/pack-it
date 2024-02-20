@@ -1,9 +1,6 @@
-// Copyright 2022, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../audio/audio_controller.dart';
@@ -46,39 +43,67 @@ class MainMenuScreen extends StatelessWidget {
               },
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(20)),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24.0),
-                    side: const BorderSide(color: Colors.red)
+                    borderRadius: BorderRadius.circular(40.0),
+                    side: const BorderSide(color: Colors.transparent)
                   )
                 )
               ),
-              child: const Text(
+              child: Text(
                 'Play',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.outfit(
                   fontSize: 28,
               ),),
             ),
             _gap,
-            MyButton(
-              onPressed: () => GoRouter.of(context).push('/settings'),
-              child: const Text(
-                'Options',
+            ElevatedButton(
+              onPressed: () {
+                audioController.playSfx(SfxType.peel);
+                GoRouter.of(context).go('/settings');
+              },
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40.0),
+                    side: const BorderSide(color: Colors.transparent)
+                  )
+                )
+              ),
+              child: Text(
+                'Settings',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.outfit(
                   fontSize: 28,
               ),),
             ),
             _gap,
-            MyButton(
-              onPressed: () => GoRouter.of(context).push('/extras'),
-              child: const Text(
+            ElevatedButton(
+              onPressed: () {
+                audioController.playSfx(SfxType.peel);
+                GoRouter.of(context).go('/extras');
+              },
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40.0),
+                    side: const BorderSide(color: Colors.transparent)
+                  )
+                )
+              ),
+              child: Text(
                 'Extras',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.outfit(
                   fontSize: 28,
               ),),
             ),

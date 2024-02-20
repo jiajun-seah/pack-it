@@ -13,6 +13,7 @@ import 'main_menu/main_menu_screen.dart';
 import 'play_session/play_session_screen.dart';
 import 'settings/settings_screen.dart';
 import 'style/my_transition.dart';
+import 'style/fade_transition.dart';
 import 'style/palette.dart';
 import 'win_game/win_game_screen.dart';
 
@@ -66,7 +67,7 @@ final router = GoRouter(
                   final map = state.extra! as Map<String, dynamic>;
                   final score = map['score'] as Score;
 
-                  return buildMyTransition<void>(
+                  return buildFadeTransition<void>(
                     key: ValueKey('won'),
                     color: context.watch<Palette>().champange,
                     child: WinGameScreen(
