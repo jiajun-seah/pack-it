@@ -55,7 +55,7 @@ class MyGame extends StatelessWidget {
                 seedColor: palette.darkForestGreen,
                 background: palette.limeGreen,
               ),
-              textTheme: GoogleFonts.robotoTextTheme().apply(
+              textTheme: GoogleFonts.outfitTextTheme().apply(
                 bodyColor: palette.darkForestGreen,
                 displayColor: palette.darkForestGreen,
               ),

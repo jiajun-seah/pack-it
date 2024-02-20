@@ -1,7 +1,3 @@
-// Copyright 2022, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -9,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart' hide Level;
 import 'package:provider/provider.dart';
 
+import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
@@ -16,8 +13,6 @@ import '../game_internals/level_state.dart';
 import '../game_internals/score.dart';
 import '../level_selection/levels.dart';
 import '../player_progress/player_progress.dart';
-// import '../style/confetti.dart';
-// import '../style/my_button.dart';
 import '../style/palette.dart';
 import 'game_widget.dart';
 
@@ -93,20 +88,33 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                     alignment: Alignment.centerRight,
                     child: InkResponse(
                       onTap: () => GoRouter.of(context).push('/settings'),
-                      child: Image.asset(
-                        'assets/images/settings.png',
-                        semanticLabel: 'Settings',
+                      child:
+                      Container(
+                        padding: EdgeInsets.all(20),
+                        child: const Icon(
+                          CupertinoIcons.gear_solid,
+                          color: Colors.black45,
+                          size: 50,
+                          semanticLabel: 'Settings',
+                            ),
+                      ),
+                      // child: Image.asset(
+                      //   'assets/images/settings.png',
+                      //   semanticLabel: 'Settings',
+                      // ),
+                    ),
+                  ),
+                  Opacity(
+                    opacity: !_won ? 1.0 : 0.0,
+                    child: Text(
+                      'Level ${widget.level.id}',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.outfit(
+                        fontSize: 40,
                       ),
                     ),
                   ),
-                  Text(
-                    'Level ${widget.level.id}',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
-                      fontSize: 55,
-                    ),
-                  ),
-                  // const Spacer(flex:1),
+                  const Spacer(flex:1),
                   const Expanded(
                     flex: 8,
                     // The actual UI of the game.
@@ -149,17 +157,18 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                 ],
               ),
               Container(
-                    // alignment: Alignment.center,
+                    alignment: Alignment.center,
                     child: Visibility(
                       visible: _won,
                       child: IgnorePointer(
                         child:
                         Stack(
-                          alignment: Alignment.topCenter,
+                          alignment: Alignment.center,
                           children: [
                           Container(
                             alignment: Alignment.center,
                             child: FractionallySizedBox(
+                              alignment: Alignment(-1,-1),
                                 widthFactor: (widget.level.id == 4 || widget.level.id == 6 ) ? 0.46 : 0.36,
                                   child: AnimatedCrossFade(
                                     duration: const Duration(seconds: 2),
@@ -245,7 +254,6 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
     if (!mounted) return;
 
     GoRouter.of(context).go('/play/won', extra: {'score': score});
-    audioController.playSfx(SfxType.peel);
     
   }
 }

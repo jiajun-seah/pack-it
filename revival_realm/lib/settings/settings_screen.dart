@@ -7,8 +7,11 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+
+import '../audio/audio_controller.dart';
+import '../audio/sounds.dart';
 import '../player_progress/player_progress.dart';
-import '../style/my_button.dart';
+// import '../style/my_button.dart';
 import '../style/palette.dart';
 import '../style/responsive_screen_landscape.dart';
 import 'settings.dart';
@@ -22,6 +25,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final settings = context.watch<SettingsController>();
     final palette = context.watch<Palette>();
+    final audioController = context.watch<AudioController>();
 
     return Scaffold(
       backgroundColor: palette.lightEarthGreen,
@@ -89,7 +93,32 @@ class SettingsScreen extends StatelessWidget {
                 ),
               ],
             ),
-              
+            TextButton(
+              onPressed: () {
+                context.read<PlayerProgress>().reset();
+                 final messenger = ScaffoldMessenger.of(context);
+                messenger.showSnackBar(
+                  const SnackBar(
+                      content: Text('Your progress has been reset')),);
+              },
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.redAccent.shade700),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    side: const BorderSide(color: Colors.transparent)
+                  )
+                )
+              ),
+              child: Text(
+                'Reset progress',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.outfit(
+                  fontSize: 28,
+              ),),
+            ),
             // _SettingsLine(
             //   'Reset progress',
             //   const Icon(Icons.delete),
@@ -103,15 +132,33 @@ class SettingsScreen extends StatelessWidget {
             //     );
             //   },
             // ),
-            // _gap,
+            _gap,
           ],
         ),
-        rectangularMenuArea: MyButton(
-          onPressed: () {
-            GoRouter.of(context).pop();
-          },
-          child: const Text('Back'),
-        ),
+        rectangularMenuArea: 
+          ElevatedButton(
+                onPressed: () {
+                  audioController.playSfx(SfxType.peel);
+                  GoRouter.of(context).go('/');
+                },
+                style: ButtonStyle(
+                  foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                  padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40.0),
+                      side: const BorderSide(color: Colors.transparent)
+                    )
+                  )
+                ),
+                child: Text(
+                  'Back',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.outfit(
+                    fontSize: 28,
+                ),),
+              ),
       ),
     );
   }

@@ -1,14 +1,12 @@
-// import 'package:revival_realm/level_selection/instructions_dialog.dart';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:nes_ui/nes_ui.dart';
 import 'package:provider/provider.dart';
 
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
 import '../player_progress/player_progress.dart';
-import '../style/my_button.dart';
 import '../style/palette.dart';
 import 'levels.dart';
 
@@ -20,8 +18,6 @@ class LevelSelectionScreen extends StatelessWidget {
     final palette = context.watch<Palette>();
     final playerProgress = context.watch<PlayerProgress>();
     final audioController = context.watch<AudioController>();
-    final levelTextStyle =
-        Theme.of(context).textTheme.bodyMedium?.copyWith(height: 1.4);
 
     return Scaffold(
       backgroundColor: palette.darkEarthGreen,
@@ -40,17 +36,6 @@ class LevelSelectionScreen extends StatelessWidget {
                       fontSize: 55,
                     ),
                   ),
-                  // const SizedBox(width: 16),
-                  // NesButton(
-                  //   type: NesButtonType.normal,
-                  //   child: NesIcon(iconData: NesIcons.questionMark),
-                  //   onPressed: () {
-                  //     NesDialog.show(
-                  //       context: context,
-                  //       builder: (_) => const InstructionsDialog(),
-                  //     );
-                  //   },
-                  // )
                 ],
               ),
             ),
@@ -58,25 +43,46 @@ class LevelSelectionScreen extends StatelessWidget {
           const SizedBox(height: 50),
           Expanded(
             child: FractionallySizedBox(
-              widthFactor: 1/2,
+              widthFactor: 3/5,
               child: GridView.builder(
                 itemCount: gameLevels.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-                itemBuilder: (context, index) => ListTile(
-                  enabled: playerProgress.highestLevelReached >=
-                          index,
-                  onTap:(){
+                itemBuilder: (context, index) => TextButton(
+                  
+                  onPressed: playerProgress.highestLevelReached >= index?(){
                     GoRouter.of(context).go('/play/session/${(index+1)}');
                     audioController.playSfx(SfxType.peel);
-                  },
-                  trailing:
-                  Text(
-                    (index+1).toString(),
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
-                      fontSize: 24,
-                    ),
+                    } : null,
+                  style: ButtonStyle(
+                    foregroundColor: playerProgress.highestLevelReached >= index? MaterialStateProperty.all<Color>(Colors.black): MaterialStateProperty.all<Color>(Colors.grey.shade600),
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                    padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        side: const BorderSide(color: Colors.transparent)
+                      )
+                    )
                   ),
+                  child: Stack(
+                    children: [
+                      Opacity(
+                        opacity: 0.9,
+                        child: Image.asset(playerProgress.highestLevelReached > index ?
+                                      'assets/images/foods/level_${(index+1)}_lid.png':
+                                      playerProgress.highestLevelReached == index ?
+                                      'assets/images/foods/styrofoam_open.png':
+                                       'assets/images/foods/styrofoam_closed.png'),
+                      ),
+                      Text(
+                        (index+1).toString(),
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.outfit(
+                          fontSize: 32,
+                        ),
+                      ),
+                    ]
+                  )
                 )
               ),
             ),

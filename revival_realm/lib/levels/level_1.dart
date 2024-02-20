@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:google_fonts/google_fonts.dart';
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
-import '../level_selection/levels.dart';
 import '../play_session/food.dart';
 
 /// This widget defines the game UI itself, without things like the settings
