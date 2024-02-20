@@ -34,8 +34,11 @@ class LevelSelectionScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Select level',
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    'Select Level',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.outfit(
+                      fontSize: 55,
+                    ),
                   ),
                   // const SizedBox(width: 16),
                   // NesButton(
@@ -54,8 +57,8 @@ class LevelSelectionScreen extends StatelessWidget {
           ),
           const SizedBox(height: 50),
           Expanded(
-            child: SizedBox(
-              width: 500,
+            child: FractionallySizedBox(
+              widthFactor: 1/2,
               child: GridView.builder(
                 itemCount: gameLevels.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
@@ -66,10 +69,14 @@ class LevelSelectionScreen extends StatelessWidget {
                     GoRouter.of(context).go('/play/session/${(index+1)}');
                     audioController.playSfx(SfxType.peel);
                   },
-                  leading: Text(
+                  trailing:
+                  Text(
                     (index+1).toString(),
-                    style: levelTextStyle,
-                  )
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.outfit(
+                      fontSize: 24,
+                    ),
+                  ),
                 )
               ),
             ),

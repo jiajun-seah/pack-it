@@ -203,7 +203,6 @@ class LevelSix extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('maki_1')
                                     ? 'assets/images/foods/maki_1.gif'
@@ -217,7 +216,6 @@ class LevelSix extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('maki_1');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -233,7 +231,6 @@ class LevelSix extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('maki_2')
                                     ? 'assets/images/foods/maki_2.gif'
@@ -247,7 +244,6 @@ class LevelSix extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('maki_2');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -263,7 +259,6 @@ class LevelSix extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('maki_3')
                                     ? 'assets/images/foods/maki_3.gif'
@@ -277,7 +272,6 @@ class LevelSix extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('maki_3');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -293,7 +287,6 @@ class LevelSix extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('sushi_1')
                                     ? 'assets/images/foods/sushi_1.gif'
@@ -307,7 +300,6 @@ class LevelSix extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_1');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -323,7 +315,6 @@ class LevelSix extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('sushi_2')
                                     ? 'assets/images/foods/sushi_2.gif'
@@ -337,7 +328,6 @@ class LevelSix extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_2');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -353,7 +343,6 @@ class LevelSix extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('sushi_3')
                                     ? 'assets/images/foods/sushi_3.gif'
@@ -367,7 +356,6 @@ class LevelSix extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_3');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -383,7 +371,6 @@ class LevelSix extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('sushi_4')
                                     ? 'assets/images/foods/sushi_4.gif'
@@ -397,7 +384,6 @@ class LevelSix extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_4');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -413,7 +399,6 @@ class LevelSix extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('sushi_5')
                                     ? 'assets/images/foods/sushi_5.gif'
@@ -427,7 +412,6 @@ class LevelSix extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_5');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -443,7 +427,6 @@ class LevelSix extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('sushi_6')
                                     ? 'assets/images/foods/sushi_6.gif'
@@ -457,7 +440,6 @@ class LevelSix extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sushi_6');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),

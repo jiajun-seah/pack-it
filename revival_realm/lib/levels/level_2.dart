@@ -109,7 +109,6 @@ class LevelTwo extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('sandwich_tl')
                                     ? 'assets/images/foods/sandwich_tl.gif'
@@ -123,7 +122,6 @@ class LevelTwo extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sandwich_tl');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -139,7 +137,6 @@ class LevelTwo extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('sandwich_tr')
                                     ? 'assets/images/foods/sandwich_tr.gif'
@@ -153,7 +150,6 @@ class LevelTwo extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sandwich_tr');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -169,7 +165,6 @@ class LevelTwo extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('sandwich_bl')
                                     ? 'assets/images/foods/sandwich_bl.gif'
@@ -183,7 +178,6 @@ class LevelTwo extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sandwich_bl');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -199,7 +193,6 @@ class LevelTwo extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('sandwich_br')
                                     ? 'assets/images/foods/sandwich_br.gif'
@@ -213,7 +206,6 @@ class LevelTwo extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('sandwich_br');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),

@@ -146,10 +146,8 @@ class LevelEight extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   alignment: Alignment.center,
-                                  // color: Colors.blue,
                                   child: FractionallySizedBox(
                                     widthFactor: 1/3,
                                     child: Image.asset(levelState.checkDropped('grape')
@@ -165,7 +163,6 @@ class LevelEight extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('grape');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -181,10 +178,8 @@ class LevelEight extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   alignment: Alignment.center,
-                                  // color: Colors.blue,
                                   child: FractionallySizedBox(
                                     widthFactor: 1/3,
                                     child: Image.asset(levelState.checkDropped('blueberry')
@@ -200,7 +195,6 @@ class LevelEight extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('blueberry');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -216,7 +210,6 @@ class LevelEight extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   alignment: Alignment.center,
                                   // color: Colors.blue,
@@ -235,7 +228,6 @@ class LevelEight extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('strawberry');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -251,7 +243,6 @@ class LevelEight extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   alignment: Alignment.center,
                                   // color: Colors.blue,
@@ -270,7 +261,6 @@ class LevelEight extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('blackcurrent');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -286,9 +276,7 @@ class LevelEight extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('apple')
                                     ? 'assets/images/foods/Apple.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -301,7 +289,6 @@ class LevelEight extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('apple');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -317,9 +304,7 @@ class LevelEight extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('pear')
                                     ? 'assets/images/foods/Pear.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -332,7 +317,6 @@ class LevelEight extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('pear');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),

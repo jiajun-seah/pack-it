@@ -160,7 +160,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                           Container(
                             alignment: Alignment.center,
                             child: FractionallySizedBox(
-                                widthFactor: 0.45,
+                                widthFactor: (widget.level.id == 4 || widget.level.id == 6 ) ? 0.46 : 0.36,
                                   child: AnimatedCrossFade(
                                     duration: const Duration(seconds: 2),
                                     firstChild: Image.asset('assets/images/foods/styrofoam.png'),

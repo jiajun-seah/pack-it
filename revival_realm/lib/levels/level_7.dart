@@ -139,7 +139,6 @@ class LevelSeven extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('vanilla_glazed')
                                     ? 'assets/images/foods/Vanilla_Glazed.gif'
@@ -153,7 +152,6 @@ class LevelSeven extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('vanilla_glazed');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -169,7 +167,6 @@ class LevelSeven extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('chocolate_sprinkle')
                                     ? 'assets/images/foods/Chocolate_Sprinkle.gif'
@@ -183,7 +180,6 @@ class LevelSeven extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('chocolate_sprinkle');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -199,9 +195,7 @@ class LevelSeven extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('chocolate_swirl')
                                     ? 'assets/images/foods/chocolate_swirl.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -214,7 +208,6 @@ class LevelSeven extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('chocolate_swirl');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -230,7 +223,6 @@ class LevelSeven extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('strawberry_glazed')
                                     ? 'assets/images/foods/Strawberry_Glazed.gif'
@@ -244,7 +236,6 @@ class LevelSeven extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('strawberry_glazed');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -260,7 +251,6 @@ class LevelSeven extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('strawberry_sprinkle')
                                     ? 'assets/images/foods/Strawberry_Sprinkle.gif'
@@ -274,7 +264,6 @@ class LevelSeven extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('strawberry_sprinkle');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -290,9 +279,7 @@ class LevelSeven extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('strawberry_swirl')
                                     ? 'assets/images/foods/Strawberry_Swirl.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -305,7 +292,6 @@ class LevelSeven extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('strawberry_swirl');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),

@@ -82,7 +82,6 @@ class LevelOne extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('rice')
@@ -97,7 +96,6 @@ class LevelOne extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('rice');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -113,7 +111,6 @@ class LevelOne extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('curry')
                                     ? 'assets/images/foods/curry_L.gif'
@@ -127,7 +124,6 @@ class LevelOne extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('curry');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),

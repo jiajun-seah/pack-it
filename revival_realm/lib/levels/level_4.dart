@@ -81,9 +81,7 @@ class LevelFour extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('rice')
                                     ? 'assets/images/foods/Rice_L.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -96,7 +94,6 @@ class LevelFour extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('rice');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -112,7 +109,6 @@ class LevelFour extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('stick')
@@ -127,7 +123,6 @@ class LevelFour extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('stick');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -143,9 +138,7 @@ class LevelFour extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('lettuce')
                                     ? 'assets/images/foods/Lettuce.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -158,7 +151,6 @@ class LevelFour extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('lettuce');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -174,7 +166,6 @@ class LevelFour extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('mushroom')
@@ -189,7 +180,6 @@ class LevelFour extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('mushroom');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),

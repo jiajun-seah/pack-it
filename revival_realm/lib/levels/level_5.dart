@@ -108,9 +108,7 @@ class LevelFive extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('chocolate_swiss')
                                     ? 'assets/images/foods/Chocolate_Swiss.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -123,7 +121,6 @@ class LevelFive extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('chocolate_swiss');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -139,9 +136,7 @@ class LevelFive extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('grape_swiss')
                                     ? 'assets/images/foods/Grape_Swiss.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -154,7 +149,6 @@ class LevelFive extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('grape_swiss');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -170,9 +164,7 @@ class LevelFive extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('orange_swiss')
                                     ? 'assets/images/foods/Orange_Swiss.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -185,7 +177,6 @@ class LevelFive extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('orange_swiss');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
@@ -201,9 +192,7 @@ class LevelFive extends StatelessWidget {
                                 List<dynamic> accepted,
                                 List<dynamic> rejected,
                               ) {
-                                debugPrint(levelState.progress.toString());
                                 return Container(
-                                  // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('lime_swiss')
                                     ? 'assets/images/foods/Lime_Swiss.gif'
                                     : 'assets/images/foods/transparent_square.png')
@@ -216,7 +205,6 @@ class LevelFive extends StatelessWidget {
                                 audioController.playSfx(SfxType.pop);
                                 levelState.setProgress('lime_swiss');
                                 levelState.evaluate();
-                                debugPrint(levelState.progress.toString());
                               },
                             ),
                           ),
