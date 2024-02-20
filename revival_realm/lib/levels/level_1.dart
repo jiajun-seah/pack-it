@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package:google_fonts/google_fonts.dart';
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
@@ -14,14 +15,12 @@ class LevelOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final level = context.watch<GameLevel>();
     final levelState = context.watch<LevelState>();
     final audioController = context.watch<AudioController>();
     
     
     return Column(
         children: [
-          Text('Level ${level.id}'),
           Expanded(
             child: Row(children: [
               Flexible(

@@ -1,7 +1,8 @@
-import 'package:revival_realm/level_selection/instructions_dialog.dart';
+// import 'package:revival_realm/level_selection/instructions_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nes_ui/nes_ui.dart';
+import 'package:google_fonts/google_fonts.dart';
+// import 'package:nes_ui/nes_ui.dart';
 import 'package:provider/provider.dart';
 
 import '../audio/audio_controller.dart';
@@ -59,7 +60,8 @@ class LevelSelectionScreen extends StatelessWidget {
                 itemCount: gameLevels.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
                 itemBuilder: (context, index) => ListTile(
-                  enabled: true,
+                  enabled: playerProgress.highestLevelReached >=
+                          index,
                   onTap:(){
                     GoRouter.of(context).go('/play/session/${(index+1)}');
                     audioController.playSfx(SfxType.peel);
@@ -73,14 +75,37 @@ class LevelSelectionScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 30),
-          MyButton(
-            onPressed: () {
-              GoRouter.of(context).go('/');
-              audioController.playSfx(SfxType.peel);
+          // MyButton(
+          //   onPressed: () {
+          //     GoRouter.of(context).go('/');
+          //     audioController.playSfx(SfxType.peel);
               
-            },
-            child: const Text('Back'),
-          ),
+          //   },
+          //   child: const Text('Back'),
+          // ),
+          ElevatedButton(
+              onPressed: () {
+                audioController.playSfx(SfxType.peel);
+                GoRouter.of(context).go('/');
+              },
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40.0),
+                    side: const BorderSide(color: Colors.transparent)
+                  )
+                )
+              ),
+              child: Text(
+                'Back',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.outfit(
+                  fontSize: 28,
+              ),),
+            ),
           const SizedBox(height: 30),
         ],
       ),

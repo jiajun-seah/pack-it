@@ -30,7 +30,7 @@ class SettingsScreen extends StatelessWidget {
           children: [
             _gap,
             Text(
-              'Options',
+              'Settings',
               textAlign: TextAlign.center,
               style: GoogleFonts.outfit(
                 fontSize: 55,

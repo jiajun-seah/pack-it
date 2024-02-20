@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
 import '../settings/settings.dart';
-import '../style/my_button.dart';
+// import '../style/my_button.dart';
 import '../style/palette.dart';
 import '../style/responsive_screen_landscape.dart';
 
@@ -36,7 +36,7 @@ class MainMenuScreen extends StatelessWidget {
         rectangularMenuArea: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
+            TextButton(
               onPressed: () {
                 audioController.playSfx(SfxType.peel);
                 GoRouter.of(context).go('/play');
@@ -47,7 +47,7 @@ class MainMenuScreen extends StatelessWidget {
                 padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
+                    borderRadius: BorderRadius.circular(20.0),
                     side: const BorderSide(color: Colors.transparent)
                   )
                 )
@@ -60,7 +60,7 @@ class MainMenuScreen extends StatelessWidget {
               ),),
             ),
             _gap,
-            ElevatedButton(
+            TextButton(
               onPressed: () {
                 audioController.playSfx(SfxType.peel);
                 GoRouter.of(context).go('/settings');
@@ -71,7 +71,7 @@ class MainMenuScreen extends StatelessWidget {
                 padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
+                    borderRadius: BorderRadius.circular(20.0),
                     side: const BorderSide(color: Colors.transparent)
                   )
                 )
@@ -84,7 +84,7 @@ class MainMenuScreen extends StatelessWidget {
               ),),
             ),
             _gap,
-            ElevatedButton(
+            TextButton(
               onPressed: () {
                 audioController.playSfx(SfxType.peel);
                 GoRouter.of(context).go('/extras');
@@ -95,7 +95,7 @@ class MainMenuScreen extends StatelessWidget {
                 padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
+                    borderRadius: BorderRadius.circular(20.0),
                     side: const BorderSide(color: Colors.transparent)
                   )
                 )

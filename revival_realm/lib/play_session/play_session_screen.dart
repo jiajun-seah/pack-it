@@ -9,14 +9,15 @@ import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart' hide Level;
 import 'package:provider/provider.dart';
 
+import 'package:google_fonts/google_fonts.dart';
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
 import '../game_internals/score.dart';
 import '../level_selection/levels.dart';
 import '../player_progress/player_progress.dart';
-import '../style/confetti.dart';
-import '../style/my_button.dart';
+// import '../style/confetti.dart';
+// import '../style/my_button.dart';
 import '../style/palette.dart';
 import 'game_widget.dart';
 
@@ -98,7 +99,14 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                       ),
                     ),
                   ),
-                  const Spacer(flex:1),
+                  Text(
+                    'Level ${widget.level.id}',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.outfit(
+                      fontSize: 55,
+                    ),
+                  ),
+                  // const Spacer(flex:1),
                   const Expanded(
                     flex: 8,
                     // The actual UI of the game.
@@ -110,13 +118,32 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                   const Spacer(flex:1),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: MyButton(
-                      onPressed: () {
-                        GoRouter.of(context).go('/play');
-                        audioController.playSfx(SfxType.peel);
-                        
-                      },
-                      child: const Text('Back'),
+                    child: 
+                    Opacity(
+                      opacity: !_won ? 1.0 : 0.0,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          audioController.playSfx(SfxType.peel);
+                          GoRouter.of(context).go('/play');
+                        },
+                        style: ButtonStyle(
+                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                          padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(12)),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(40.0),
+                              side: const BorderSide(color: Colors.transparent)
+                            )
+                          )
+                        ),
+                        child: Text(
+                          'Back',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.outfit(
+                            fontSize: 28,
+                        ),),
+                      ),
                     ),
                   ),
                 ],

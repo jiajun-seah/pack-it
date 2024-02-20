@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
-import '../level_selection/levels.dart';
 import '../play_session/food.dart';
 
 
@@ -15,13 +14,11 @@ class LevelFour extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final level = context.watch<GameLevel>();
     final levelState = context.watch<LevelState>();
     final audioController = context.watch<AudioController>();
     
     return Column(
         children: [
-          Text('Level ${level.id}'),
           Expanded(
             child: Row(children: [
               Flexible(

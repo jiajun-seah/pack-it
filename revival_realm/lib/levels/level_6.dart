@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
 import '../game_internals/level_state.dart';
-import '../level_selection/levels.dart';
 import '../play_session/food.dart';
 
 /// This widget defines the game UI itself, without things like the settings
@@ -14,14 +13,12 @@ class LevelSix extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final level = context.watch<GameLevel>();
     final levelState = context.watch<LevelState>();
 
     final audioController = context.watch<AudioController>();
     
     return Column(
         children: [
-          Text('Level ${level.id}'),
           Expanded(
             child: Row(children: [
               Flexible(
