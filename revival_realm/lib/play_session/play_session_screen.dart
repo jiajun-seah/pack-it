@@ -18,9 +18,6 @@ import 'game_widget.dart';
 
 /// This widget defines the entirety of the screen that the player sees when
 /// they are playing a level.
-///
-/// It is a stateful widget because it manages some state of its own,
-/// such as whether the game is in a "celebration" state.
 class PlaySessionScreen extends StatefulWidget {
   final GameLevel level;
 
@@ -90,7 +87,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                       onTap: () => GoRouter.of(context).push('/settings'),
                       child:
                       Container(
-                        padding: EdgeInsets.all(20),
+                        padding: const EdgeInsets.all(20),
                         child: const Icon(
                           CupertinoIcons.gear_solid,
                           color: Colors.black45,
@@ -168,7 +165,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                           Container(
                             alignment: Alignment.center,
                             child: FractionallySizedBox(
-                              alignment: Alignment(-1,-1),
+                              alignment: const Alignment(-1,-1),
                                 widthFactor: (widget.level.id == 4 || widget.level.id == 6 ) ? 0.46 : 0.36,
                                   child: AnimatedCrossFade(
                                     duration: const Duration(seconds: 2),
@@ -178,24 +175,6 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                                     firstCurve: Curves.easeIn,
                                     secondCurve: Curves.easeOutCubic,
                                     sizeCurve: Curves.elasticInOut,
-                                    // layoutBuilder:
-                                    //   (topChild, topChildKey, bottomChild, bottomChildKey) {
-                                    //     return Stack(
-                                    //       // clipBehavior: Clip.none,
-                                    //       alignment: Alignment.center,
-                                    //       children: <Widget>[
-                                    //         Positioned(
-                                    //           key: bottomChildKey,
-                                    //           top: 0,
-                                    //           child: bottomChild,
-                                    //         ),
-                                    //         Positioned(
-                                    //           key: topChildKey,
-                                    //           child: topChild,
-                                    //         )
-                                    //       ]
-                                    //     );
-                                    //   },
                                   ),
                                 ),
                           ),
@@ -204,9 +183,6 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                       ),
                     ),
                   ),
-              // SizedBox(height: 50),
-
-              
             ],
           ),
         ),
