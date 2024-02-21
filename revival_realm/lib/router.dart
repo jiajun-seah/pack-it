@@ -29,7 +29,7 @@ final router = GoRouter(
             path: 'play',
             pageBuilder: (context, state) => buildMyTransition<void>(
                   key: ValueKey('play'),
-                  color: context.watch<Palette>().darkEarthGreen,
+                  color: context.watch<Palette>().lightBeige,
                   child: const LevelSelectionScreen(
                     key: Key('level selection'),
                   ),

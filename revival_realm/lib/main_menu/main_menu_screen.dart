@@ -20,108 +20,133 @@ class MainMenuScreen extends StatelessWidget {
     final audioController = context.watch<AudioController>();
 
     return Scaffold(
-      backgroundColor: palette.lightEarthGreen,
-      body: ResponsiveScreen(
-        squarishMainArea: const Center(
-          child: Text(
-              'Pack-It!',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Halogen',
-                fontSize: 200,
-                // height: 1,
+      backgroundColor: palette.mediumBeige,
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(image: AssetImage('assets/images/title/title_background_animated.png'),
+              fit: BoxFit.cover),),
+          ),
+          // Container(
+          //   decoration: const BoxDecoration(
+          //     image: DecorationImage(image: AssetImage('assets/images/title/falling_leaf.gif'),
+          //     fit: BoxFit.cover),),
+          // ),
+          
+          ResponsiveScreen(
+          squarishMainArea: Row(
+            children: [
+              Flexible(flex:2, child: Container(),),
+              Flexible(
+                flex: 1,
+                child: Center(
+                  child: Image.asset('assets/images/title/pack_it_logo_cropped.png')),
               ),
-            ),
-        ),
-        rectangularMenuArea: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextButton(
-              onPressed: () {
-                audioController.playSfx(SfxType.peel);
-                GoRouter.of(context).go('/play');
-              },
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    side: const BorderSide(color: Colors.transparent)
-                  )
-                )
-              ),
-              child: Text(
-                'Play',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 28,
-              ),),
-            ),
-            _gap,
-            TextButton(
-              onPressed: () {
-                audioController.playSfx(SfxType.peel);
-                GoRouter.of(context).go('/settings');
-              },
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    side: const BorderSide(color: Colors.transparent)
-                  )
-                )
-              ),
-              child: Text(
-                'Settings',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 28,
-              ),),
-            ),
-            _gap,
-            TextButton(
-              onPressed: () {
-                audioController.playSfx(SfxType.peel);
-                GoRouter.of(context).go('/extras');
-              },
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    side: const BorderSide(color: Colors.transparent)
-                  )
-                )
-              ),
-              child: Text(
-                'Extras',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 28,
-              ),),
-            ),
-            
-            Padding(
-              padding: const EdgeInsets.only(top: 32),
-              child: ValueListenableBuilder<bool>(
-                valueListenable: settingsController.audioOn,
-                builder: (context, audioOn, child) {
-                  return IconButton(
-                    onPressed: () => settingsController.toggleAudioOn(),
-                    icon: Icon(audioOn ? Icons.volume_up : Icons.volume_off),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
+        
+              ],
+          ),
+          rectangularMenuArea: Row(
+            children: [
+              Flexible(flex: 3, child: Container()),
+              Flexible(
+                flex:1,
+                child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      audioController.playSfx(SfxType.peel);
+                      GoRouter.of(context).go('/play');
+                    },
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                      padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                          side: const BorderSide(color: Colors.transparent)
+                        )
+                      )
+                    ),
+                    child: Text(
+                      'Play',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.outfit(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 48,
+                    ),),
+                  ),
+                  _gap,
+                  TextButton(
+                    onPressed: () {
+                      audioController.playSfx(SfxType.peel);
+                      GoRouter.of(context).go('/settings');
+                    },
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                      padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                          side: const BorderSide(color: Colors.transparent)
+                        )
+                      )
+                    ),
+                    child: Text(
+                      'Settings',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.outfit(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 32,
+                    ),),
+                  ),
+                  _gap,
+                  TextButton(
+                    onPressed: () {
+                      audioController.playSfx(SfxType.peel);
+                      GoRouter.of(context).go('/extras');
+                    },
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                      padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                          side: const BorderSide(color: Colors.transparent)
+                        )
+                      )
+                    ),
+                    child: Text(
+                      'Extras',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.outfit(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 32,
+                    ),),
+                  ),
+                  
+                  Padding(
+                    padding: const EdgeInsets.only(top: 32),
+                    child: ValueListenableBuilder<bool>(
+                      valueListenable: settingsController.audioOn,
+                      builder: (context, audioOn, child) {
+                        return IconButton(
+                          onPressed: () => settingsController.toggleAudioOn(),
+                          icon: Icon(audioOn ? Icons.volume_up : Icons.volume_off),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+                          ),
+              )
+            ],
+          ),
+        ),]
       ),
     );
   }

@@ -75,6 +75,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/foods/
+    - assets/images/title/
     - assets/audio/music/
     - assets/audio/sfx/
 

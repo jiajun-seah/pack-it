@@ -52,8 +52,8 @@ class MyGame extends StatelessWidget {
             title: 'Pack-It!',
             theme: flutterNesTheme().copyWith(
               colorScheme: ColorScheme.fromSeed(
-                seedColor: palette.darkForestGreen,
-                background: palette.limeGreen,
+                seedColor: palette.beige,
+                background: palette.beige,
               ),
               textTheme: GoogleFonts.outfitTextTheme().apply(
                 bodyColor: palette.darkForestGreen,
