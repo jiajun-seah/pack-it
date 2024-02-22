@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-// import 'foods_mapping.dart';
-
 class Food extends StatelessWidget{
   //type of Recyclable
   final String name;

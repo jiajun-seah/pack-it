@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// import '../audio/audio_controller.dart';
-// import '../audio/sounds.dart';
-// import '../game_internals/level_state.dart';
 import '../level_selection/levels.dart';
-// import 'pixel.dart';
 import '../levels/level_1.dart';
 import '../levels/level_2.dart';
 import '../levels/level_3.dart';

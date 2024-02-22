@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../audio/audio_controller.dart';
 import '../audio/sounds.dart';
 import '../game_internals/score.dart';
-import 'package:google_fonts/google_fonts.dart';
-// import '../level_selection/levels.dart';
-// import '../style/my_button.dart';
 import '../style/palette.dart';
 import '../style/responsive_screen_landscape.dart';
 

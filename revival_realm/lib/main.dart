@@ -1,10 +1,4 @@
-// import 'dart:developer' as dev;
-
-// import 'package:flutter/foundation.dart';
-// import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
-// import 'package:logging/logging.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nes_ui/nes_ui.dart';
 import 'package:provider/provider.dart';

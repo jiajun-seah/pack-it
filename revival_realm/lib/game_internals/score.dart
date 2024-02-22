@@ -1,7 +1,3 @@
-// Copyright 2022, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
-
 /// Encapsulates a score and the arithmetic to compute it.
 class Score {
   // final int score;
@@ -11,10 +7,6 @@ class Score {
   final int level;
 
   factory Score(int level, Duration duration) {
-    // The higher the difficulty, the higher the score.
-    // var score = difficulty;
-    // The lower the time to beat the level, the higher the score.
-    // score *= 10000 ~/ (duration.inSeconds.abs() + 1);
     return Score._(level, duration);
   }
 

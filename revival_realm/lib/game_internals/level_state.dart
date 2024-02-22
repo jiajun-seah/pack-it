@@ -1,11 +1,9 @@
 import 'package:flutter/foundation.dart';
-import '../level_selection/levels.dart';
 
 /// Tracks the filled status of the GameBoard
 /// also tracks if the GameBoard has been fully filled
 class LevelState extends ChangeNotifier {
   final VoidCallback onWin;
-  // final List<String> foods;
 
   final List<String> foods;
 
