@@ -15,12 +15,29 @@ If you wish to run the game locally, clone this repo, then ```flutter run```. Th
 Note: Remember to set up Flutter for web and MacOS respectively (See: https://docs.flutter.dev/platform-integration/web/building and https://docs.flutter.dev/platform-integration/macos/building) if you have not done so.
 
 # Features
-
+Pack your takeaway food into your reusable lunchbox! But wait, it is not that simple... there are ideal positions for you to arrange your food. 
+## Gameplay Mechanics
+- Use context clues (shape, colour, size etc.) to solve the puzzle hidden in each level for a successful bento box. Understanding the pattern required for each level is key to solving the puzzle.
+- Each level is timed to show you how long you took to complete the level.
+- Win screen after each level educates players on the harmful effects of single-use plastics, especially those made out of styrofoam.
+## Level Design
+- Each level comes with a reusable lunchbox in the centre of the screen, with food items surrounding it.
+- Each food item is draggable (works with mouse and touch gesture) and have a pre-determined position in the lunchbox.
+- To finish a level, put all food items into the correct positions.
+## Graphics and Art Style
+- The game's art style follows that of a colourful, "chalk" painting style, to attract players.
+- Colours are chosen from a set palette to ensure game cohesiveness and to make use of colours creatively.
+- Some amount of colour theory was used to select game elements (eg. colours of wrapping clothes should generally be complementary to that of the lunchbox).
+## Sound and Music
+- Relaxing acoustic guitar melody played on loop to enhance the chill mood of the game.
+- Sounds are added when navigating between pages to provide responsiveness to players.
+- Sounds are added when dropping food into the correct positions and on level victory as a audio cue to players.
+  
 # Assets
 Read about how I created the assets myself in this article (TBA)
 
 ## Game Art
-All game assets are handdrawn using Procreate on iPad Air (3rd Generation). 
+All game assets are handdrawn using Procreate on iPad Air (3rd Generation). A palette was used to ensure cohesiveness of the game design (https://lospec.com/palette-list/resurrect-64)
 
 ## Music
 All game music and sound effects are made using Apple Garageband.
