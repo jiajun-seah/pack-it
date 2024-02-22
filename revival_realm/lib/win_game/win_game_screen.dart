@@ -41,7 +41,7 @@ class WinGameScreen extends StatelessWidget {
               gap,
               Center(
                 child: Text(
-                'Awesome!',
+                'Awesome job!',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.outfit(
                   fontSize: 55,
