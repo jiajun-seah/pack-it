@@ -188,7 +188,6 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
         ),
       ),
     );
-    ;
   }
   
   Future<void> _playerWon() async {

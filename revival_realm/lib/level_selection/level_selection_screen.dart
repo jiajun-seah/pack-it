@@ -39,6 +39,7 @@ class LevelSelectionScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.outfit(
                         fontSize: 55,
+                        fontWeight: FontWeight.w700
                       ),
                     ),
                   ],

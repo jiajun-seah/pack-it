@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
+import 'extras/extras_screen.dart';
 import 'game_internals/score.dart';
 import 'level_selection/level_selection_screen.dart';
 import 'level_selection/levels.dart';
@@ -78,6 +79,11 @@ final router = GoRouter(
           path: 'settings',
           builder: (context, state) =>
               const SettingsScreen(key: Key('settings')),
+        ),
+        GoRoute(
+          path: 'extras',
+          builder: (context, state) =>
+              const ExtrasScreen(key: Key('extras')),
         ),
       ],
     ),
