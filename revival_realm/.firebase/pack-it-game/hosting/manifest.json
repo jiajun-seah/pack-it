@@ -5,8 +5,8 @@
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Pack-It! Bring your own lunchboxes to takeaway",
-    "orientation": "portrait-primary",
+    "description": "Pack-It! Bring your own lunchboxes to takeaway.",
+    "orientation": "landscape-primary",
     "prefer_related_applications": false,
     "icons": [
         {
