@@ -103,7 +103,7 @@ class ExtrasScreen extends StatelessWidget {
                           fontSize: 24,
                           decoration: TextDecoration.underline
                         ),
-                        recognizer: TapGestureRecognizer()..onTap = () {launchUrlString('https:///github.com/jiajun-seah');}
+                        recognizer: TapGestureRecognizer()..onTap = () {launchUrlString('https://github.com/jiajun-seah/pack-it');}
                       )
                     ])
                   ),
