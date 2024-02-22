@@ -32,18 +32,18 @@ class LevelSelectionScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Center(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Select Level',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
-                        fontSize: 55,
-                        fontWeight: FontWeight.w700
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Select Level',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.outfit(
+                          fontSize: 55,
+                          fontWeight: FontWeight.w700
+                        ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
               ),
             ),
             const SizedBox(height: 50),

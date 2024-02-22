@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 
 import '../audio/audio_controller.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import '../audio/sounds.dart';
 import '../style/palette.dart';
 import '../style/responsive_screen_landscape.dart';
@@ -14,7 +15,7 @@ import '../style/responsive_screen_landscape.dart';
 class ExtrasScreen extends StatelessWidget {
   const ExtrasScreen({super.key});
 
-  static const _gap = SizedBox(height: 60);
+  // static const _gap = SizedBox(height: 60);
 
   @override
   Widget build(BuildContext context) {
@@ -34,60 +35,63 @@ class ExtrasScreen extends StatelessWidget {
           squarishMainArea: Column(
             children: [
               
-              Text(
-                'Extras',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 55,
-                  fontWeight:FontWeight.w700
-                ),
-              ),
-              _gap,
-              Container(
-                // color: Colors.white70,
-                child: Text(
-                  'Special Thanks',
+              Flexible(
+                flex:1,
+                child: AutoSizeText(
+                  'Extras',
+                  minFontSize: 38,
+                  overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.outfit(
-                    fontSize: 28,
-                    fontWeight:FontWeight.w600
+                    fontSize: 55,
+                    fontWeight: FontWeight.w700
                   ),
                 ),
               ),
-              Text(
-                'Basic Template by Flutter Dev team \n Friends who helped to playtest and provide feedback',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 24,
+              Flexible(flex:1, child: Container(),),
+              Flexible(
+                flex:1,
+                child: AutoSizeText(
+                  'Special Thanks',
+                  minFontSize: 22,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.outfit(
+                    fontSize: 28,
+                    fontWeight: FontWeight.w700
+                  ),
                 ),
               ),
-              _gap,
-              //  Text(
-              //   'Tech Stack',
-              //   textAlign: TextAlign.center,
-              //   style: GoogleFonts.outfit(
-              //     fontSize: 28,
-              //     fontWeight:FontWeight.w600
-              //   ),
-              // ),
-              // Text(
-              //   'Programmed with: Flutter and Dart\n Assets: Procreate \n Music: GarageBand',
-              //   textAlign: TextAlign.center,
-              //   style: GoogleFonts.outfit(
-              //     fontSize: 24,
-              //   ),
-              // ),
-              // _gap,
-               Text(
-                'Socials',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 28,
-                  fontWeight:FontWeight.w600
+              Flexible(
+                flex:1,
+                child: 
+                AutoSizeText(
+                  'Casual Games Toolkit (Basic Template) by Flutter Dev team \n Friends who helped to playtest and provide feedback',
+                  minFontSize: 20,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.outfit(
+                    fontSize: 24,
+                    // fontWeight: FontWeight.w700
+                  ),
                 ),
               ),
-              // _gap,
-              Container(
+              Flexible(flex:1, child: Container(),),
+              Flexible(
+              flex:1,
+                child: AutoSizeText(
+                  'Socials',
+                  minFontSize: 22,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.outfit(
+                    fontSize: 28,
+                    fontWeight: FontWeight.w700
+                  ),
+                ),
+              ),
+              Flexible(
+                flex:1,
                 child:
                   RichText(
                     text: TextSpan(children:[
@@ -95,12 +99,14 @@ class ExtrasScreen extends StatelessWidget {
                         text: 'Find me on ',
                         style: GoogleFonts.outfit(
                           fontSize: 24,
+                          color: Colors.black
                         ),
                       ),
                       TextSpan(
                         text: 'Github',
                         style: GoogleFonts.outfit(
                           fontSize: 24,
+                          color: Colors.black,
                           decoration: TextDecoration.underline
                         ),
                         recognizer: TapGestureRecognizer()..onTap = () {launchUrlString('https://github.com/jiajun-seah/pack-it');}

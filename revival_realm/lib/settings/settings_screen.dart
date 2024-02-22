@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 
 import '../audio/audio_controller.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import '../audio/sounds.dart';
 import '../player_progress/player_progress.dart';
 import '../style/palette.dart';
@@ -35,93 +36,123 @@ class SettingsScreen extends StatelessWidget {
           ResponsiveScreen(
           squarishMainArea: Column(
             children: [
-              _gap,
-              Text(
-                'Settings',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 55,
-                  fontWeight: FontWeight.w700
-                ),
-              ),
-              _gap,
-              Row(
-                children: [
-                  Expanded(
-                    flex:2,
-                    child: Text(
-                      'Music Volume',
-                      textAlign: TextAlign.right,
-                      style: GoogleFonts.outfit(
-                        fontSize: 36,
-                      ),
-                    ),
-                  ),
-                  Flexible(
-                    flex:1,
-                    child: Container()
-                  ),
-                  Flexible(
-                    flex: 8,
-                    child: ValueListenableBuilder<double>(
-                      valueListenable: settings.musicVolume,
-                      builder: (context, musicVolume, child) =>
-                      Slider.adaptive(value: musicVolume, onChanged: (value) => settings.setMusicVolume(value))
-                    ),
-                  ),
-                ]
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: Text(
-                      'SFX Volume',
-                      textAlign: TextAlign.right,
-                      style: GoogleFonts.outfit(
-                        fontSize: 36,
-                      ),
-                    ),
-                  ),
-                  Flexible(
-                    flex:1,
-                    child: Container()
-                  ),
-                  Flexible(
-                    flex: 8,
-                    child: ValueListenableBuilder<double>(
-                      valueListenable: settings.soundsVolume,
-                      builder: (context, soundsVolume, child) =>
-                       Slider.adaptive(value: soundsVolume, onChanged: (value) => settings.setSoundsVolume(value))
-                    ),
-                  ),
-                ],
-              ),
-              TextButton(
-                onPressed: () {
-                  context.read<PlayerProgress>().reset();
-                   final messenger = ScaffoldMessenger.of(context);
-                  messenger.showSnackBar(
-                    const SnackBar(
-                        content: Text('Your progress has been reset')),);
-                },
-                style: ButtonStyle(
-                  foregroundColor: MaterialStateProperty.all<Color>(Colors.redAccent.shade700),
-                  backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                  padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                      side: const BorderSide(color: Colors.transparent)
-                    )
-                  )
-                ),
-                child: Text(
-                  'Reset progress',
+              Flexible(flex:1, child: Container(),),
+              Flexible(
+                flex:1,
+                child: AutoSizeText(
+                  'Settings',
+                  minFontSize: 38,
+                  // maxFontSize: 55,
+                  overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.outfit(
-                    fontSize: 28,
-                ),),
+                    fontSize: 55,
+                    fontWeight: FontWeight.w700
+                  ),
+                ),
+              ),
+              Flexible(flex:1, child: Container(),),
+              Flexible(
+                flex:1,
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex:2,
+                      child: AutoSizeText(
+                        'Music Volume',
+                        minFontSize: 24,
+                        // maxFontSize: 55,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.right,
+                        maxLines: 2,
+                        style: GoogleFonts.outfit(
+                          fontSize: 32,
+                          // fontWeight: FontWeight.w700
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      flex:1,
+                      child: Container()
+                    ),
+                    Flexible(
+                      flex: 7,
+                      child: ValueListenableBuilder<double>(
+                        valueListenable: settings.musicVolume,
+                        builder: (context, musicVolume, child) =>
+                        Slider.adaptive(value: musicVolume, onChanged: (value) => settings.setMusicVolume(value))
+                      ),
+                    ),
+                  ]
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: AutoSizeText(
+                        'SFX Volume',
+                        minFontSize: 24,
+                        // maxFontSize: 55,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.right,
+                        maxLines: 2,
+                        style: GoogleFonts.outfit(
+                          fontSize: 32,
+                          // fontWeight: FontWeight.w700
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      flex:1,
+                      child: Container()
+                    ),
+                    Flexible(
+                      flex: 7,
+                      child: ValueListenableBuilder<double>(
+                        valueListenable: settings.soundsVolume,
+                        builder: (context, soundsVolume, child) =>
+                         Slider.adaptive(value: soundsVolume, onChanged: (value) => settings.setSoundsVolume(value))
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Flexible(
+                flex:1,
+                child: TextButton(
+                  onPressed: () {
+                    context.read<PlayerProgress>().reset();
+                     final messenger = ScaffoldMessenger.of(context);
+                    messenger.showSnackBar(
+                      const SnackBar(
+                          content: Text('Your progress has been reset')),);
+                  },
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all<Color>(Colors.redAccent.shade700),
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                    padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(14)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        side: const BorderSide(color: Colors.transparent)
+                      )
+                    )
+                  ),
+                  child: AutoSizeText(
+                        'Reset Progress',
+                        minFontSize: 20,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                        maxLines: 1,
+                        style: GoogleFonts.outfit(
+                          fontSize: 28,
+                          // fontWeight: FontWeight.w700
+                        ),
+                      ),
+                ),
               ),
               // _SettingsLine(
               //   'Reset progress',
@@ -156,12 +187,17 @@ class SettingsScreen extends StatelessWidget {
                       )
                     )
                   ),
-                  child: Text(
-                    'Back',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
-                      fontSize: 28,
-                  ),),
+                  child: AutoSizeText(
+                        'Back',
+                        minFontSize: 20,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                        maxLines: 1,
+                        style: GoogleFonts.outfit(
+                          fontSize: 28,
+                          // fontWeight: FontWeight.w700
+                        ),
+                      ),
                 ),
         ),]
       ),
