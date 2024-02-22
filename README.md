@@ -17,6 +17,8 @@ Note: Remember to set up Flutter for web and MacOS respectively (See: https://do
 # Features
 
 # Assets
+Read about how I created the assets myself in this article (TBA)
+
 ## Game Art
 All game assets are handdrawn using Procreate on iPad Air (3rd Generation). 
 
