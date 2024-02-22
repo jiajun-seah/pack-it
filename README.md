@@ -38,4 +38,7 @@ All game music and sound effects are made using Apple Garageband.
 ## Settings
 <img width="1460" alt="Screenshot 2024-02-22 at 9 08 05 PM" src="https://github.com/jiajun-seah/pack-it/assets/77622894/e7504460-0ddf-4da9-8d4a-082c0ad11b87">
 
+## Special Thanks
+1. Special thanks to the dev team of Flutter Casual Games Toolkit for providing the game templates. The templates have pre-implemented the essentials of a app-like game so that the focus can be placed on designing actual gameplay. Check them out here: https://flutter.dev/games
+2. Huge thank you to friends and family who have playtested the game and were involved one way or another, such as conducting UAT, providing advice on game art etc. I hope this little pet project of mine has cheered up your day :)
 
