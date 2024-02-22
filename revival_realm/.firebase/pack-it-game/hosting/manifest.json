@@ -1,6 +1,6 @@
 {
-    "name": "revival_realm",
-    "short_name": "revival_realm",
+    "name": "pack-it",
+    "short_name": "pack-it",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
