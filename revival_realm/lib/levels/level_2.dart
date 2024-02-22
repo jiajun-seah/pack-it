@@ -44,14 +44,14 @@ class LevelTwo extends StatelessWidget {
                                       name: 'sandwich_tr',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Sandwich_tr.gif')
+                                      sprite: Image.asset('assets/images/foods/sandwich_tr.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
                                       name: 'sandwich_tr',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Sandwich_tr.gif')
+                                      sprite: Image.asset('assets/images/foods/sandwich_tr.gif')
                                     ),
                                   ),
                                 ),

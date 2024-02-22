@@ -77,14 +77,14 @@ class LevelEight extends StatelessWidget {
                                       name: 'pear',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Pear.gif')
+                                      sprite: Image.asset('assets/images/foods/pear.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
                                       name: 'pear',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/Pear.gif')
+                                      sprite: Image.asset('assets/images/foods/pear.gif')
                                     ),
                                   ),
                                 ),
@@ -307,7 +307,7 @@ class LevelEight extends StatelessWidget {
                               ) {
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('pear')
-                                    ? 'assets/images/foods/Pear.gif'
+                                    ? 'assets/images/foods/pear.gif'
                                     : 'assets/images/foods/transparent_square.png')
                                 );
                               },

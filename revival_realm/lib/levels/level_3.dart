@@ -113,7 +113,7 @@ class LevelThree extends StatelessWidget {
                                 return Container(
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('orange_l')
-                                    ? 'assets/images/foods/Orange_L.gif'
+                                    ? 'assets/images/foods/Orange_l.gif'
                                     : 'assets/images/foods/transparent_square.png')
                                 );
                               },
@@ -142,7 +142,7 @@ class LevelThree extends StatelessWidget {
                                 return Container(
                                   // color: Colors.blue,
                                   child: Image.asset(levelState.checkDropped('orange_r')
-                                    ? 'assets/images/foods/Orange_R.gif'
+                                    ? 'assets/images/foods/Orange_r.gif'
                                     : 'assets/images/foods/transparent_square.png')
                                 );
                               },
@@ -269,14 +269,14 @@ class LevelThree extends StatelessWidget {
                                       name: 'blueberry',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/blueberry.gif')
+                                      sprite: Image.asset('assets/images/foods/Blueberry.gif')
                                     )),
                                     childWhenDragging: Container(),
                                     child: Food(
                                       name: 'blueberry',
                                       relativeWidth: 0.5,
                                       relativeHeight: 0.5,
-                                      sprite: Image.asset('assets/images/foods/blueberry.gif')
+                                      sprite: Image.asset('assets/images/foods/Blueberry.gif')
                                     ),
                                   ),
                                 ),

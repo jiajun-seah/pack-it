@@ -198,7 +198,7 @@ class LevelSeven extends StatelessWidget {
                               ) {
                                 return Container(
                                   child: Image.asset(levelState.checkDropped('chocolate_swirl')
-                                    ? 'assets/images/foods/chocolate_swirl.gif'
+                                    ? 'assets/images/foods/Chocolate_Swirl.gif'
                                     : 'assets/images/foods/transparent_square.png')
                                 );
                               },
