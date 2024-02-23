@@ -96,7 +96,30 @@ class ExtrasScreen extends StatelessWidget {
                   RichText(
                     text: TextSpan(children:[
                       TextSpan(
-                        text: 'Find me on ',
+                        text: 'Read about my development process ',
+                        style: GoogleFonts.outfit(
+                          fontSize: 24,
+                          color: Colors.black
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'here',
+                        style: GoogleFonts.outfit(
+                          fontSize: 24,
+                          color: Colors.black,
+                          decoration: TextDecoration.underline
+                        ),
+                        recognizer: TapGestureRecognizer()..onTap = () {launchUrlString('https://medium.com/@orangepufflejj/pixel-perfect-how-i-made-a-flutter-game-from-start-to-finish-6e78cfb3629f');}
+                      ),
+                      TextSpan(
+                        text: ' or ',
+                        style: GoogleFonts.outfit(
+                          fontSize: 24,
+                          color: Colors.black
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'find me on ',
                         style: GoogleFonts.outfit(
                           fontSize: 24,
                           color: Colors.black
