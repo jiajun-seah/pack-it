@@ -32,7 +32,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
 
   static const _celebrationDuration = Duration(milliseconds: 3000);
   static const _preCelebrationDuration = Duration(milliseconds: 600);
-  static const _styrofoamDuration = Duration(milliseconds: 1000);
+  static const _styrofoamDuration = Duration(milliseconds: 2000);
 
   bool _won = false;
   bool _duringCelebration = false;
@@ -168,7 +168,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                               alignment: const Alignment(-1,-1),
                                 widthFactor: (widget.level.id == 4 || widget.level.id == 6 ) ? 0.46 : 0.36,
                                   child: AnimatedCrossFade(
-                                    duration: const Duration(seconds: 2),
+                                    duration: const Duration(seconds: 3),
                                     firstChild: Image.asset('assets/images/foods/styrofoam.png'),
                                     secondChild: Image.asset('assets/images/foods/level_${(widget.level.id)}_lid.png'),
                                     crossFadeState: _lidOn ? CrossFadeState.showSecond: CrossFadeState.showFirst,

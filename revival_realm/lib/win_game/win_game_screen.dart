@@ -51,22 +51,22 @@ class WinGameScreen extends StatelessWidget {
               gap,
               Center(
                 child: Text(
-                'Time:',
+                'Time: ${score.formattedTime}',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.outfit(
-                  fontSize: 24,
+                  fontSize: 32,
                 ),
               ),
               ),
-              Center(
-                child: Text(
-                score.formattedTime,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 55,
-                ),
-              ),
-              ),
+              // Center(
+              //   child: Text(
+              //   score.formattedTime,
+              //   textAlign: TextAlign.center,
+              //   style: GoogleFonts.outfit(
+              //     fontSize: 55,
+              //   ),
+              // ),
+              // ),
               gap,
               Stack(
                 alignment: Alignment.center,

@@ -103,7 +103,7 @@ class ExtrasScreen extends StatelessWidget {
                         ),
                       ),
                       TextSpan(
-                        text: 'Github',
+                        text: 'GitHub',
                         style: GoogleFonts.outfit(
                           fontSize: 24,
                           color: Colors.black,
