@@ -17,11 +17,16 @@ List<String> soundTypeToFilename(SfxType type) {
       return const [
         'chime.mp3',
       ];
+    case SfxType.tube:
+      return const [
+        'tube.mp3',
+      ];
   }
 }
 
 enum SfxType {
   peel,
   pop,
-  chime
+  chime,
+  tube
 }
