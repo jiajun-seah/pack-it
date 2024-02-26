@@ -34,7 +34,7 @@ Pack your takeaway food into your reusable lunchbox! But wait, it is not that si
 - Sounds are added when dropping food into the correct positions and on level victory as a audio cue to players.
   
 # Assets
-Read about how I created the assets myself in this article (TBA)
+Read about how I created the assets myself in [this article](https://medium.com/@orangepufflejj/pixel-perfect-how-i-made-a-flutter-game-from-start-to-finish-6e78cfb3629f)
 
 ## Game Art
 All game assets are handdrawn using Procreate on iPad Air (3rd Generation). A palette was used to ensure cohesiveness of the game design (https://lospec.com/palette-list/resurrect-64)
